@@ -17,4 +17,12 @@
 
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196254333-26f139ce-e1d9-47d9-a04f-bde69b2a242d.png">
 
+- Finishing upload
 
+   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196255979-447657ef-52f8-415e-91e5-7a3bca21078a.png">
+
+- Annotate images
+  - Click on the image to annotate, then drag a frame around the object's area and classify it.
+  - Go to the next image and repeat previous step to all images.
+  
+    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196256383-e0a00bc0-78f0-4293-bd19-f2fbfc39ee3a.png">
