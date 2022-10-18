@@ -92,8 +92,57 @@ cd /content/drive/MyDrive/DADS7202
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510281-b8e23663-5209-4b88-957e-5438d5b4bbab.png">
 
-In the **models folder** ,go to research folder ,then go to the **object_detection** folder and download files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**
+- In the **models folder** ,go to research folder ,then go to the **object_detection** folder and download files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510913-9edc9d28-423c-4e76-ae88-cc794618cd15.png">
 
 ### *COCO API installation*
+
+- Change directory to research folder
+
+```
+cd /content/drive/MyDrive/DADS7202/models/research
+```
+---output---
+
+- Install coco API
+
+```
+!protoc object_detection/protos/*.proto --python_out=.
+```
+```
+!git clone https://github.com/cocodataset/cocoapi.git
+```
+---output---
+```
+cd cocoapi/PythonAPI
+```
+---output---
+```
+!make
+```
+---output---
+```
+cp -r pycocotools /content/drive/MyDrive/DADS7202/models/research
+```
+---output---
+
+### *Object Detection API installation*
+
+- Back to **research** folder
+
+```
+cd /content/drive/MyDrive/DADS7202/models/research
+```
+---output---
+
+- Installing the object detection package
+
+```
+cp object_detection/packages/tf2/setup.py .
+```
+---output---
+
+``
+#python -m pip install --use-feature=2020-resolver .
+``
