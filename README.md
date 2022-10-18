@@ -231,3 +231,74 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 !python generate_tfrecord.py -x /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test -l //content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt -o /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/test.record
 ```
 ---output---
+
+- The annotations folder should be look like this.
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517704-15e14d48-0aa9-4872-8ca0-1a3ca4df162e.png">
+
+- In **models** folder (**inside training_demo folder**) create a new directory named **my_ssd_resnet101_v1_fpn** and download **pipeline.config** from **pre-train-models/ssd_resnet101...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517998-799e438a-4ee8-4836-89de-79ed5746e519.png">
+
+- Configure the Training Pipeline
+  - Double click into pipeline.config in model/my_ssd_resnet101_v1_fpn
+  - **Looking at line 3, let's change the number of different label classes**.
+  - Line 6,7 can set image resizer height and width.
+  - **Line 131 to set batch size**.
+  - Line 136 to set augmentation options.
+  - **Line 161 change the Path to checkpoint of pre-trained model**.
+  - **Line 152,162 change number of step**.
+  - **Line 167 change fine tune checkpoint type to detection**.
+  - **Line 168 set it to false**.
+  - **Line 172 change Path to label map file**.
+  - **Line 174 change Path to training TFRecord file**.
+  - **Line 182 change Path to label map file**.
+  - **Line 186 change Path to testing TFRecord**.
+  
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196518462-62833952-1c11-4428-8d16-06d8fc907e26.png">
+
+### *Training the model*
+
+- Change directory to training_demo.
+
+```
+cd /content/drive/MyDrive/DADS7202/workspace/training_demo
+```
+---output---
+
+- Training the model
+
+```
+!python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config
+```
+---output---
+
+### *Evaluating the Model*
+
+- Set metric type
+
+```
+from object_detection.protos import eval_pb2
+eval_config = eval_pb2.EvalConfig()
+eval_config.metrics_set.extend(['coco_detection_metrics'])
+```
+---output---
+
+- Change directory to training_demo
+
+```
+cd /content/drive/MyDrive/DADS7202/workspace/training_demo
+```
+---output---
+
+- Model evaluate using Tensorboard
+
+```
+!python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config --checkpoint_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn
+```
+---output---
+
+### *Inferencing Trained Models*
+
+- In exported-models folder create my_model folder
+- Export the model to /content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model
