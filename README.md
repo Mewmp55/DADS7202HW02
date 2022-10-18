@@ -91,3 +91,9 @@ cd /content/drive/MyDrive/DADS7202
 - In the created folder, you will see a new folder.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510281-b8e23663-5209-4b88-957e-5438d5b4bbab.png">
+
+In the **models folder** ,go to research folder ,then go to the **object_detection** folder and download files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510913-9edc9d28-423c-4e76-ae88-cc794618cd15.png">
+
+### *COCO API installation*
