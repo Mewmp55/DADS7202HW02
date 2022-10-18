@@ -2,7 +2,7 @@
 
 ## This work is to try to create an object detection model using Tensorflow, following the steps of [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html) and YouTube Chanel [Krish Naik](https://www.youtube.com/watch?v=XoMiveY_1Z4) video.
 
-### *Prepare DATASET*
+<summary>### *Prepare DATASET*</summary>
 - Prepare the images you want to use in the folder.
 
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196252482-65f86535-9a44-4862-95d2-8c8587fb10bb.png">
@@ -43,19 +43,23 @@
 
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196258535-d99d1a9b-ecd7-42d6-8611-cdca47147589.png">
 
+</details>
+<details>
+
+
 ### *Install Tensorflow*
-```
+```python
 !pip install tensorflow-gpu
 ```
 ---output---
 
-```js
+```python
 import tensorflow as tf
 print(tf.__version__)
 ```
 ---output---
 
-```
+```python
 !nvidia-smi -L
 ```
 ---output---
@@ -64,7 +68,7 @@ print(tf.__version__)
 
 - Mounting Google Drive
 
-```js
+```python
 from google.colab import drive
 drive.mount('/content/drive')
 ```
@@ -77,12 +81,12 @@ drive.mount('/content/drive')
 
 - Change directory to your folder.
 
-```
+```python
 cd /content/drive/MyDrive/DADS7202
 ```
 ---output---
 
-```
+```python
 !git clone https://github.com/tensorflow/models.git
 ```
 ---output---
@@ -100,29 +104,29 @@ cd /content/drive/MyDrive/DADS7202
 
 - Change directory to research folder
 
-```
+```python
 cd /content/drive/MyDrive/DADS7202/models/research
 ```
 ---output---
 
 - Install coco API
 
-```
+```python
 !protoc object_detection/protos/*.proto --python_out=.
 ```
-```
+```python
 !git clone https://github.com/cocodataset/cocoapi.git
 ```
 ---output---
-```
+```python
 cd cocoapi/PythonAPI
 ```
 ---output---
-```
+```python
 !make
 ```
 ---output---
-```
+```python
 cp -r pycocotools /content/drive/MyDrive/DADS7202/models/research
 ```
 ---output---
@@ -131,14 +135,14 @@ cp -r pycocotools /content/drive/MyDrive/DADS7202/models/research
 
 - Back to **research** folder
 
-```
+```python
 cd /content/drive/MyDrive/DADS7202/models/research
 ```
 ---output---
 
 - Installing the object detection package
 
-```
+```python
 cp object_detection/packages/tf2/setup.py .
 ```
 ---output---
@@ -146,14 +150,14 @@ cp object_detection/packages/tf2/setup.py .
 
 > #python -m pip install --use-feature=2020-resolver .
 
-```
+```python
 !python -m pip install .
 ```
 ---output---
 
 - Test Installation
 
-```
+```python
 !python object_detection/builders/model_builder_tf2_test.py
 ```
 ---output---
@@ -176,7 +180,7 @@ Preparing the Workspace
 
 - Change directory to pre-trained-models folder
 
-```
+```python
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 ```
 ---output---
@@ -184,7 +188,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 - Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md).
 - In this work we try to use Pre-Train model as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**.
 
-```
+```python
 !wget http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet101_v1_fpn_640x640_coco17_tpu-8.tar.gz
 ```
 ---output---
@@ -193,7 +197,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516271-a753f502-a217-41ec-b39a-a6ae2258592a.png">
 
-```
+```python
 !tar -xvf ssd_resnet101_v1_fpn_640x640_coco17_tpu-8.tar.gz
 ```
 ---output---
@@ -216,18 +220,18 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
   - Run **generate_tfrecord.py** script to create tensorflow records.
   - Check the train folder, test folder, label_map.pbtxt and the ourput path before running.
   
-```
+```python
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
 ---output---
 
 > Create train data:
-```
+```python
 !python generate_tfrecord.py -x /content/drive/MyDrive/DADS7202/workspace/training_demo/images/train -l /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt -o /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/train.record
 ```
 
 > Create test data:
-```
+```python
 !python generate_tfrecord.py -x /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test -l //content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt -o /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/test.record
 ```
 ---output---
@@ -261,14 +265,14 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 - Change directory to training_demo.
 
-```
+```python
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
 ---output---
 
 - Training the model
 
-```
+```python
 !python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config
 ```
 ---output---
@@ -277,7 +281,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 - Set metric type
 
-```js
+```python
 from object_detection.protos import eval_pb2
 eval_config = eval_pb2.EvalConfig()
 eval_config.metrics_set.extend(['coco_detection_metrics'])
@@ -286,14 +290,14 @@ eval_config.metrics_set.extend(['coco_detection_metrics'])
 
 - Change directory to training_demo
 
-```
+```python
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
 ---output---
 
 - Model evaluate using Tensorboard
 
-```
+```python
 !python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config --checkpoint_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn
 ```
 ---output---
@@ -303,14 +307,14 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 - In exported-models folder create my_model folder
 - Export the model to */content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model*
 
-```
+```python
 !python exporter_main_v2.py --input_type image_tensor --pipeline_config_path /content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config --trained_checkpoint_dir /content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --output_directory /content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model
 ```
 ---output---
 
 - Inferencing trained model
 
-```js
+```python
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'    # Suppress TensorFlow logging (1)
 import pathlib
@@ -429,7 +433,7 @@ cv2_imshow(image_with_detections)
 
 - Pretrain-model SSD_resnet101_v1_fpn without training
 
-```js
+```python
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'    # Suppress TensorFlow logging (1)
 import pathlib
@@ -549,7 +553,7 @@ cv2_imshow(image_with_detections)
 
 - With 5,000 steps of training, the results are still unsatisfactory. After this, try 10,000 training steps.
 
-```js
+```python
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'    # Suppress TensorFlow logging (1)
 import pathlib
