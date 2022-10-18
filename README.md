@@ -50,6 +50,10 @@
 </details>
 
 ### *Install Tensorflow*
+
+<details>
+<summary><b>Details: Install Tensorflow</b></summary>
+   
 ```python
 !pip install tensorflow-gpu
 ```
@@ -65,9 +69,13 @@ print(tf.__version__)
 !nvidia-smi -L
 ```
 ---output---
+</details>
 
 ### *Cloning TFOD 2.0 Github to drive*
 
+<details>
+<summary><b>Details: Cloning TFOD 2.0 Github to drive</b></summary>
+   
 - Mounting Google Drive
 
 ```python
@@ -101,8 +109,12 @@ cd /content/drive/MyDrive/DADS7202
 - In the **models folder** ,go to research folder ,then go to the **object_detection** folder and download files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510913-9edc9d28-423c-4e76-ae88-cc794618cd15.png">
-
+</details>
+   
 ### *COCO API installation*
+
+<details>
+<summary><b>Details: COCO API installation</b></summary>
 
 - Change directory to research folder
 
@@ -132,8 +144,12 @@ cd cocoapi/PythonAPI
 cp -r pycocotools /content/drive/MyDrive/DADS7202/models/research
 ```
 ---output---
+</details>
 
 ### *Object Detection API installation*
+
+<details>
+<summary><b>Details: Object Detection API installation</b></summary>
 
 - Back to **research** folder
 
@@ -163,8 +179,13 @@ cp object_detection/packages/tf2/setup.py .
 !python object_detection/builders/model_builder_tf2_test.py
 ```
 ---output---
-
+</details>
+   
 ### *Training Custom Object Detector*
+
+<details>
+<summary><b>Details: Training Custom Object Detector</b></summary>
+   
 Preparing the Workspace
 
 - In the DADS7202 folder (or other created folder in cloning TFOD github step), create a workspace folder and a subfolder, as shown below.
@@ -263,7 +284,13 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
   
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196518462-62833952-1c11-4428-8d16-06d8fc907e26.png">
 
+</details>
+
+
 ### *Training the model*
+
+<details>
+<summary><b>Details: Training the model</b></summary>
 
 - Change directory to training_demo.
 
@@ -278,8 +305,12 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 !python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config
 ```
 ---output---
+</details>
 
 ### *Evaluating the Model*
+
+<details>
+<summary><b>Details: Evaluating the Model</b></summary>
 
 - Set metric type
 
@@ -303,8 +334,12 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 !python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config --checkpoint_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn
 ```
 ---output---
+</details>
 
 ### *Inferencing Trained Models*
+
+<details>
+<summary><b>Details: Inferencing Trained Models</b></summary>
 
 - In exported-models folder create my_model folder
 - Export the model to */content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model*
@@ -672,3 +707,9 @@ cv2_imshow(image_with_detections)
 Loading model...Done! Took 21.366928339004517 seconds
 Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196521952-64671dc6-717c-4ef9-a38a-93bed9b177e5.png">
+
+- By increasing the steps to 10000, the results look better.
+   
+</details>
+
+### *Performance Tuning*
