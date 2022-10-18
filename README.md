@@ -51,7 +51,7 @@
 ### *Install Tensorflow*
 
 <details>
-<summary><b>Details: Install Tensorflow</b></summary>
+<summary>Details: Install Tensorflow</summary>
    
 ```python
 !pip install tensorflow-gpu
@@ -73,7 +73,7 @@ print(tf.__version__)
 ### *Cloning TFOD 2.0 Github to drive*
 
 <details>
-<summary><b>Details: Cloning TFOD 2.0 Github to drive</b></summary>
+<summary>Details: Cloning TFOD 2.0 Github to drive</summary>
    
 - Mounting Google Drive
 
@@ -113,7 +113,7 @@ cd /content/drive/MyDrive/DADS7202
 ### *COCO API installation*
 
 <details>
-<summary><b>Details: COCO API installation</b></summary>
+<summary>Details: COCO API installation</summary>
 
 - Change directory to research folder
 
@@ -148,7 +148,7 @@ cp -r pycocotools /content/drive/MyDrive/DADS7202/models/research
 ### *Object Detection API installation*
 
 <details>
-<summary><b>Details: Object Detection API installation</b></summary>
+<summary>Details: Object Detection API installation</summary>
 
 - Back to **research** folder
 
@@ -183,7 +183,7 @@ cp object_detection/packages/tf2/setup.py .
 ### *Training Custom Object Detector*
 
 <details>
-<summary><b>Details: Training Custom Object Detector</b></summary>
+<summary>Details: Training Custom Object Detector</summary>
    
 Preparing the Workspace
 
@@ -289,7 +289,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ### *Training the model*
 
 <details>
-<summary><b>Details: Training the model</b></summary>
+<summary>Details: Training the model</summary>
 
 - Change directory to training_demo.
 
@@ -309,7 +309,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ### *Evaluating the Model*
 
 <details>
-<summary><b>Details: Evaluating the Model</b></summary>
+<summary>Details: Evaluating the Model</summary>
 
 - Set metric type
 
@@ -338,7 +338,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ### *Inferencing Trained Models*
 
 <details>
-<summary><b>Details: Inferencing Trained Models</b></summary>
+<summary>Details: Inferencing Trained Models</summary>
 
 - In exported-models folder create my_model folder
 - Export the model to */content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model*
