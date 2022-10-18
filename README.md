@@ -181,10 +181,11 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 ```
 ---output---
 
-- Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo].
+- Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md).
 - In this work we try to use Pre-Train model as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**.
 
 ```
 !wget http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet101_v1_fpn_640x640_coco17_tpu-8.tar.gz
 ```
 ---output---
+
