@@ -143,9 +143,9 @@ cp object_detection/packages/tf2/setup.py .
 ```
 ---output---
 
-``
-#python -m pip install --use-feature=2020-resolver .
-``
+
+> #python -m pip install --use-feature=2020-resolver .
+
 ```
 !python -m pip install .
 ```
@@ -181,7 +181,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 ```
 ---output---
 
-- Download Pre-Trained Model which are listed in <u>TensorFlow 2 Detection Model Zoo</u>.
+- Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo].
 - In this work we try to use Pre-Train model as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**.
 
 ```
