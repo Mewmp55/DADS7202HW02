@@ -210,3 +210,24 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
   - Download **Generate TensorFlow Records script**.
   - Upload file into **training_demo** folder.
     <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516987-a58c2eb9-a3a3-48eb-8617-2ab2ab39d39d.png">
+
+- Create TensorFlow Records.
+  - Change directory to **training_demo**.
+  - Run **generate_tfrecord.py** script to create tensorflow records.
+  - Check the train folder, test folder, label_map.pbtxt and the ourput path before running.
+  
+```
+cd /content/drive/MyDrive/DADS7202/workspace/training_demo
+```
+---output---
+
+> Create train data:
+```
+!python generate_tfrecord.py -x /content/drive/MyDrive/DADS7202/workspace/training_demo/images/train -l /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt -o /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/train.record
+```
+
+> Create test data:
+```
+!python generate_tfrecord.py -x /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test -l //content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt -o /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/test.record
+```
+---output---
