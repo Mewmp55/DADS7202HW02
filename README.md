@@ -4,7 +4,7 @@
 
 
 <details>
-<summary>### *Prepare DATASET*</summary>
+<summary><hr3>*Prepare DATASET*</hr3></summary>
 
 - Prepare the images you want to use in the folder.
 
