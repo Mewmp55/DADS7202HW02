@@ -303,14 +303,14 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 - In exported-models folder create my_model folder
 - Export the model to */content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model*
 
-```
+```js
 !python exporter_main_v2.py --input_type image_tensor --pipeline_config_path /content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config --trained_checkpoint_dir /content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --output_directory /content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model
 ```
 ---output---
 
 - Inferencing trained model
 
-```java
+```js
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'    # Suppress TensorFlow logging (1)
 import pathlib
