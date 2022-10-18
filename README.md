@@ -54,3 +54,40 @@ import tensorflow as tf
 print(tf.__version__)
 ```
 ---output---
+
+```
+!nvidia-smi -L
+```
+---output---
+
+### *Cloning TFOD 2.0 Github to drive*
+
+- Mounting Google Drive
+
+```
+from google.colab import drive
+drive.mount('/content/drive')
+```
+---output---
+
+- Go to the folder symbol on the left side of the screen.
+- Create the folder you want to clone the repository into.
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510070-ba902de7-9c4b-4f42-9003-ae7fefddeedf.png">
+
+- Change directory to your folder.
+
+```
+cd /content/drive/MyDrive/DADS7202
+```
+---output---
+
+```
+!git clone https://github.com/tensorflow/models.git
+```
+---output---
+
+- Cloning Tensorflow github repository
+- In the created folder, you will see a new folder.
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510281-b8e23663-5209-4b88-957e-5438d5b4bbab.png">
