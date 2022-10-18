@@ -189,3 +189,24 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 ```
 ---output---
 
+- Extracted our pre-trained model and The pre-trained-model folder should look like this.
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516271-a753f502-a217-41ec-b39a-a6ae2258592a.png">
+
+```
+!tar -xvf ssd_resnet101_v1_fpn_640x640_coco17_tpu-8.tar.gz
+```
+---output---
+
+- In the **training-demo** folder, upload the previously downloaded files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**.
+  - This step is for easier to call this script.
+  - Able to call the script in research folder without download and re-upload step.
+  
+  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516574-10db4ccb-d2dd-48a7-b4a3-f62f01dc9d53.png">
+
+- Download **partition_dataset.py** and **generate_tfrecord.py**
+  - Go to [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html).
+  - Download **Partition Dataset script**, then partition the Dataset. (In this work we skip this step because we preprocessing dataset on [Roboflow](https://roboflow.com/) already.)
+  - Download **Generate TensorFlow Records script**.
+  - Upload file into **training_demo** folder.
+    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516987-a58c2eb9-a3a3-48eb-8617-2ab2ab39d39d.png">
