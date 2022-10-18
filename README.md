@@ -146,3 +146,29 @@ cp object_detection/packages/tf2/setup.py .
 ``
 #python -m pip install --use-feature=2020-resolver .
 ``
+```
+!python -m pip install .
+```
+---output---
+
+- Test Installation
+
+```
+!python object_detection/builders/model_builder_tf2_test.py
+```
+---output---
+
+### *Training Custom Object Detector*: Preparing the Workspace
+
+- In the DADS7202 folder (or other created folder in cloning TFOD github step), create a workspace folder and a subfolder, as shown below.
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512776-d4ddc051-f929-4215-b592-744c34821783.png">
+
+- In the *annotations* folder right click + new file create *label_map.pbtxt*
+  - double click on label_map.pbtxt and edit the label
+  
+  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512933-eea5a62b-1a52-45f5-b059-84c77e1fba5d.png">
+
+- In the *test* and *train* folders, upload the images to use train and test the model. In this work uses JPG+XML files.
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196513043-0177688f-0c77-428a-ad49-785537b3acd5.png">
