@@ -2,7 +2,7 @@
 
 ## Intro : โปรเจคนี้เป็นการทำ Image Object Detection โดยใช้รูป Data set ทุเรียน และใช้โมเดล x , y 
 
-## **Step 1: Prepare Dataset.**  
+## **Step 1: Prepare Dataset**  
 Because this model is the Durian image detection, we must prepare the Durian dataset. The scope of the desired durian data set is Durian with rind full and no peeling off. There are two methods for preparing a collection of images.
 
 <details>
@@ -84,7 +84,7 @@ Once the Durian image data set from both methods has been obtained, select the i
 
 </details>
 
-## **Step 2: Images Annotation And Data Augmentation.**
+## **Step 2: Images Annotation And Data Augmentation**
 We use the Roboflow website to annotate images and augmentation at this stage. The steps to do it are as follows.
 
 <details>
@@ -133,9 +133,9 @@ We use the Roboflow website to annotate images and augmentation at this stage. T
 </details>
 
 
-## **Step 3 :  Prepare the environment.**
+## **Step 3 :  Prepare the environment**
 
-Get the environment is `GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)`
+Get the environment is `GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)`.
 
 <details>
 <summary>Details</summary>
@@ -171,17 +171,16 @@ for i, gpu in enumerate(gpus):
 
 </details>
 
-**1. Installation and Setup Environment for modals.**  
-
-**2. Pre-Trained Models.**  
-
-**3. Training Custom Object Detector (Fine Tune Models) .**  
-
-**4. Compare between Pre-Trained Models and After-Trained Models.**  
-
+## **STEP 4 : Installation and setup**  
+Before we start, we need to Install and set up the prerequisites that are essential to proceed towards object detection.  
+- Install Tensorflow  
+- Cloning TFOD 2.0 Github to drive  
+- COCO API installation  
+- Object Detection API installation  
+- Preparing the Workspace
 
 <details>
-<summary>1.1 Installation details</summary>
+<summary>Details</summary>
 
 - Install tensorflow.
    
@@ -318,6 +317,24 @@ cp object_detection/packages/tf2/setup.py .
 ---output---
 
 </details>
+
+
+
+
+
+**1. Installation and Setup Environment for modals.**  
+
+**2. Pre-Trained Models.**  
+
+**3. Training Custom Object Detector (Fine Tune Models) .**  
+
+**4. Compare between Pre-Trained Models and After-Trained Models.**  
+
+
+<details>
+<summary>1.1 Installation details</summary>
+
+
 
 <details>
 <summary>1.2 Setup Environment for modals as <b>SSD ResNet101 V1 FPN 640x640 (RetinaNet101)</b> and <b>Faster R-CNN ResNet50 V1 640x640</b> details</summary>
