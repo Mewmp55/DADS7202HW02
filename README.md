@@ -389,6 +389,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 </details>
 
   - Setup Environment for Model 2 is **Faster R-CNN ResNet50 V1 640x640**
+In models folder (inside training_demo folder) create a new directory named my_ssd_resnet101_v1_fpn and download **pipeline.config** from **pre-train-models/ssd_resnet101...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196734498-b3a61946-0fbb-44c7-a666-d29e2aadc6ac.png">
 
