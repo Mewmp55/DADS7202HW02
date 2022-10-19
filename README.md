@@ -144,6 +144,8 @@ Get the environment is `GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823
 !nvidia-smi -L
 ```
 
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196757909-82128152-46e5-468e-829f-0052efdabeef.png">
+
 ```python
 import sys
 print( f"Python {sys.version}\n" )
