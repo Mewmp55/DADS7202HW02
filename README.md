@@ -930,7 +930,7 @@ eval_config = eval_pb2.EvalConfig()
 eval_config.metrics_set.extend(['coco_detection_metrics'])
 ```
   
-  - Change directory to training_demo
+    - Change directory to training_demo
 
 ```python
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo
