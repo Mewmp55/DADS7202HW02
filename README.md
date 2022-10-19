@@ -190,32 +190,10 @@ print(tf.__version__)
 
 </details>
 
-
-- Cloning TFOD 2.0 Github to drive  
-- COCO API installation  
-- Object Detection API installation  
-- Preparing the Workspace
-
 <details>
-<summary>Details</summary>
+<summary>Cloning TFOD 2.0 Github to drive</summary>
 
-- Install tensorflow.
-   
-```python
-!pip install tensorflow-gpu
-```
----output---
-
-```python
-import tensorflow as tf
-print(tf.__version__)
-```
----output---
-
-
-- Cloning TFOD 2.0 Github to drive.
-
-  - Mounting Google Drive.
+- Mounting Google Drive.
 
 ```python
 from google.colab import drive
@@ -223,12 +201,12 @@ drive.mount('/content/drive')
 ```
 ---output---
 
-  - Go to the folder symbol on the left side of the screen.
-  - Create the folder you want to clone the repository into.
+- Go to the folder symbol on the left side of the screen.
+- Create the folder you want to clone the repository into.
 
-  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510070-ba902de7-9c4b-4f42-9003-ae7fefddeedf.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510070-ba902de7-9c4b-4f42-9003-ae7fefddeedf.png">
 
-  - Change directory to your folder.
+- Change directory to your folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202
@@ -240,16 +218,24 @@ cd /content/drive/MyDrive/DADS7202
 ```
 ---output---
 
-  - Cloning Tensorflow github repository.
-  - In the created folder, you will see a new folder.
+- Cloning Tensorflow github repository.
+- In the created folder, you will see a new folder.
 
-  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510281-b8e23663-5209-4b88-957e-5438d5b4bbab.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510281-b8e23663-5209-4b88-957e-5438d5b4bbab.png">
 
-  - In the **models folder**, go to **research** folder, then go to the **object_detection** folder and download files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**
+- In the **models folder**, go to **research** folder, then go to the **object_detection** folder and download files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**
 
-  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510913-9edc9d28-423c-4e76-ae88-cc794618cd15.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510913-9edc9d28-423c-4e76-ae88-cc794618cd15.png">
+
+</details>
 
 
+- COCO API installation  
+- Object Detection API installation  
+- Preparing the Workspace
+
+
+  
 - COCO API installation.
 
   - Change directory to **research** folder.
