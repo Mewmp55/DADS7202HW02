@@ -229,23 +229,17 @@ cd /content/drive/MyDrive/DADS7202
 
 </details>
 
+<details>
+<summary>COCO API installation</summary>
 
-- COCO API installation  
-- Object Detection API installation  
-- Preparing the Workspace
-
-
-  
-- COCO API installation.
-
-  - Change directory to **research** folder.
+- Change directory to **research** folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202/models/research
 ```
 ---output---
 
-  - Install COCO API.
+- Install COCO API.
 
 ```python
 !protoc object_detection/protos/*.proto --python_out=.
@@ -266,16 +260,19 @@ cd cocoapi/PythonAPI
 cp -r pycocotools /content/drive/MyDrive/DADS7202/models/research
 ```
 
-  - Object Detection API installation.
+</details>
 
-    - Back to **research** folder.
+<details>
+<summary>Object Detection API installation</summary>
+
+- Back to **research** folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202/models/research
 ```
 ---output---
 
-    - Installing the object detection package.
+- Installing the object detection package.
 
 ```python
 cp object_detection/packages/tf2/setup.py .
@@ -286,7 +283,10 @@ cp object_detection/packages/tf2/setup.py .
 ```
 ---output---
 
-    - Test Installation.
+</details>
+
+<details>
+<summary>Test Installation</summary>
 
 ```python
 !python object_detection/builders/model_builder_tf2_test.py
@@ -294,6 +294,10 @@ cp object_detection/packages/tf2/setup.py .
 ---output---
 
 </details>
+
+
+
+- Preparing the Workspace
 
 
 
