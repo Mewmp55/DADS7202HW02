@@ -272,25 +272,22 @@ Setup Environment for modals as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)** 
 <details>
 <summary>Setup Environment for modal details</summary>
 
-**Training Custom Object Detector.**
+- Preparing the Workspace.
 
-<details>
-<summary>Preparing the Workspace.</summary>
-
-- In the DADS7202 folder (or other created folder in cloning TFOD github step), create a workspace folder and a subfolder, as shown below.
+  - In the DADS7202 folder (or other created folder in cloning TFOD github step), create a workspace folder and a subfolder, as shown below.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512776-d4ddc051-f929-4215-b592-744c34821783.png">
 
-- In the **annotations** folder right click + new file create **label_map.pbtxt**
-  - Double click on label_map.pbtxt and edit the label.
+  - In the **annotations** folder right click + new file create **label_map.pbtxt**
+    - Double click on label_map.pbtxt and edit the label.
   
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512933-eea5a62b-1a52-45f5-b059-84c77e1fba5d.png">
 
-- In the **test** and **train** folders, upload the images to use train and test the model. In this work uses JPG+XML files.
+  - In the **test** and **train** folders, upload the images to use train and test the model. In this work uses JPG+XML files.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196513043-0177688f-0c77-428a-ad49-785537b3acd5.png">
 
-- Change directory to pre-trained-models folder.
+  - Change directory to pre-trained-models folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
@@ -380,6 +377,8 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
   - **Line 186 change Path to testing TFRecord**.
   
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196518462-62833952-1c11-4428-8d16-06d8fc907e26.png">
+  
+</details>
 
 **Model 2: Faster R-CNN ResNet50 V1 640x640**
 
