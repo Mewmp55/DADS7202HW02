@@ -454,37 +454,39 @@ Ref: [https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-
 <details>
 <summary>Details</summary>
 
-- Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) because in this work we try to use Pre-Train model as **Faster R-CNN ResNet50 V1 640x640.**.
+1. Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) because in this work we try to use Pre-Train model as **Faster R-CNN ResNet50 V1 640x640.**.
 
+To use this model, we will start from extract pre-trained-model folder.
 ```python
 !wget http://download.tensorflow.org/models/object_detection/tf2/20200711/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.tar.gz
 ```
----output---
+  
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196795446-7a18d794-7905-4587-9caf-8f30fa3a436f.png">
 
-- Extracted our pre-trained model and The **pre-trained-model** folder should look like this.
+2. Extracted our pre-trained model and The **pre-trained-model** folder should look like this.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196734840-e66baa86-6e5f-410b-8547-95d7d3ed3b1d.png">
 
 ```
 !tar -xvf faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.tar.gz
 ```
----output---
 
-- In the **training-demo** folder, upload the previously downloaded files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py** .
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196795600-e572a3d7-ca22-42cc-9c1a-0eaacf80be22.png">
+
+3. In the **training-demo** folder, upload the previously downloaded files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py** .
   - This step is for easier to call this script.
   - Able to call the script in research folder without download and re-upload step.
   
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196741775-b9f116b9-3fe3-4c4c-b2f4-5fe6e6f3f198.png">
 
-- Download **partition_dataset.py** and **generate_tfrecord.py**
+4. Download **partition_dataset.py** and **generate_tfrecord.py**
   - Go to [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html).
   - Download **Partition Dataset script**, then partition the dataset. (In this work we skip this step because we preprocessing dataset on [Roboflow](https://roboflow.com/) already.)
   - Download **Generate TensorFlow Records script**.
   - Upload file into **training_demo** folder.
 
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196742294-9c8c173a-dd8b-4c18-adea-73c72310a4e4.png">
-
-- Create TensorFlow Records.
+5. Create TensorFlow Records.
   - Change directory to **training_demo**.
   - Run **generate_tfrecord.py** script to create tensorflow records.
   - Check the train folder, test folder, label_map.pbtxt and the ourput path before running.
@@ -492,7 +494,6 @@ Ref: [https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-
 ```
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
----output---
 
 > Create train data:
 ```
@@ -503,17 +504,16 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
 !python generate_tfrecord.py -x /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test -l //content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt -o /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/test.record
 ```
----output---
 
-- The annotations folder should be look like this.
+6. The annotations folder should be look like this.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743145-046586bf-b85b-4aa0-b38c-3e79788437dd.png">
 
-- In **models** folder **(inside training_demo folder)** create a new directory named **Faster_R-CNN_ResNet50_V1** and download **pipeline.config** from **pre-train-models/faster_rcnn...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
+7. In **models** folder **(inside training_demo folder)** create a new directory named **Faster_R-CNN_ResNet50_V1** and download **pipeline.config** from **pre-train-models/faster_rcnn...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743456-8a7b9c17-ab62-4530-99ed-ca8c8b1c6305.png">
 
-- Configure the Training Pipeline.
+8. Configure the Training Pipeline.
   - Double click into pipeline.config in **models/Faster_R-CNN_ResNet50_V1**
   - **Looking at line 10, let's change the number of different label classes.**
   - Line 13,14 can set image resizer height and width.
@@ -527,6 +527,11 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
   - **Line 139 change Path to label map file.**
   - **Line 143 change Path to testing TFRecord.**
 
+
+### *For This Model, we tune the parameters same as SSD ResNet101 V1 FPN 640x640 (RetinaNet101), except Number of steps:*
+*<b>Number of steps: 1,000 , 2,000</b> 
+
+  
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743916-572614fa-9738-44c4-967c-64cac14cab6d.png">
 
 </details>
