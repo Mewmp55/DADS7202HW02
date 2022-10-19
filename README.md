@@ -304,12 +304,12 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 </details>
 </details>
 
-**Setup Environment for Model 1 is SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
+  1.2.1 Setup Environment for Model 1 is **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517998-799e438a-4ee8-4836-89de-79ed5746e519.png">
+        <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517998-799e438a-4ee8-4836-89de-79ed5746e519.png">
 
-<details>
-<summary>Details</summary>
+  <details>
+  <summary>Details</summary>
 
 - Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) because in this work we try to use Pre-Train model as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**.
 
