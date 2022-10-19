@@ -2,13 +2,10 @@
 
 ## Intro : โปรเจคนี้เป็นการทำ Image Object Detection โดยใช้รูป Data set ทุเรียน และใช้โมเดล x , y 
 
-### *Part I: Prepare Dataset.*
-
+## **Step 1: Prepare Dataset.**  
+- Find Dataset using scraping from google image with durian (full peel only).
 <details>
 <summary>Details</summary>
-
-- Find Dataset using scraping from google image with durian (full peel only).
-
 ```python
 !pip install git+https://github.com/Joeclinton1/google-images-download.git
 ```
@@ -72,13 +69,12 @@ def collect_data(query, number = 50, train_ratio=0.7) :
 ```python
 collect_data('durian', number = 88)
 ```
+</details>  
 - Prepare the images you want to use in the folder.
 
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196252482-65f86535-9a44-4862-95d2-8c8587fb10bb.png">
 
-</details>
-
-### *Part II: Annotation images with Roboflow.*
+## **Step 2: Images Annotation And Data Augmentation.**
 
    This work is to try to create an object detection model using Tensorflow, following the steps of [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html) and YouTube Chanel [Krish Naik](https://www.youtube.com/watch?v=XoMiveY_1Z4) video.
 
