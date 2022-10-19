@@ -894,7 +894,7 @@ cv2_imshow(image_with_detections)
 # CLOSES WINDOW ONCE KEY IS PRESSED
 ```
   
-*<b>By increasing the steps to 10000, the results look better.</b>*
+> <b>By increasing the steps to 10000, the results look better.</b>
   
 Loading model...Done! Took 21.366928339004517 seconds
 Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
