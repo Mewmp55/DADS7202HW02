@@ -9,7 +9,8 @@ Because this model is the Durian image detection, we must prepare the Durian dat
 <summary>Details</summary>
 
 - Scraping durian images from Google Images using the library, which will search for images based on the keywords "Durian" from Google and download them. Then the searchable image will be automatically divided into train and test folders with class folders.
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196752245-724b17e1-d02b-452f-b458-a6a39a27ed7f.png">
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196753569-3b3b3ad7-00d2-4f16-aaa9-b82ed28d3b76.png">
 
 ```python
 import os
@@ -77,7 +78,6 @@ def collect_data(query, number = 50, train_ratio=0.7) :
 - Download Durian images from the internet.  
 Once the Durian image data set from both methods has been obtained, select the images to be used in Annotate.  
 
-
 - Prepare the images you want to use in the folder.
 
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196252482-65f86535-9a44-4862-95d2-8c8587fb10bb.png">
@@ -85,7 +85,7 @@ Once the Durian image data set from both methods has been obtained, select the i
 </details>
 
 ## **Step 2: Images Annotation And Data Augmentation.**
-
+We use the Roboflow website to annotate images and augmentation at this stage. The steps to do it are as follows.
 
 <details>
 <summary>Details</summary>
@@ -133,7 +133,9 @@ Once the Durian image data set from both methods has been obtained, select the i
 </details>
 
 
-### *Part III*
+## *Step 3 :  Prepare Environment.*
+
+
 **1. Installation and Setup Environment for modals.**  
 
 **2. Pre-Trained Models.**  
