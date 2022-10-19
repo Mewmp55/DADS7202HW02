@@ -922,7 +922,7 @@ table compare between Pre train and after fine-tune
   
 - Evaluating the Model
 
-  - Set metric type.
+  1. Set metric type.
 
 ```python
 from object_detection.protos import eval_pb2
@@ -930,14 +930,14 @@ eval_config = eval_pb2.EvalConfig()
 eval_config.metrics_set.extend(['coco_detection_metrics'])
 ```
   
-    - Change directory to training_demo
+  2. Change directory to training_demo
 
 ```python
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
 ---output---
 
-  - Model evaluate using Tensorboard
+  3. Model evaluate using Tensorboard
 
 ```python
 !python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1 --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1/pipeline.config --checkpoint_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1
