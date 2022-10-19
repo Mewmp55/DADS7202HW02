@@ -920,7 +920,7 @@ table compare between Pre train and after fine-tune
 <details>
 <summary>Details</summary>
   
-**Evaluating the Model**
+## **Evaluating the Model**
 
 1. Set metric type.
 
@@ -950,7 +950,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
 ---output---
   
-**Inferencing Trained Models**
+## **Inferencing Trained Models**
   
 1. In exported-models folder create my_model folder
 2. Export the model to */content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model*
