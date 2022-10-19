@@ -502,10 +502,11 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 table compare between Pre train and after fine-tune
 
-Pretrain-model | After fine-tune (5,000) | After fine-tune (10,000) | 
------------- | ------------- | ------------- | 
-
-  <img width="200" alt="image" src="https://user-images.githubusercontent.com/97492504/196775870-5b79146d-4855-4168-883d-4bbf7299c1e6.png"> | <img width="200" alt="image" src="https://user-images.githubusercontent.com/97492504/196775742-90f63f52-2c97-49c3-915e-30fdd06c9499.png"> | <img width="200" alt="image" src="https://user-images.githubusercontent.com/97492504/196776002-cdeea952-f333-4bf3-894c-2c5c2376b89d.png"> | 
+Model | Step | Batch_size | mAP(.50) | mAP(.50: .95) | Time | Accuracy
+------------ | ------------- | ------------- | ------------- | ------------- | -------------
+RetinaNet101 (without tuning) | 1,000 | 8 |  |  |  | 
+RetinaNet101 (tuning) | 5,000 | 8 |  |  |  | 
+RetinaNet101 (tuning) | 10,000 | 8 |  |  |  | 
 
 
 <details>
