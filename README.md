@@ -540,8 +540,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 ### **Model : SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
 
-table compare between Pre train and after fine-tune
-
+table compare between pre-trained-model and after fine-tune model
 
 Model | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.) | Accuracy
 :----: | :----: | :----: | :----: | :----: | :----: | :----:
@@ -710,7 +709,7 @@ cv2_imshow(image_with_detections)
 # CLOSES WINDOW ONCE KEY IS PRESSED
 ```
 
-> <b>Pretrain-model SSD_resnet101_v1_fpn without training.</b>
+> <b>Pre-trained-model SSD_resnet101_v1_fpn without training.</b>
   
 `
 Loading model...Done! Took 39.04430317878723 seconds
@@ -973,7 +972,7 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
 
 ### **Model : Faster R-CNN ResNet50 V1 640x640**
 
-table compare between Pre train and after fine-tune
+table compare between pre-trained-model and after fine-tune model
 
 Model | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.) | Accuracy
 :----: | :----: | :----: | :----: | :----: | :----: | :----:
@@ -999,7 +998,6 @@ eval_config.metrics_set.extend(['coco_detection_metrics'])
 ```python
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
----output---
 
 3. Model evaluate using Tensorboard
 
@@ -1142,7 +1140,7 @@ cv2_imshow(image_with_detections)
 # CLOSES WINDOW ONCE KEY IS PRESSED
 ```
 
-> <b>Pretrain-model Faster R-CNN without training.</b>
+> <b>Pre-trained-model Faster R-CNN without training.</b>
 
 `
 Loading model...Done! Took 9.365224361419678 seconds
@@ -1268,7 +1266,7 @@ cv2_imshow(image_with_detections)
 # CLOSES WINDOW ONCE KEY IS PRESSED
 ```
 
-> <b>Fater R-CNN - 1,000 Step.</b>
+> <b>Fater R-CNN as 1,000 Step.</b>
 
 `
 Loading model...Done! Took 8.798496007919312 seconds
@@ -1393,7 +1391,7 @@ cv2_imshow(image_with_detections)
 # CLOSES WINDOW ONCE KEY IS PRESSED
 ```
 
-> <b>Fater R-CNN - 2,000 Step.</b>
+> <b>Fater R-CNN as 2,000 Step.</b>
 
 `
 Loading model...Done! Took 8.783716917037964 seconds
