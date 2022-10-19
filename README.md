@@ -80,13 +80,16 @@ collect_data('durian', number = 88)
 
 ### *Part II: Annotation images with Roboflow.*
 
-This work is to try to create an object detection model using Tensorflow, following the steps of [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html) and YouTube Chanel [Krish Naik](https://www.youtube.com/watch?v=XoMiveY_1Z4) video.
+   This work is to try to create an object detection model using Tensorflow, following the steps of [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html) and YouTube Chanel [Krish Naik](https://www.youtube.com/watch?v=XoMiveY_1Z4) video.
 
 <details>
 <summary>Details</summary>
 
 - From the folder you have prepared.
-- Go to the [roboflow](https://roboflow.com/) website.
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196252482-65f86535-9a44-4862-95d2-8c8587fb10bb.png">
+
+- Go to the [Roboflow](https://roboflow.com/) website.
 - Sign up for a new account then sign in.
 - Create new project and select project type as object detection.
 
@@ -125,15 +128,14 @@ This work is to try to create an object detection model using Tensorflow, follow
 </details>
 
 
+### *Part III: Installation and Model Evaluation.*
 
-### Part III
-Model : X
-
-<details>
-<summary><h3><b>Installation.</h3></b></summary>
+**Installation.**
 
 <details>
-<summary>Install Tensorflow.</summary>
+<summary>Details</summary>
+
+- Install Tensorflow.
    
 ```python
 !pip install tensorflow-gpu
@@ -173,13 +175,9 @@ for i, gpu in enumerate(gpus):
 ```
 ---output---
 
-</details>
+- Cloning TFOD 2.0 Github to drive.
 
-
-<details>
-<summary>Cloning TFOD 2.0 Github to drive.</summary>
-   
-- Mounting Google Drive.
+  - Mounting Google Drive.
 
 ```python
 from google.colab import drive
@@ -187,12 +185,12 @@ drive.mount('/content/drive')
 ```
 ---output---
 
-- Go to the folder symbol on the left side of the screen.
-- Create the folder you want to clone the repository into.
+  - Go to the folder symbol on the left side of the screen.
+  - Create the folder you want to clone the repository into.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510070-ba902de7-9c4b-4f42-9003-ae7fefddeedf.png">
 
-- Change directory to your folder.
+  - Change directory to your folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202
@@ -204,27 +202,26 @@ cd /content/drive/MyDrive/DADS7202
 ```
 ---output---
 
-- Cloning Tensorflow github repository.
-- In the created folder, you will see a new folder.
+  - Cloning Tensorflow github repository.
+  - In the created folder, you will see a new folder.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510281-b8e23663-5209-4b88-957e-5438d5b4bbab.png">
 
-- In the **models folder**, go to **research** folder, then go to the **object_detection** folder and download files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**
+  - In the **models folder**, go to **research** folder, then go to the **object_detection** folder and download files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510913-9edc9d28-423c-4e76-ae88-cc794618cd15.png">
-</details>
 
-<details>
-<summary>COCO API installation.</summary>
 
-- Change directory to **research** folder.
+- COCO API installation.
+
+  - Change directory to **research** folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202/models/research
 ```
 ---output---
 
-- Install coco API.
+  - Install COCO API.
 
 ```python
 !protoc object_detection/protos/*.proto --python_out=.
@@ -246,17 +243,16 @@ cp -r pycocotools /content/drive/MyDrive/DADS7202/models/research
 ```
 </details>
 
-<details>
-<summary>Object Detection API installation.</summary>
+- Object Detection API installation.
 
-- Back to **research** folder.
+  - Back to **research** folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202/models/research
 ```
 ---output---
 
-- Installing the object detection package.
+  - Installing the object detection package.
 
 ```python
 cp object_detection/packages/tf2/setup.py .
@@ -267,7 +263,7 @@ cp object_detection/packages/tf2/setup.py .
 ```
 ---output---
 
-- Test Installation.
+  - Test Installation.
 
 ```python
 !python object_detection/builders/model_builder_tf2_test.py
@@ -276,7 +272,6 @@ cp object_detection/packages/tf2/setup.py .
 
 </details>
 
-</details>
    
 <details>
 <summary><h3><b>Training Custom Object Detector.</h3></b></summary>
