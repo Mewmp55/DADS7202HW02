@@ -502,6 +502,14 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 table compare between Pre train and after fine-tune
 
+
+------------ | ------------- | ------------- | ------------- | ------------- | -------------
+Pretrain-model | np.random.seed(1150)  tf.random.set_seed(1112) | 173 | 0.039 | 0.322 | 0.8020 
+![image](https://user-images.githubusercontent.com/97492504/196774983-0bf089d0-1224-49a8-9994-b6ff7252d92b.png) | np.random.seed(1234)  tf.random.set_seed(5678) | 188 | 0.106 | 0.353 | 0.8049 
+Round 3 | np.random.seed(1928)  tf.random.set_seed(3746) | 78 | 0.210 | 0.495 | 0.7869 
+Round 4 | np.random.seed(4321)  tf.random.set_seed(8765) | 82 | 0.225 | 0.499 | 0.7991 
+Round 5 | np.random.seed(1324)  tf.random.set_seed(5769) | 131 | 0.158 | 0.422 | 0.8083 
+
 <details>
 <summary>Details</summary>
   
