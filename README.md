@@ -84,6 +84,8 @@ Once the Durian image data set from both methods has been obtained, select the i
 
 </details>
 
+---
+
 ## **Step 2: Images Annotation And Data Augmentation**
 We use the Roboflow website to annotate images and augmentation at this stage. The steps to do it are as follows.
 
