@@ -1,6 +1,9 @@
 # DADS7202HW02
 
-## Intro : โปรเจคนี้เป็นการทำ Image Object Detection โดยใช้รูป Data set ทุเรียน และใช้โมเดล x , y 
+## **Introduction**
+This project is for **Image Object Detection** on Durian Dataset, using  Google's Machine Learning library, Tensorflow, Two Deep Learning Convolutional Neural Network models, which are Resnet 101, and Faster R CNN.--
+According to these models, pre-trained on the Common Objects in Context (COCO) dataset, which doesn’t contains Durian pictures. Therefore this project required finetuning and training the models on Durian Dataset.--
+And another objective of this project is to compare by using precision scores between the models, pre-trained, and after finetuning both the Resnet 101 model and Faster R CNN model. 
 
 ## **Step 1: Prepare Dataset**  
 Because this model is the Durian image detection, we must prepare the Durian dataset. The scope of the desired durian data set is Durian with rind full and no peeling off. There are two methods for preparing a collection of images.
@@ -8,7 +11,7 @@ Because this model is the Durian image detection, we must prepare the Durian dat
 <details>
 <summary>Details</summary>
 
-- Scraping durian images from Google Images using the library, which will search for images based on the keywords "Durian" from Google and download them. Then the searchable image will be automatically divided into train and test folders with class folders.
+1. Scraping durian images from Google Images using the library, which will search for images based on the keywords "Durian" from Google and download them. Then the searchable image will be automatically divided into train and test folders with class folders.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196753569-3b3b3ad7-00d2-4f16-aaa9-b82ed28d3b76.png">
 
@@ -75,10 +78,10 @@ def collect_data(query, number = 50, train_ratio=0.7) :
   print('Complete')
 ```
 
-- Download Durian images from the internet.  
+2. Download Durian images from the internet.  
 Once the Durian image data set from both methods has been obtained, select the images to be used in Annotate.  
 
-- Prepare the images you want to use in the folder.
+3. Prepare the images you want to use in the folder.
 
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196252482-65f86535-9a44-4862-95d2-8c8587fb10bb.png">
 
@@ -136,8 +139,7 @@ We use the Roboflow website to annotate images and augmentation at this stage. T
 
 ---
 
-
-## **Step 3 :  Prepare the environment**
+## **Step 3: Prepare the environment**
 
 Get the environment is `GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)`.
 
@@ -503,8 +505,8 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 table compare between Pre train and after fine-tune
 
 
-Model | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time | Accuracy
-:--- | :----: | :----: | :----: | :----: | :----: | :----:
+Model | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.) | Accuracy
+:----: | :----: | :----: | :----: | :----: | :----: | :----:
 SSD ResNet101 V1 FPN 640x640 (without tuning) | 2,000 | 8 |  |  |  | 
 SSD ResNet101 V1 FPN 640x640 (tuning) | 5,000 | 8 |  |  |  | 
 SSD ResNet101 V1 FPN 640x640 (tuning) | 10,000 | 8 |  |  |  | 
@@ -935,8 +937,8 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
 
 table compare between Pre train and after fine-tune
 
-Model | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time | Accuracy
-:--- | :----: | :----: | :----: | :----: | :----: | :----:
+Model | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.) | Accuracy
+:----: | :----: | :----: | :----: | :----: | :----: | :----:
 Faster R-CNN ResNet50 V1 640x640 (without tuning) | | 8 |  |  |  | 
 Faster R-CNN ResNet50 V1 640x640 (tuning) | 1,000 | 8 |  |  |  | 
 Faster R-CNN ResNet50 V1 640x640 (tuning) | 2,000 | 8 |  |  |  | 
@@ -1373,8 +1375,8 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
 
 ## **Conclusion**
 
-Model | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time(sec.) | Accuracy
-:--- | :----: | :----: | :----: | :----: | :----: | :----:
+Model | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.) | Accuracy
+:----: | :----: | :----: | :----: | :----: | :----: | :----:
 SSD ResNet101 V1 FPN 640x640 | 5,000 | 8 | 0.784264 | 0.390598 | 0.343 |  |
 SSD ResNet101 V1 FPN 640x640 | 10,000 | 8 | 0.940915 | 0.395898 | 0.339 |  | 
 Faster R-CNN ResNet50 V1 640x640 | 1,000 | 8 | 0.951654 | 0.449221 | 0.253 |  | 
