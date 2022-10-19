@@ -1,19 +1,18 @@
 # DADS7202HW02
 
-Outline 
-Intro : โปรเจคนี้เป็นการทำ Image Object Detection โดยใช้รูป Data set ทุเรียน และใช้โมเดล x , y 
+## Intro : โปรเจคนี้เป็นการทำ Image Object Detection โดยใช้รูป Data set ทุเรียน และใช้โมเดล x , y 
 
-Part I เตรียมดาต้า
+### Part I เตรียมดาต้า
 3.เตรียม Data Set รูปทุเรียน 
 เนื่องจากต้องการทำ Object detection ทุเรียนทั้งลูกโดยไม่แกะเปลือก ดังนั้นเราจะใช้รูปทุเรียนที่ไม่แกะเปลือกเท่านั้นในการทำโมเดลนี้ 
 1.1 หา Data Set 
 scraping from google image https://colab.research.google.com/drive/10BmRjMikVAeoxf55EMPKBtTGGPteRvty?usp=sharing 
 ดาวน์โหลดจากอินเตอร์เนตแบบแมนนวล
             1.2 คัดรูป โดยเลือกเฉพาะรูปทุเรียนที่มีเปลือกครบ ไม่มีการปลอกเปลือกเลย
-Part II
+### Part II
 Annotation รูปภาพด้วย Roboflow 
 
-Part III
+### Part III
 Model : X
 
 <details>
