@@ -320,24 +320,9 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 
 </details>
 
+## **STEP 5 : Training Custom Object Detector**
 
-
-
-
-
-
-<details>
-<summary>1.2 Setup Environment for modals as <b>SSD ResNet101 V1 FPN 640x640 (RetinaNet101)</b> and <b>Faster R-CNN ResNet50 V1 640x640</b> details</summary>
-
-- Preparing the Workspace.
-
-
-</details>
-
-  - Setup Environment for Model 1 is **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**.  
-In models folder (inside training_demo folder) create a new directory named my_ssd_resnet101_v1_fpn and **download pipeline.config** from pre-train-models/ssd_resnet101..., then re-upload to the newly created directory. Our training_demo should now look like this:
-
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517998-799e438a-4ee8-4836-89de-79ed5746e519.png">
+- **Model : SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
 
 <details>
 <summary>Details</summary>
@@ -419,10 +404,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
   
 </details>
 
-  - Setup Environment for Model 2 is **Faster R-CNN ResNet50 V1 640x640**.  
-In models folder (inside training_demo folder) create a new directory named Faster_R-CNN_ResNet50_V1 and **download pipeline.config** from pre-train-models/faster_rcnn..., then re-upload to the newly created directory. Our training_demo should now look like this:
-
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196734498-b3a61946-0fbb-44c7-a666-d29e2aadc6ac.png">
+- **Faster R-CNN ResNet50 V1 640x640**
 
 <details>
 <summary>Details</summary>
@@ -503,6 +485,9 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743916-572614fa-9738-44c4-967c-64cac14cab6d.png">
 
 </details>
+
+
+
 
 
 
