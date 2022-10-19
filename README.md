@@ -176,7 +176,6 @@ cd cocoapi/PythonAPI
 ```python
 cp -r pycocotools /content/drive/MyDrive/DADS7202/models/research
 ```
----output---
 </details>
 
 <details>
