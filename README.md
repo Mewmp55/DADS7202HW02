@@ -183,7 +183,7 @@ for i, gpu in enumerate(gpus):
 
 ---
 
-## **STEP 4 : Installation and setup**  
+## **STEP 4: Installation and setup**  
 Before we start, we need to Install and set up the prerequisites that are essential to proceed towards object detection.  
 
 <details>
@@ -334,9 +334,9 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 
 ---
 
-## **STEP 5 : Training Custom Object Detector**
+## **STEP 5: Training Custom Object Detector**
 
-### **Model : SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
+### **Model: SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
 
 RetinaNet-101 Feature Pyramid Net Trained on MS-COCO Data, is a single-stage object detection model that goes straight from image pixels to bounding box coordinates and class probabilities. It is able to exceed the accuracy of the best two-stage detectors while offering comparable speed performance to that of the single-stage detectors. The model architecture is based on a Feature Pyramid Network on top of a feedforward ResNet-101 backbone. The model has been trained using a new loss function, "Focal Loss", which addresses the imbalance between foreground and background classes that arises within single-stage detectors.
 
@@ -445,7 +445,7 @@ For This Model, we play around with different setups to test things out and get 
   
 </details>
 
-### **Model : Faster R-CNN ResNet50 V1 640x640**
+### **Model: Faster R-CNN ResNet50 V1 640x640**
 
 Faster_R-CNN-ResNet50_V1 is a single-stage object detection model and the architecture of this model is complex because it has several moving parts.  
 
@@ -540,9 +540,9 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 ---
 
-## **STEP 6 :  Evaluating the Model**
+## **STEP 6:  Evaluating the Model**
 
-### **Model : SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
+### **Model: SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
 
 table compare between pre-trained-model and after fine-tune model
 
@@ -974,7 +974,7 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
    
 </details>
 
-### **Model : Faster R-CNN ResNet50 V1 640x640**
+### **Model: Faster R-CNN ResNet50 V1 640x640**
 
 table compare between pre-trained-model and after fine-tune model
 
