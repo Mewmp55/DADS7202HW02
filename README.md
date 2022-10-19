@@ -15,55 +15,59 @@ Annotation รูปภาพด้วย Roboflow
 ### Part III
 Model : X
 
+**This work is to try to create an object detection model using Tensorflow, following the steps of [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html) and YouTube Chanel [Krish Naik](https://www.youtube.com/watch?v=XoMiveY_1Z4) video.**
+
 <details>
-<summary>Prepare DATASET</summary>
+<summary><b>Prepare DATASET</b></summary>
 
 - Prepare the images you want to use in the folder.
 
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196252482-65f86535-9a44-4862-95d2-8c8587fb10bb.png">
 
-- Go to the roboflow website.
+- Go to the [roboflow](https://roboflow.com/) website.
 - Sign up for a new account then sign in.
 - Create new project and select project type as object detection.
 
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196253940-498d7780-cbde-4fd4-855c-c44ff6b354d8.png">
 
-- Upload image to project
+- Upload image to project.
 
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196254333-26f139ce-e1d9-47d9-a04f-bde69b2a242d.png">
 
-- Finishing upload
+- Finishing upload.
 
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196255979-447657ef-52f8-415e-91e5-7a3bca21078a.png">
 
-- Annotate images
+- Annotate images.
   - Click on the image to annotate, then drag a frame around the object's area and classify it.
   - Go to the next image and repeat previous step to all images.
   
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196256383-e0a00bc0-78f0-4293-bd19-f2fbfc39ee3a.png">
 
-- Add images to dataset
-  - Click the Add n images to Dataset at the top right of the website.
-  - Choose the method adjust required value ,then click add images.
+- Add images to dataset.
+  - Click the **Add n images to Dataset** at the top right of the website.
+  - Choose the method adjust required value, then click add images.
  
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196257692-58a054ec-7793-4116-879d-3d38a442be8d.png">
 
-- Generate new version of Dataset
+- Generate new version of Dataset.
   - Click the generate button at the bottom left of the screen.
   - In Section 3.Preprocessing Can be used to resize the image, and in Section 4. It can be used to do Augmentation and then generate a new dataset immediately in Section 5.
 
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196258333-54abf1fe-a431-4845-b135-143d18e7ffd9.png">
 
-- Export dataset
+- Export dataset.
 
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196258535-d99d1a9b-ecd7-42d6-8611-cdca47147589.png">
 
 </details>
 
-### *Install Tensorflow*
 
 <details>
-<summary>Details: Install Tensorflow</summary>
+<summary><b>Install.</b></summary>
+
+<details>
+<summary>Install Tensorflow.</summary>
    
 ```python
 !pip install tensorflow-gpu
@@ -80,14 +84,36 @@ print(tf.__version__)
 !nvidia-smi -L
 ```
 ---output---
+
+```python
+import sys
+print( f"Python {sys.version}\n" )
+
+import numpy as np
+print( f"NumPy {np.__version__}\n" )
+
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+import tensorflow as tf
+print( f"TensorFlow {tf.__version__}" )
+print( f"tf.keras.backend.image_data_format() = {tf.keras.backend.image_data_format()}" )
+
+# Count the number of GPUs as detected by tensorflow
+gpus = tf.config.list_physical_devices('GPU')
+print( f"TensorFlow detected { len(gpus) } GPU(s):" )
+for i, gpu in enumerate(gpus):
+  print( f".... GPU No. {i}: Name = {gpu.name} , Type = {gpu.device_type}" )
+```
+---output---
+
 </details>
 
-### *Cloning TFOD 2.0 Github to drive*
 
 <details>
-<summary>Details: Cloning TFOD 2.0 Github to drive</summary>
+<summary>Cloning TFOD 2.0 Github to drive.</summary>
    
-- Mounting Google Drive
+- Mounting Google Drive.
 
 ```python
 from google.colab import drive
@@ -112,29 +138,27 @@ cd /content/drive/MyDrive/DADS7202
 ```
 ---output---
 
-- Cloning Tensorflow github repository
+- Cloning Tensorflow github repository.
 - In the created folder, you will see a new folder.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510281-b8e23663-5209-4b88-957e-5438d5b4bbab.png">
 
-- In the **models folder** ,go to research folder ,then go to the **object_detection** folder and download files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**
+- In the **models folder**, go to **research** folder, then go to the **object_detection** folder and download files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510913-9edc9d28-423c-4e76-ae88-cc794618cd15.png">
 </details>
-   
-### *COCO API installation*
 
 <details>
-<summary>Details: COCO API installation</summary>
+<summary>COCO API installation.</summary>
 
-- Change directory to research folder
+- Change directory to **research** folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202/models/research
 ```
 ---output---
 
-- Install coco API
+- Install coco API.
 
 ```python
 !protoc object_detection/protos/*.proto --python_out=.
@@ -157,47 +181,43 @@ cp -r pycocotools /content/drive/MyDrive/DADS7202/models/research
 ---output---
 </details>
 
-### *Object Detection API installation*
-
 <details>
-<summary>Details: Object Detection API installation</summary>
+<summary>Object Detection API installation.</summary>
 
-- Back to **research** folder
+- Back to **research** folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202/models/research
 ```
 ---output---
 
-- Installing the object detection package
+- Installing the object detection package.
 
 ```python
 cp object_detection/packages/tf2/setup.py .
 ```
----output---
-
-
-> #python -m pip install --use-feature=2020-resolver .
-
+> #python -m pip install --use-feature=2020-resolver .  
 ```python
 !python -m pip install .
 ```
 ---output---
 
-- Test Installation
+- Test Installation.
 
 ```python
 !python object_detection/builders/model_builder_tf2_test.py
 ```
 ---output---
+
+</details>
+
 </details>
    
-### *Training Custom Object Detector*
+<details>
+<summary><b>Training Custom Object Detector.</b></summary>
 
 <details>
-<summary>Details: Training Custom Object Detector</summary>
-   
-Preparing the Workspace
+<summary>Preparing the Workspace</summary>
 
 - In the DADS7202 folder (or other created folder in cloning TFOD github step), create a workspace folder and a subfolder, as shown below.
 
