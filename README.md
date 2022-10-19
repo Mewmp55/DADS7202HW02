@@ -135,10 +135,14 @@ We use the Roboflow website to annotate images and augmentation at this stage. T
 
 ## **Step 3 :  Prepare the environment.**
 
+Get the environment is `GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)`
+
+<details>
+<summary>Details</summary>
+
 ```python
 !nvidia-smi -L
 ```
-Get the environment is `GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)`
 
 ```python
 import sys
@@ -163,7 +167,7 @@ for i, gpu in enumerate(gpus):
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196757486-ae014929-9763-456f-8d1d-90cfb5cbabaa.png">
 
-
+</details>
 
 **1. Installation and Setup Environment for modals.**  
 
