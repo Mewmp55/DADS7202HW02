@@ -652,7 +652,7 @@ cv2_imshow(image_with_detections)
 # CLOSES WINDOW ONCE KEY IS PRESSED
 ```
 
-> Pretrain-model SSD_resnet101_v1_fpn without training.
+> <b>Pretrain-model SSD_resnet101_v1_fpn without training.</b>
   
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196520945-4978e9a3-b512-44a1-a8ef-aad0a11fa4b7.png">
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196521072-a133a268-62ad-418a-8372-93456b26da4d.png">
@@ -773,7 +773,7 @@ cv2_imshow(image_with_detections)
 # CLOSES WINDOW ONCE KEY IS PRESSED
 ```
 
-> With 5,000 steps of training, the results are still unsatisfactory. After this, try 10,000 training steps.
+> <b>With 5,000 steps of training, the results are still unsatisfactory. After this, try 10,000 training steps.</b>
   
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196521457-630ee530-8717-4304-a68a-de7adad358c4.png">
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196521564-44488043-7a83-4159-b702-4e7aa03443a4.png">
