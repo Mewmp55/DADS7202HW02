@@ -196,7 +196,6 @@ Check `Tensorflow version is 2.9.2` :
 import tensorflow as tf
 print(tf.__version__)
 ```
----output---
 
 </details>
 
@@ -228,9 +227,6 @@ cd /content/drive/MyDrive/DADS7202
 ```
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196786008-0f7faa81-2da7-4883-8d6a-192e2f5e024b.png">
-
-  
-  
 
 5. Cloning Tensorflow github repository.
 6. In the created folder, you will see a new folder.
@@ -285,7 +281,6 @@ cp -r pycocotools /content/drive/MyDrive/DADS7202/models/research
 ```python
 cd /content/drive/MyDrive/DADS7202/models/research
 ```
----output---
 
 2. Installing the object detection package.
 
@@ -341,39 +336,46 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 
 ### **Model : SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
 
+RetinaNet-101 Feature Pyramid Net Trained on MS-COCO Data, is a single-stage object detection model that goes straight from image pixels to bounding box coordinates and class probabilities. It is able to exceed the accuracy of the best two-stage detectors while offering comparable speed performance to that of the single-stage detectors. The model architecture is based on a Feature Pyramid Network on top of a feedforward ResNet-101 backbone. The model has been trained using a new loss function, "Focal Loss", which addresses the imbalance between foreground and background classes that arises within single-stage detectors.
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196790605-ccae3683-0ebc-44b9-844f-a990f18d437c.png">
+
 <details>
 <summary>Details</summary>
 
-- Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) because in this work we try to use Pre-Train model as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**.
+1. Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) because in this work we try to use Pre-Train model as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**.
 
+To use this model, we will start from extract pre-trained-model folder.
 ```python
 !wget http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet101_v1_fpn_640x640_coco17_tpu-8.tar.gz
 ```
----output---
 
-- Extracted our pre-trained model and The **pre-trained-model** folder should look like this.
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196790933-e98f4fa9-5d0c-43e7-b918-44fe99776960.png">
+
+2. Extracted our pre-trained model and The **pre-trained-model** folder should look like this.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516271-a753f502-a217-41ec-b39a-a6ae2258592a.png">
 
 ```python
 !tar -xvf ssd_resnet101_v1_fpn_640x640_coco17_tpu-8.tar.gz
 ```
----output---
 
-- In the **training-demo** folder, upload the previously downloaded files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**.
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196791279-76569959-6662-4007-9c41-d7992c0e147e.png">
+
+3. In the **training-demo** folder, upload the previously downloaded files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**.
   - This step is for easier to call this script.
   - Able to call the script in research folder without download and re-upload step.
   
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516574-10db4ccb-d2dd-48a7-b4a3-f62f01dc9d53.png">
 
-- Download **partition_dataset.py** and **generate_tfrecord.py**
+4. Download **partition_dataset.py** and **generate_tfrecord.py**
   - Go to [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html).
   - Download **Partition Dataset script**, then partition the Dataset. (In this work we skip this step because we preprocessing dataset on [Roboflow](https://roboflow.com/) already.)
   - Download **Generate TensorFlow Records script**.
   - Upload file into **training_demo** folder.
     <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516987-a58c2eb9-a3a3-48eb-8617-2ab2ab39d39d.png">
 
-- Create TensorFlow Records.
+5. Create TensorFlow Records.
   - Change directory to **training_demo**.
   - Run **generate_tfrecord.py** script to create tensorflow records.
   - Check the train folder, test folder, label_map.pbtxt and the ourput path before running.
@@ -381,7 +383,6 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 ```python
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
----output---
 
 > Create train data:
 ```python
@@ -392,17 +393,16 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```python
 !python generate_tfrecord.py -x /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test -l //content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt -o /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/test.record
 ```
----output---
 
-- The annotations folder should be look like this.
+6. The annotations folder should be look like this.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517704-15e14d48-0aa9-4872-8ca0-1a3ca4df162e.png">
 
-- In **models** folder **(inside training_demo folder)** create a new directory named **my_ssd_resnet101_v1_fpn** and download **pipeline.config** from **pre-train-models/ssd_resnet101...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
+7. In **models** folder **(inside training_demo folder)** create a new directory named **my_ssd_resnet101_v1_fpn** and download **pipeline.config** from **pre-train-models/ssd_resnet101...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517998-799e438a-4ee8-4836-89de-79ed5746e519.png">
 
-- Configure the Training Pipeline.
+8. Configure the Training Pipeline.
   - Double click into pipeline.config in model/my_ssd_resnet101_v1_fpn
   - **Looking at line 3, let's change the number of different label classes.**
   - Line 6, 7 can set image resizer height and width.
@@ -416,7 +416,30 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
   - **Line 174 change Path to training TFRecord file**.
   - **Line 182 change Path to label map file**.
   - **Line 186 change Path to testing TFRecord**.
+
+This model pre-trained on the Common Objects in Context (COCO) dataset, which don’t contains Durian pictures. Therefore this project required configuring and training the models on Durian Dataset.
+
+The TensorFlow Object Detection API allows model configuration via the pipeline.config file that goes along with the pre-trained model. 
+
+For This Model, we play around with different setups to test things out and get the best model performance. `As the following model parameters`:
+
+- Num_classes (int) : 1 :arrow_right: Because we only detect Durian, we set up as 1. 
+- Batch_size (int) : 8 
+The batch size number must be divisible by 2 and due to the constrain of available memory, so we choose 8. 
+
+- Fine_tune_checkpoint (str): put a path to the pre-trained model of ResNet101 V1 FPN 640x640 (RetinaNet101)  model checkpoint. 
+- Fine_tune_checkpoint_type (str): set to detection because we want to train a detection model.
+- Use_bfloat16 (boolean): set to ‘false’ cause we are not going to train a model on a TPU.
+- Label_map_path (str): provide a path to the **label_map.pbtxt** was created previously. 
+- Train_input_reader (str): set a path to training TFRecord file train_input_reader.
+- Eval_input_reader(str): set a path to testing TFRecord file.
+
+
+### *For The Steps of Training. We try several numbers, Begin from 5,000 steps.*
+Number of steps: 2,000 , 5,000 , 10,000 
   
+Cause it depends on our resources as memory and GPU
+
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196518462-62833952-1c11-4428-8d16-06d8fc907e26.png">
   
 </details>
