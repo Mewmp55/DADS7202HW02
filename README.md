@@ -187,11 +187,12 @@ Before we start, we need to Install and set up the prerequisites that are essent
 <details>
 <summary>Install Tensorflow</summary>
 
+Check `Tensorflow version`:
 ```python
 !pip install tensorflow-gpu
 ```
----output---
 
+Check `Tensorflow version is 2.9.2` :
 ```python
 import tensorflow as tf
 print(tf.__version__)
