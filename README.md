@@ -195,32 +195,6 @@ print(tf.__version__)
 ```
 ---output---
 
-```python
-!nvidia-smi -L
-```
----output---
-
-```python
-import sys
-print( f"Python {sys.version}\n" )
-
-import numpy as np
-print( f"NumPy {np.__version__}\n" )
-
-import matplotlib.pyplot as plt
-%matplotlib inline
-
-import tensorflow as tf
-print( f"TensorFlow {tf.__version__}" )
-print( f"tf.keras.backend.image_data_format() = {tf.keras.backend.image_data_format()}" )
-
-# Count the number of GPUs as detected by tensorflow
-gpus = tf.config.list_physical_devices('GPU')
-print( f"TensorFlow detected { len(gpus) } GPU(s):" )
-for i, gpu in enumerate(gpus):
-  print( f".... GPU No. {i}: Name = {gpu.name} , Type = {gpu.device_type}" )
-```
----output---
 
 - Cloning TFOD 2.0 Github to drive.
 
@@ -235,7 +209,7 @@ drive.mount('/content/drive')
   - Go to the folder symbol on the left side of the screen.
   - Create the folder you want to clone the repository into.
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510070-ba902de7-9c4b-4f42-9003-ae7fefddeedf.png">
+  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510070-ba902de7-9c4b-4f42-9003-ae7fefddeedf.png">
 
   - Change directory to your folder.
 
@@ -252,11 +226,11 @@ cd /content/drive/MyDrive/DADS7202
   - Cloning Tensorflow github repository.
   - In the created folder, you will see a new folder.
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510281-b8e23663-5209-4b88-957e-5438d5b4bbab.png">
+  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510281-b8e23663-5209-4b88-957e-5438d5b4bbab.png">
 
   - In the **models folder**, go to **research** folder, then go to the **object_detection** folder and download files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510913-9edc9d28-423c-4e76-ae88-cc794618cd15.png">
+  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510913-9edc9d28-423c-4e76-ae88-cc794618cd15.png">
 
 
 - COCO API installation.
