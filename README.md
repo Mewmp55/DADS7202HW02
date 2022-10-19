@@ -486,36 +486,18 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 </details>
 
+## **STEP 6 :  Evaluating the Model**
 
+### **Model : SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
 
-
-
-
-<details>
-<summary>Training the model</summary>
-
-- Change directory to training_demo.
-
-```python
-cd /content/drive/MyDrive/DADS7202/workspace/training_demo
-```
----output---
-
-- Training the model
-
-```python
-!python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config
-```
----output---
-</details>
-
-</details>
-
+table compare between Pre train and after fine-tune
 
 <details>
-<summary><h3><b>Evaluating the Model.</h3></b></summary>
+<summary>Details</summary>
+  
+- Evaluating the Model
 
-- Set metric type.
+  - Set metric type.
 
 ```python
 from object_detection.protos import eval_pb2
@@ -523,13 +505,13 @@ eval_config = eval_pb2.EvalConfig()
 eval_config.metrics_set.extend(['coco_detection_metrics'])
 ```
 
-- Change directory to training_demo.
+  - Change directory to training_demo.
 
 ```python
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
 
-- Model evaluate using Tensorboard.
+  - Model evaluate using Tensorboard.
 
 ```python
 !python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config --checkpoint_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn
@@ -542,20 +524,17 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
 ---output---
 
-</details>
+- Inferencing Trained Models.
 
-<details>
-<summary><h3><b>Inferencing Trained Models.</h3></b></summary>
-
-- In exported-models folder create my_model folder.
-- Export the model to */content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model*
+  - In exported-models folder create my_model folder.
+  - Export the model to */content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model*
 
 ```python
 !python exporter_main_v2.py --input_type image_tensor --pipeline_config_path /content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config --trained_checkpoint_dir /content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --output_directory /content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model
 ```
 ---output---
-
-- Inferencing trained model.
+  
+  - Inferencing trained model.
 
 ```python
 
@@ -673,10 +652,10 @@ cv2_imshow(image_with_detections)
 # CLOSES WINDOW ONCE KEY IS PRESSED
 ```
 
+> Pretrain-model SSD_resnet101_v1_fpn without training.
+  
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196520945-4978e9a3-b512-44a1-a8ef-aad0a11fa4b7.png">
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196521072-a133a268-62ad-418a-8372-93456b26da4d.png">
-
-- Pretrain-model SSD_resnet101_v1_fpn without training.
 
 ```python
 
@@ -794,10 +773,10 @@ cv2_imshow(image_with_detections)
 # CLOSES WINDOW ONCE KEY IS PRESSED
 ```
 
+> With 5,000 steps of training, the results are still unsatisfactory. After this, try 10,000 training steps.
+  
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196521457-630ee530-8717-4304-a68a-de7adad358c4.png">
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196521564-44488043-7a83-4159-b702-4e7aa03443a4.png">
-
-- With 5,000 steps of training, the results are still unsatisfactory. After this, try 10,000 training steps.
 
 ```python
 
@@ -914,6 +893,8 @@ print('Done')
 cv2_imshow(image_with_detections)
 # CLOSES WINDOW ONCE KEY IS PRESSED
 ```
+  
+`By increasing the steps to 10000, the results look better.`
 Loading model...Done! Took 21.366928339004517 seconds
 Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196521952-64671dc6-717c-4ef9-a38a-93bed9b177e5.png">
@@ -923,3 +904,9 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
 </details>
 
   
+
+### **Model : Faster R-CNN ResNet50 V1 640x640**
+
+
+
+
