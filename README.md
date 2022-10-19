@@ -173,7 +173,24 @@ for i, gpu in enumerate(gpus):
 
 ## **STEP 4 : Installation and setup**  
 Before we start, we need to Install and set up the prerequisites that are essential to proceed towards object detection.  
-- Install Tensorflow  
+
+<details>
+<summary>Install Tensorflow</summary>
+
+```python
+!pip install tensorflow-gpu
+```
+---output---
+
+```python
+import tensorflow as tf
+print(tf.__version__)
+```
+---output---
+
+</details>
+
+
 - Cloning TFOD 2.0 Github to drive  
 - COCO API installation  
 - Object Detection API installation  
