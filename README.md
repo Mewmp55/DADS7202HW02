@@ -1436,4 +1436,5 @@ Faster R-CNN ResNet50 V1 640x640 | 2,000 | 8 | 0.933264 | 0.499617 | 0.249 |  |
 
 ## **End Credit**  
 This work is part of the DADS7202 Deep Learning in Master degree of Science at Faculty of Applied Statistics National Institute of Development Administration.
+
 ---
