@@ -129,13 +129,17 @@ collect_data('durian', number = 88)
 
 
 ### *Part III*
-**1. Installation and Setup Environment for modals.**
-**2. Pre-Trained Model.**
-**3. Training Custom Object Detector (Fine Tune Model) .**
-**4. Compare between Pre-Trained Model and After-Trained Model.
+**1. Installation and Setup Environment for modals.**  
+
+**2. Pre-Trained Models.**  
+
+**3. Training Custom Object Detector (Fine Tune Models) .**  
+
+**4. Compare between Pre-Trained Models and After-Trained Models.**  
+
 
 <details>
-<summary>Installation details</summary>
+<summary>1.1 Installation details</summary>
 
 - Install tensorflow.
    
@@ -274,7 +278,7 @@ cp object_detection/packages/tf2/setup.py .
 </details>
 
 <details>
-<summary>Setup Environment for modals as <b>SSD ResNet101 V1 FPN 640x640 (RetinaNet101)</b> and <b>Faster R-CNN ResNet50 V1 640x640</b> details</summary>
+<summary>1.2 Setup Environment for modals as <b>SSD ResNet101 V1 FPN 640x640 (RetinaNet101)</b> and <b>Faster R-CNN ResNet50 V1 640x640</b> details</summary>
 
 - Preparing the Workspace.
 
@@ -300,7 +304,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 </details>
 </details>
 
-**Model 1: SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
+**Setup Environment for Model 1 is SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517998-799e438a-4ee8-4836-89de-79ed5746e519.png">
 
@@ -384,7 +388,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
   
 </details>
 
-**Model 2: Faster R-CNN ResNet50 V1 640x640**
+**Setup Environment for Model 2 is Faster R-CNN ResNet50 V1 640x640**
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196734498-b3a61946-0fbb-44c7-a666-d29e2aadc6ac.png">
 
