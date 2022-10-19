@@ -223,8 +223,8 @@ cp object_detection/packages/tf2/setup.py .
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512776-d4ddc051-f929-4215-b592-744c34821783.png">
 
-- In the **annotations** folder right click + new file create *label_map.pbtxt*
-  - double click on label_map.pbtxt and edit the label
+- In the **annotations** folder right click + new file create **label_map.pbtxt**
+  - Double click on label_map.pbtxt and edit the label.
   
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512933-eea5a62b-1a52-45f5-b059-84c77e1fba5d.png">
 
@@ -232,7 +232,7 @@ cp object_detection/packages/tf2/setup.py .
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196513043-0177688f-0c77-428a-ad49-785537b3acd5.png">
 
-- Change directory to pre-trained-models folder
+- Change directory to pre-trained-models folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
@@ -247,7 +247,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 ```
 ---output---
 
-- Extracted our pre-trained model and The pre-trained-model folder should look like this.
+- Extracted our pre-trained model and The **pre-trained-model** folder should look like this.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516271-a753f502-a217-41ec-b39a-a6ae2258592a.png">
 
@@ -294,18 +294,18 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517704-15e14d48-0aa9-4872-8ca0-1a3ca4df162e.png">
 
-- In **models** folder (**inside training_demo folder**) create a new directory named **my_ssd_resnet101_v1_fpn** and download **pipeline.config** from **pre-train-models/ssd_resnet101...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
+- In **models** folder **(inside training_demo folder)** create a new directory named **my_ssd_resnet101_v1_fpn** and download **pipeline.config** from **pre-train-models/ssd_resnet101...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517998-799e438a-4ee8-4836-89de-79ed5746e519.png">
 
-- Configure the Training Pipeline
+- Configure the Training Pipeline.
   - Double click into pipeline.config in model/my_ssd_resnet101_v1_fpn
-  - **Looking at line 3, let's change the number of different label classes**.
-  - Line 6,7 can set image resizer height and width.
+  - **Looking at line 3, let's change the number of different label classes.**
+  - Line 6, 7 can set image resizer height and width.
   - **Line 131 to set batch size**.
   - Line 136 to set augmentation options.
   - **Line 161 change the Path to checkpoint of pre-trained model**.
-  - **Line 152,162 change number of step**.
+  - **Line 152, 162 change number of step**.
   - **Line 167 change fine tune checkpoint type to detection**.
   - **Line 168 set it to false**.
   - **Line 172 change Path to label map file**.
@@ -317,11 +317,8 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 </details>
 
-
-### *Training the model*
-
 <details>
-<summary>Details: Training the model</summary>
+<summary>Training the model</summary>
 
 - Change directory to training_demo.
 
@@ -338,41 +335,45 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ---output---
 </details>
 
-### *Evaluating the Model*
+</details>
+
 
 <details>
-<summary>Details: Evaluating the Model</summary>
+<summary><b>Evaluating the Model.</b></summary>
 
-- Set metric type
+- Set metric type.
 
 ```python
 from object_detection.protos import eval_pb2
 eval_config = eval_pb2.EvalConfig()
 eval_config.metrics_set.extend(['coco_detection_metrics'])
 ```
----output---
 
-- Change directory to training_demo
+- Change directory to training_demo.
 
 ```python
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
----output---
 
-- Model evaluate using Tensorboard
+- Model evaluate using Tensorboard.
 
 ```python
 !python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config --checkpoint_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn
 ```
 ---output---
+
+```
+%load_ext tensorboard
+%tensorboard --logdir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn
+```
+---output---
+
 </details>
 
-### *Inferencing Trained Models*
-
 <details>
-<summary>Details: Inferencing Trained Models</summary>
+<summary><b>Inferencing Trained Models.</b></summary>
 
-- In exported-models folder create my_model folder
+- In exported-models folder create my_model folder.
 - Export the model to */content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model*
 
 ```python
@@ -380,9 +381,10 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
 ---output---
 
-- Inferencing trained model
+- Inferencing trained model.
 
 ```python
+
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'    # Suppress TensorFlow logging (1)
 import pathlib
@@ -496,12 +498,14 @@ print('Done')
 cv2_imshow(image_with_detections)
 # CLOSES WINDOW ONCE KEY IS PRESSED
 ```
+
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196520945-4978e9a3-b512-44a1-a8ef-aad0a11fa4b7.png">
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196521072-a133a268-62ad-418a-8372-93456b26da4d.png">
 
-- Pretrain-model SSD_resnet101_v1_fpn without training
+- Pretrain-model SSD_resnet101_v1_fpn without training.
 
 ```python
+
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'    # Suppress TensorFlow logging (1)
 import pathlib
@@ -622,6 +626,7 @@ cv2_imshow(image_with_detections)
 - With 5,000 steps of training, the results are still unsatisfactory. After this, try 10,000 training steps.
 
 ```python
+
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'    # Suppress TensorFlow logging (1)
 import pathlib
@@ -743,4 +748,3 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
    
 </details>
 
-### *Performance Tuning*
