@@ -437,15 +437,41 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
 ---output---
 
-```
 > Create train data:
+```
 !python generate_tfrecord.py -x /content/drive/MyDrive/DADS7202/workspace/training_demo/images/train -l /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt -o /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/train.record
+```
 
 > Create test data:
+```
 !python generate_tfrecord.py -x /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test -l //content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt -o /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/test.record
 ```
 ---output---
-  
+
+- The annotations folder should be look like this.
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743145-046586bf-b85b-4aa0-b38c-3e79788437dd.png">
+
+- In **models** folder **(inside training_demo folder)** create a new directory named **Faster_R-CNN_ResNet50_V1** and download **pipeline.config** from **pre-train-models/faster_rcnn...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743456-8a7b9c17-ab62-4530-99ed-ca8c8b1c6305.png">
+
+- Configure the Training Pipeline.
+  - Double click into pipeline.config in **models/Faster_R-CNN_ResNet50_V1**
+  - **Looking at line 10, let's change the number of different label classes.**
+  - Line 13,14 can set image resizer height and width.
+  - **Line 93 to set batch size.**
+  - **Line 97,103 change number of step.**
+  - **Line 113 change the Path to checkpoint of pre-trained model.**
+  - **Line 114 change fine tune checkpoint type to detection.**
+  - **Line 122 set it to false.**
+  - **Line 126 change Path to label map file.**
+  - **Line 128 change Path to training TFRecord file.**
+  - **Line 139 change Path to label map file.**
+  - **Line 143 change Path to testing TFRecord.**
+
+  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743916-572614fa-9738-44c4-967c-64cac14cab6d.png">
+
 </details>
 
 
