@@ -3,15 +3,14 @@
 ## Intro : โปรเจคนี้เป็นการทำ Image Object Detection โดยใช้รูป Data set ทุเรียน และใช้โมเดล x , y 
 
 ## **Step 1: Prepare Dataset.**  
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196252482-65f86535-9a44-4862-95d2-8c8587fb10bb.png">
+Because this model is the Durian image detection, we must prepare the Durian dataset. The scope of the desired durian data set is Durian with rind full and no peeling off. There are two methods for preparing a collection of images.
 
 <details>
 <summary>Details</summary>
-- Find Dataset using scraping from google image with durian (full peel only).
 
-```python
-!pip install git+https://github.com/Joeclinton1/google-images-download.git
-```
+- Scraping durian images from Google Images using the library, which will search for images based on the keywords "Durian" from Google and download them. Then the searchable image will be automatically divided into train and test folders with class folders.
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196752245-724b17e1-d02b-452f-b458-a6a39a27ed7f.png">
+
 ```python
 import os
 import shutil
@@ -35,6 +34,11 @@ from torchvision import datasets, models, transforms
 
 import matplotlib.pyplot as plt
 ```
+
+```python
+!pip install git+https://github.com/Joeclinton1/google-images-download.git
+```
+
 ```python
 def collect_data(query, number = 50, train_ratio=0.7) :
   # Remove spaces
@@ -69,9 +73,10 @@ def collect_data(query, number = 50, train_ratio=0.7) :
   
   print('Complete')
 ```
-```python
-collect_data('durian', number = 88)
-```
+
+- Download Durian images from the internet.  
+Once the Durian image data set from both methods has been obtained, select the images to be used in Annotate.  
+
 
 - Prepare the images you want to use in the folder.
 
@@ -81,7 +86,6 @@ collect_data('durian', number = 88)
 
 ## **Step 2: Images Annotation And Data Augmentation.**
 
-   This work is to try to create an object detection model using Tensorflow, following the steps of [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html) and YouTube Chanel [Krish Naik](https://www.youtube.com/watch?v=XoMiveY_1Z4) video.
 
 <details>
 <summary>Details</summary>
