@@ -527,10 +527,8 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
   - **Line 139 change Path to label map file.**
   - **Line 143 change Path to testing TFRecord.**
 
-
 ### *For This Model, we tune the parameters same as SSD ResNet101 V1 FPN 640x640 (RetinaNet101), except Number of steps:*
-*<b>Number of steps: 1,000 , 2,000</b> 
-
+*<b>Number of steps: 1,000, 2,000</b>*
   
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743916-572614fa-9738-44c4-967c-64cac14cab6d.png">
 
