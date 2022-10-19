@@ -128,12 +128,10 @@ collect_data('durian', number = 88)
 </details>
 
 
-### *Part III: Installation and Model Evaluation*
-
-Install Tensorflow and Model Evaluation are SSD ResNet101 V1 FPN 640x640 (RetinaNet101). and Faster R-CNN ResNet50 V1 640x640.
+### *Part III: Installation and Setup Environment for modals*
 
 <details>
-<summary>Install Tensorflow details</summary>
+<summary>Installation details</summary>
    
 ```python
 !pip install tensorflow-gpu
@@ -240,16 +238,16 @@ cd cocoapi/PythonAPI
 cp -r pycocotools /content/drive/MyDrive/DADS7202/models/research
 ```
 
-- Object Detection API installation.
+  - Object Detection API installation.
 
-  - Back to **research** folder.
+    - Back to **research** folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202/models/research
 ```
 ---output---
 
-  - Installing the object detection package.
+    - Installing the object detection package.
 
 ```python
 cp object_detection/packages/tf2/setup.py .
@@ -260,7 +258,7 @@ cp object_detection/packages/tf2/setup.py .
 ```
 ---output---
 
-  - Test Installation.
+    - Test Installation.
 
 ```python
 !python object_detection/builders/model_builder_tf2_test.py
@@ -269,12 +267,10 @@ cp object_detection/packages/tf2/setup.py .
 
 </details>
 
-Model Evaluation are SSD ResNet101 V1 FPN 640x640 (RetinaNet101). and Faster R-CNN ResNet50 V1 640x640.
-
-<details>
-<summary>Model Evaluation details</summary>
+Setup Environment for modals as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)** and **Faster R-CNN ResNet50 V1 640x640**
    
-**Training Custom Object Detector.**
+<details>
+<summary><b>Training Custom Object Detector.**</b></summary>
 
 <details>
 <summary>Preparing the Workspace.</summary>
@@ -298,10 +294,10 @@ Model Evaluation are SSD ResNet101 V1 FPN 640x640 (RetinaNet101). and Faster R-C
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 ```
 ---output---
-
+</details>
 </details>
 
-**Model Evaluation.**
+**Model 1: SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
 
 - Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) because in this work we try to use Pre-Train model as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**.
 
@@ -377,6 +373,8 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
   - **Line 186 change Path to testing TFRecord**.
   
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196518462-62833952-1c11-4428-8d16-06d8fc907e26.png">
+
+
 
 - Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) because in this work we try to use Pre-Train model as **Faster R-CNN ResNet50 V1 640x640.**.
 
