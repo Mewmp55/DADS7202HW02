@@ -295,41 +295,17 @@ cp object_detection/packages/tf2/setup.py .
 
 </details>
 
-
-
-- Preparing the Workspace
-
-
-
-
-
-**1. Installation and Setup Environment for modals.**  
-
-**2. Pre-Trained Models.**  
-
-**3. Training Custom Object Detector (Fine Tune Models) .**  
-
-**4. Compare between Pre-Trained Models and After-Trained Models.**  
-
-
 <details>
-<summary>1.1 Installation details</summary>
-
-
-
-<details>
-<summary>1.2 Setup Environment for modals as <b>SSD ResNet101 V1 FPN 640x640 (RetinaNet101)</b> and <b>Faster R-CNN ResNet50 V1 640x640</b> details</summary>
-
-- Preparing the Workspace.
-
-  - In the DADS7202 folder (or other created folder in cloning TFOD github step), create a workspace folder and a subfolder, as shown below.
-
-  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512776-d4ddc051-f929-4215-b592-744c34821783.png">
-
-  - In the **annotations** folder right click + new file create **label_map.pbtxt**
-    - Double click on label_map.pbtxt and edit the label.
+<summary>Preparing the Workspace</summary>
   
-    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512933-eea5a62b-1a52-45f5-b059-84c77e1fba5d.png">
+- In the DADS7202 folder (or other created folder in cloning TFOD github step), create a workspace folder and a subfolder, as shown below.
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512776-d4ddc051-f929-4215-b592-744c34821783.png">
+
+- In the **annotations** folder right click + new file create **label_map.pbtxt**
+  - Double click on label_map.pbtxt and edit the label.
+  
+  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512933-eea5a62b-1a52-45f5-b059-84c77e1fba5d.png">
 
   - In the **test** and **train** folders, upload the images to use train and test the model. In this work uses JPG+XML files.
 
@@ -341,7 +317,21 @@ cp object_detection/packages/tf2/setup.py .
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 ```
 ---output---
+
 </details>
+
+
+
+
+
+
+
+<details>
+<summary>1.2 Setup Environment for modals as <b>SSD ResNet101 V1 FPN 640x640 (RetinaNet101)</b> and <b>Faster R-CNN ResNet50 V1 640x640</b> details</summary>
+
+- Preparing the Workspace.
+
+
 </details>
 
   - Setup Environment for Model 1 is **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**.  
