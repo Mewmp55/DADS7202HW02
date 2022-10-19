@@ -187,7 +187,6 @@ Before we start, we need to Install and set up the prerequisites that are essent
 <details>
 <summary>Install Tensorflow</summary>
 
-Check `Tensorflow version`:
 ```python
 !pip install tensorflow-gpu
 ```
@@ -204,37 +203,41 @@ print(tf.__version__)
 <details>
 <summary>Cloning TFOD 2.0 Github to drive</summary>
 
-- Mounting Google Drive.
+We create a project directory named ‘DADS7202’, this folder contains materials of TensorFlow Object detection models which download and extract from TensorFlow Model Garden repository [Tensorflow models](https://github.com/tensorflow/models), we cloned this repository to the local machine, a new folder named ‘models’ is in the project directory. 
+
+1. Mounting Google Drive.
 
 ```python
 from google.colab import drive
 drive.mount('/content/drive')
 ```
----output---
 
-- Go to the folder symbol on the left side of the screen.
-- Create the folder you want to clone the repository into.
+2. Go to the folder symbol on the left side of the screen.
+3. Create the folder you want to clone the repository into.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510070-ba902de7-9c4b-4f42-9003-ae7fefddeedf.png">
 
-- Change directory to your folder.
+4. Change directory to your folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202
 ```
----output---
 
 ```python
 !git clone https://github.com/tensorflow/models.git
 ```
----output---
 
-- Cloning Tensorflow github repository.
-- In the created folder, you will see a new folder.
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196786008-0f7faa81-2da7-4883-8d6a-192e2f5e024b.png">
+
+  
+  
+
+5. Cloning Tensorflow github repository.
+6. In the created folder, you will see a new folder.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510281-b8e23663-5209-4b88-957e-5438d5b4bbab.png">
 
-- In the **models folder**, go to **research** folder, then go to the **object_detection** folder and download files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**
+7. In the **models folder**, go to **research** folder, then go to the **object_detection** folder and download files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510913-9edc9d28-423c-4e76-ae88-cc794618cd15.png">
 
@@ -242,15 +245,16 @@ cd /content/drive/MyDrive/DADS7202
 
 <details>
 <summary>COCO API installation</summary>
+  
+We need to install COCO API separately because it doesn't go directly with the Object Detection API.
 
-- Change directory to **research** folder.
+1. Change directory to **research** folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202/models/research
 ```
----output---
 
-- Install COCO API.
+2. Install COCO API.
 
 ```python
 !protoc object_detection/protos/*.proto --python_out=.
@@ -258,15 +262,15 @@ cd /content/drive/MyDrive/DADS7202/models/research
 ```python
 !git clone https://github.com/cocodataset/cocoapi.git
 ```
----output---
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196786387-03ed5c8f-9c55-4fd2-9114-9d9d715f15c9.png">
+
 ```python
 cd cocoapi/PythonAPI
 ```
----output---
 ```python
 !make
 ```
----output---
 ```python
 cp -r pycocotools /content/drive/MyDrive/DADS7202/models/research
 ```
@@ -276,14 +280,14 @@ cp -r pycocotools /content/drive/MyDrive/DADS7202/models/research
 <details>
 <summary>Object Detection API installation</summary>
 
-- Back to **research** folder.
+1. Back to **research** folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202/models/research
 ```
 ---output---
 
-- Installing the object detection package.
+2. Installing the object detection package.
 
 ```python
 cp object_detection/packages/tf2/setup.py .
@@ -292,42 +296,42 @@ cp object_detection/packages/tf2/setup.py .
 ```python
 !python -m pip install .
 ```
----output---
 
-</details>
-
-<details>
-<summary>Test Installation</summary>
+3. Test Installation</summary>
 
 ```python
 !python object_detection/builders/model_builder_tf2_test.py
 ```
----output---
 
 </details>
 
 <details>
 <summary>Preparing the Workspace</summary>
+
+Transforming each dataset is required (training, validation, and testing). We should transform our dataset into the [TFRecord format](https://www.tensorflow.org/tutorials/load_data/tfrecord?hl=en), which is a simple format for storing a sequence of binary records.
   
-- In the DADS7202 folder (or other created folder in cloning TFOD github step), create a workspace folder and a subfolder, as shown below.
+1. In the DADS7202 folder (or other created folder in cloning TFOD github step), create a workspace folder and a subfolder, as shown below.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512776-d4ddc051-f929-4215-b592-744c34821783.png">
 
-- In the **annotations** folder right click + new file create **label_map.pbtxt**
+We will use the workspace folder to store all of the model-related attributes, including data. 
+
+The TensorFlow Object Detection API needs A Label Map file is a simple .txt file, It links labels to some integer values, for training and detection purposes.
+  
+2. In the **annotations** folder right click + new file create **label_map.pbtxt**
   - Double click on label_map.pbtxt and edit the label.
   
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512933-eea5a62b-1a52-45f5-b059-84c77e1fba5d.png">
 
-  - In the **test** and **train** folders, upload the images to use train and test the model. In this work uses JPG+XML files.
+3. In the **test** and **train** folders, upload the images to use train and test the model. In this work uses JPG+XML files.
 
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196513043-0177688f-0c77-428a-ad49-785537b3acd5.png">
 
-  - Change directory to pre-trained-models folder.
+4. Change directory to pre-trained-models folder.
 
 ```python
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 ```
----output---
 
 </details>
 
