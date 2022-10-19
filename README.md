@@ -544,7 +544,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
 ---output---
   
-  - Inferencing trained model.
+3. Inferencing trained model.
 
 ```python
 
@@ -1094,6 +1094,7 @@ cv2_imshow(image_with_detections)
 Loading model...Done! Took 9.365224361419678 seconds
 Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
 `
+
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196767560-f524d772-dea6-4c40-8a72-a8129f59b175.png">
 
 
@@ -1337,11 +1338,6 @@ print('Done')
 cv2_imshow(image_with_detections)
 # CLOSES WINDOW ONCE KEY IS PRESSED
 ```
-  
-`
-Loading model...Done! Took 8.783716917037964 seconds
-Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
-`
 
 > <b>Fater R-CNN - 2,000 Step.</b>
 
