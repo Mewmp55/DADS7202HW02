@@ -322,7 +322,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 
 ## **STEP 5 : Training Custom Object Detector**
 
-- **Model : SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
+- ### **Model : SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
 
 <details>
 <summary>Details</summary>
@@ -404,7 +404,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
   
 </details>
 
-- **Faster R-CNN ResNet50 V1 640x640**
+- ### **Model : Faster R-CNN ResNet50 V1 640x640**
 
 <details>
 <summary>Details</summary>
