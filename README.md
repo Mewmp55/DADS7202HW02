@@ -2,7 +2,7 @@
 
 ## Intro : โปรเจคนี้เป็นการทำ Image Object Detection โดยใช้รูป Data set ทุเรียน และใช้โมเดล x , y 
 
-### *Part I: Prepare Data Set.*
+### *Part I: Prepare Dataset.*
 
 <details>
 <summary>Details</summary>
@@ -72,23 +72,16 @@ def collect_data(query, number = 50, train_ratio=0.7) :
 ```python
 collect_data('durian', number = 88)
 ```
-</details>
-
-### Part II
-Annotation รูปภาพด้วย Roboflow 
-
-### Part III
-Model : X
-
-**This work is to try to create an object detection model using Tensorflow, following the steps of [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html) and YouTube Chanel [Krish Naik](https://www.youtube.com/watch?v=XoMiveY_1Z4) video.**
-
-<details>
-<summary><h3><b>Prepare DATASET</h3></b></summary>
-
 - Prepare the images you want to use in the folder.
 
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196252482-65f86535-9a44-4862-95d2-8c8587fb10bb.png">
 
+</details>
+
+### *Part II: Annotation images with Roboflow.*
+     This work is to try to create an object detection model using Tensorflow, following the steps of [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html) and YouTube Chanel [Krish Naik](https://www.youtube.com/watch?v=XoMiveY_1Z4) video.
+
+- From the folder you have prepared.
 - Go to the [roboflow](https://roboflow.com/) website.
 - Sign up for a new account then sign in.
 - Create new project and select project type as object detection.
@@ -115,7 +108,7 @@ Model : X
  
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196257692-58a054ec-7793-4116-879d-3d38a442be8d.png">
 
-- Generate new version of Dataset.
+- Generate new version of dataset.
   - Click the generate button at the bottom left of the screen.
   - In Section 3.Preprocessing Can be used to resize the image, and in Section 4. It can be used to do Augmentation and then generate a new dataset immediately in Section 5.
 
@@ -126,6 +119,12 @@ Model : X
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196258535-d99d1a9b-ecd7-42d6-8611-cdca47147589.png">
 
 </details>
+
+
+
+### Part III
+Model : X
+
 <details>
 <summary><h3><b>Installation.</h3></b></summary>
 
