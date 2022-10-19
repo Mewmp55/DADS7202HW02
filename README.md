@@ -2,13 +2,78 @@
 
 ## Intro : โปรเจคนี้เป็นการทำ Image Object Detection โดยใช้รูป Data set ทุเรียน และใช้โมเดล x , y 
 
-### Part I เตรียมดาต้า
-3.เตรียม Data Set รูปทุเรียน 
-เนื่องจากต้องการทำ Object detection ทุเรียนทั้งลูกโดยไม่แกะเปลือก ดังนั้นเราจะใช้รูปทุเรียนที่ไม่แกะเปลือกเท่านั้นในการทำโมเดลนี้ 
-1.1 หา Data Set 
-scraping from google image https://colab.research.google.com/drive/10BmRjMikVAeoxf55EMPKBtTGGPteRvty?usp=sharing 
-ดาวน์โหลดจากอินเตอร์เนตแบบแมนนวล
-            1.2 คัดรูป โดยเลือกเฉพาะรูปทุเรียนที่มีเปลือกครบ ไม่มีการปลอกเปลือกเลย
+### *Part I: Prepare Data Set.*
+
+<details>
+<summary>Details</summary>
+
+- Find Dataset using scraping from google image with durian (full peel only).
+
+```python
+!pip install git+https://github.com/Joeclinton1/google-images-download.git
+```
+```python
+import os
+import shutil
+import copy
+import time
+
+import cv2
+from google.colab.patches import cv2_imshow
+from PIL import Image
+
+from skimage import io
+import requests
+from google_images_download import google_images_download
+
+import numpy as np
+import torch
+from torch import nn
+import torch.optim as optim
+from torch.optim import lr_scheduler
+from torchvision import datasets, models, transforms
+
+import matplotlib.pyplot as plt
+```
+```python
+def collect_data(query, number = 50, train_ratio=0.7) :
+  # Remove spaces
+  query = query.replace(' ','')
+  classes = query.split(',')
+  
+  # Search and download images from google.
+  response = google_images_download.googleimagesdownload()
+  arguments = {'keywords' : query, 
+              'limit' : number, 
+              'silent_mode' : True,
+              'format' : 'jpg',
+              'output_directory' : 'data'}
+  paths = response.download(arguments)
+
+  # Create a folder to divide between training set and test set.
+  if not os.path.isdir('data/train') :
+    os.mkdir('data/train')
+  if not os.path.isdir('data/test') :
+    os.mkdir('data/test')
+  for x in classes :
+    if not os.path.isdir('data/train/'+x) :
+      os.mkdir('data/train/'+x)
+  
+  # To divide between training set and test set.
+  n_train = int(train_ratio*number)
+  for x in classes :
+    files = os.listdir('data/' + x)
+    for i in range(n_train) :
+      shutil.move('data/' + x + '/' + files[i], 'data/train/' + x + '/')
+    shutil.move('data/' + x, 'data/test/')
+  
+  print('Complete')
+```
+```python
+collect_data('durian', number = 88)
+```
+</details>
+
 ### Part II
 Annotation รูปภาพด้วย Roboflow 
 
