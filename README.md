@@ -1348,7 +1348,7 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196771728-79acf142-cf3a-40ac-b14b-460f21b6ba66.png">
 
-</detail>
+</details>
 
 ---
 
