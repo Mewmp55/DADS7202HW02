@@ -128,7 +128,11 @@ collect_data('durian', number = 88)
 </details>
 
 
-### *Part III: Installation and Setup Environment for modals.*
+### *Part III*
+**1. Installation and Setup Environment for modals.**
+**2. Pre-Trained Model.**
+**3. Training Custom Object Detector (Fine Tune Model) .**
+**4. Compare between Pre-Trained Model and After-Trained Model.
 
 <details>
 <summary>Installation details</summary>
@@ -382,13 +386,26 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 **Model 2: Faster R-CNN ResNet50 V1 640x640**
 
-imageeee
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196734498-b3a61946-0fbb-44c7-a666-d29e2aadc6ac.png">
 
 <details>
 <summary>Details</summary>
 
 - Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) because in this work we try to use Pre-Train model as **Faster R-CNN ResNet50 V1 640x640.**.
 
+```python
+!wget http://download.tensorflow.org/models/object_detection/tf2/20200711/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.tar.gz
+```
+---output---
+
+- Extracted our pre-trained model and The **pre-trained-model** folder should look like this.
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196734840-e66baa86-6e5f-410b-8547-95d7d3ed3b1d.png">
+
+```
+!tar -xvf faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.tar.gz
+```
+---output---
 </details>
 
 
