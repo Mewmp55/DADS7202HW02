@@ -133,12 +133,11 @@ We use the Roboflow website to annotate images and augmentation at this stage. T
 </details>
 
 
-## **Step 3 :  Prepare Environment.**
+## **Step 3 :  Prepare the environment.**
 
 ```python
 !nvidia-smi -L
 ```
-GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)
 
 ```python
 import sys
@@ -160,16 +159,7 @@ print( f"TensorFlow detected { len(gpus) } GPU(s):" )
 for i, gpu in enumerate(gpus):
   print( f".... GPU No. {i}: Name = {gpu.name} , Type = {gpu.device_type}" )
 ```
-Python 3.7.15 (default, Oct 12 2022, 19:14:55) 
-[GCC 7.5.0]
-
-NumPy 1.21.6
-
-TensorFlow 2.9.2
-tf.keras.backend.image_data_format() = channels_last
-TensorFlow detected 1 GPU(s):
-.... GPU No. 0: Name = /physical_device:GPU:0 , Type = GPU
-
+Get the environment is GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)
 
 
 
