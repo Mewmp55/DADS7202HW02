@@ -132,6 +132,8 @@ collect_data('durian', number = 88)
 
 <details>
 <summary>Installation details</summary>
+
+- Install tensorflow.
    
 ```python
 !pip install tensorflow-gpu
@@ -267,10 +269,8 @@ cp object_detection/packages/tf2/setup.py .
 
 </details>
 
-Setup Environment for modals as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)** and **Faster R-CNN ResNet50 V1 640x640**
-
 <details>
-<summary>Setup Environment for modal details</summary>
+<summary>Setup Environment for modals as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)** and **Faster R-CNN ResNet50 V1 640x640** details</summary>
 
 - Preparing the Workspace.
 
