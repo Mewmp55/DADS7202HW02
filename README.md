@@ -1,10 +1,23 @@
 # DADS7202HW02
 
-## Introduce: This work is to try to create an object detection model using Tensorflow, following the steps of [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html) and YouTube Chanel [Krish Naik](https://www.youtube.com/watch?v=XoMiveY_1Z4) video.
+Outline 
+Intro : โปรเจคนี้เป็นการทำ Image Object Detection โดยใช้รูป Data set ทุเรียน และใช้โมเดล x , y 
 
-### *Prepare DATASET*
+Part I เตรียมดาต้า
+3.เตรียม Data Set รูปทุเรียน 
+เนื่องจากต้องการทำ Object detection ทุเรียนทั้งลูกโดยไม่แกะเปลือก ดังนั้นเราจะใช้รูปทุเรียนที่ไม่แกะเปลือกเท่านั้นในการทำโมเดลนี้ 
+1.1 หา Data Set 
+scraping from google image https://colab.research.google.com/drive/10BmRjMikVAeoxf55EMPKBtTGGPteRvty?usp=sharing 
+ดาวน์โหลดจากอินเตอร์เนตแบบแมนนวล
+            1.2 คัดรูป โดยเลือกเฉพาะรูปทุเรียนที่มีเปลือกครบ ไม่มีการปลอกเปลือกเลย
+Part II
+Annotation รูปภาพด้วย Roboflow 
+
+Part III
+Model : X
+
 <details>
-<summary>Details: Prepare DATASET</summary>
+<summary>Prepare DATASET</summary>
 
 - Prepare the images you want to use in the folder.
 
