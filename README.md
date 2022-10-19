@@ -133,7 +133,44 @@ We use the Roboflow website to annotate images and augmentation at this stage. T
 </details>
 
 
-## *Step 3 :  Prepare Environment.*
+## **Step 3 :  Prepare Environment.**
+
+```python
+!nvidia-smi -L
+```
+GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)
+
+```python
+import sys
+print( f"Python {sys.version}\n" )
+
+import numpy as np
+print( f"NumPy {np.__version__}\n" )
+
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+import tensorflow as tf
+print( f"TensorFlow {tf.__version__}" )
+print( f"tf.keras.backend.image_data_format() = {tf.keras.backend.image_data_format()}" )
+
+# Count the number of GPUs as detected by tensorflow
+gpus = tf.config.list_physical_devices('GPU')
+print( f"TensorFlow detected { len(gpus) } GPU(s):" )
+for i, gpu in enumerate(gpus):
+  print( f".... GPU No. {i}: Name = {gpu.name} , Type = {gpu.device_type}" )
+```
+Python 3.7.15 (default, Oct 12 2022, 19:14:55) 
+[GCC 7.5.0]
+
+NumPy 1.21.6
+
+TensorFlow 2.9.2
+tf.keras.backend.image_data_format() = channels_last
+TensorFlow detected 1 GPU(s):
+.... GPU No. 0: Name = /physical_device:GPU:0 , Type = GPU
+
+
 
 
 **1. Installation and Setup Environment for modals.**  
