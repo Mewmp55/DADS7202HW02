@@ -128,14 +128,12 @@ collect_data('durian', number = 88)
 </details>
 
 
-### *Part III: Installation and Model Evaluation.*
+### *Part III: Installation and Model Evaluation*
 
-**Installation.**
+Install Tensorflow and Model Evaluation are SSD ResNet101 V1 FPN 640x640 (RetinaNet101). and Faster R-CNN ResNet50 V1 640x640.
 
 <details>
-<summary>Details</summary>
-
-- Install Tensorflow.
+<summary>Install Tensorflow details</summary>
    
 ```python
 !pip install tensorflow-gpu
@@ -241,7 +239,6 @@ cd cocoapi/PythonAPI
 ```python
 cp -r pycocotools /content/drive/MyDrive/DADS7202/models/research
 ```
-</details>
 
 - Object Detection API installation.
 
@@ -272,12 +269,15 @@ cp object_detection/packages/tf2/setup.py .
 
 </details>
 
-   
-<details>
-<summary><h3><b>Training Custom Object Detector.</h3></b></summary>
+Model Evaluation are SSD ResNet101 V1 FPN 640x640 (RetinaNet101). and Faster R-CNN ResNet50 V1 640x640.
 
 <details>
-<summary>Preparing the Workspace</summary>
+<summary>Model Evaluation details</summary>
+   
+**Training Custom Object Detector.**
+
+<details>
+<summary>Preparing the Workspace.</summary>
 
 - In the DADS7202 folder (or other created folder in cloning TFOD github step), create a workspace folder and a subfolder, as shown below.
 
@@ -299,8 +299,11 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 ```
 ---output---
 
-- Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md).
-- In this work we try to use Pre-Train model as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**.
+</details>
+
+**Model Evaluation.**
+
+- Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) because in this work we try to use Pre-Train model as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**.
 
 ```python
 !wget http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet101_v1_fpn_640x640_coco17_tpu-8.tar.gz
@@ -375,7 +378,11 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
   
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196518462-62833952-1c11-4428-8d16-06d8fc907e26.png">
 
-</details>
+- Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) because in this work we try to use Pre-Train model as **Faster R-CNN ResNet50 V1 640x640.**.
+
+
+
+
 
 <details>
 <summary>Training the model</summary>
