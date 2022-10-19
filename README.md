@@ -61,8 +61,6 @@ Model : X
    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196258535-d99d1a9b-ecd7-42d6-8611-cdca47147589.png">
 
 </details>
-
-
 <details>
 <summary><h3><b>Installation.</h3></b></summary>
 
@@ -214,10 +212,10 @@ cp object_detection/packages/tf2/setup.py .
 </details>
    
 <details>
-<summary><b>Training Custom Object Detector.</b></summary>
+<summary><h3><b>Training Custom Object Detector.</h3></b></summary>
 
 <details>
-<summary>Preparing the Workspace</summary>
+<summary> Preparing the Workspace</summary>
 
 - In the DADS7202 folder (or other created folder in cloning TFOD github step), create a workspace folder and a subfolder, as shown below.
 
