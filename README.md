@@ -304,9 +304,8 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 </details>
 </details>
 
-  - Setup Environment for Model 1 is **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
-  
-In models folder (inside training_demo folder) create a new directory named my_ssd_resnet101_v1_fpn and download **pipeline.config** from **pre-train-models/ssd_resnet101...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
+  - Setup Environment for Model 1 is **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**  
+In models folder (inside training_demo folder) create a new directory named my_ssd_resnet101_v1_fpn and **download pipeline.config** from pre-train-models/ssd_resnet101..., then re-upload to the newly created directory. Our training_demo should now look like this:
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517998-799e438a-4ee8-4836-89de-79ed5746e519.png">
 
