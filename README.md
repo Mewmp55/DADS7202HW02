@@ -504,9 +504,9 @@ table compare between Pre train and after fine-tune
 
 Model | Step | Batch_size | mAP(.50) | mAP(.50: .95) | Time | Accuracy
 ------------ | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
-RetinaNet101 (without tuning) | 1,000 | 8 |  |  |  | 
-RetinaNet101 (tuning) | 5,000 | 8 |  |  |  | 
-RetinaNet101 (tuning) | 10,000 | 8 |  |  |  | 
+SSD ResNet101 V1 FPN 640x640 (without tuning) | 1,000 | <center>8</center> |  |  |  | 
+SSD ResNet101 V1 FPN 640x640 (tuning) | 5,000 | <center>8</center> |  |  |  | 
+SSD ResNet101 V1 FPN 640x640 (tuning) | 10,000 | <center>8</center> |  |  |  | 
 
 
 <details>
