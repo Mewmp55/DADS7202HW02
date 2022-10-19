@@ -87,7 +87,7 @@ Once the Durian image data set from both methods has been obtained, select the i
 
 3. Prepare the images you want to use in the folder.
 
-   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196252482-65f86535-9a44-4862-95d2-8c8587fb10bb.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196252482-65f86535-9a44-4862-95d2-8c8587fb10bb.png">
 
 </details>
 
@@ -107,15 +107,15 @@ We use the Roboflow website to annotate images and augmentation at this stage. T
 - Sign up for a new account then sign in.
 - Create new project and select project type as object detection.
 
-   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196253940-498d7780-cbde-4fd4-855c-c44ff6b354d8.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196253940-498d7780-cbde-4fd4-855c-c44ff6b354d8.png">
 
 - Upload image to project.
 
-   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196254333-26f139ce-e1d9-47d9-a04f-bde69b2a242d.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196254333-26f139ce-e1d9-47d9-a04f-bde69b2a242d.png">
 
 - Finishing upload.
 
-   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196255979-447657ef-52f8-415e-91e5-7a3bca21078a.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196255979-447657ef-52f8-415e-91e5-7a3bca21078a.png">
 
 - Annotate images.
   - Click on the image to annotate, then drag a frame around the object's area and classify it.
@@ -377,7 +377,8 @@ To use this model, we will start from extract pre-trained-model folder.
   - Download **Partition Dataset script**, then partition the Dataset. (In this work we skip this step because we preprocessing dataset on [Roboflow](https://roboflow.com/) already.)
   - Download **Generate TensorFlow Records script**.
   - Upload file into **training_demo** folder.
-    <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516987-a58c2eb9-a3a3-48eb-8617-2ab2ab39d39d.png">
+    
+  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516987-a58c2eb9-a3a3-48eb-8617-2ab2ab39d39d.png">
 
 5. Create TensorFlow Records.
   - Change directory to **training_demo**.
@@ -488,6 +489,7 @@ To use this model, we will start from extract pre-trained-model folder.
   - Upload file into **training_demo** folder.
 
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196742294-9c8c173a-dd8b-4c18-adea-73c72310a4e4.png">
+
 5. Create TensorFlow Records.
   - Change directory to **training_demo**.
   - Run **generate_tfrecord.py** script to create tensorflow records.
