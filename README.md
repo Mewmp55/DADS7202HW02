@@ -215,7 +215,7 @@ cp object_detection/packages/tf2/setup.py .
 <summary><h3><b>Training Custom Object Detector.</h3></b></summary>
 
 <details>
-<summary> Preparing the Workspace</summary>
+<summary>Preparing the Workspace</summary>
 
 - In the DADS7202 folder (or other created folder in cloning TFOD github step), create a workspace folder and a subfolder, as shown below.
 
@@ -337,7 +337,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 
 <details>
-<summary><b>Evaluating the Model.</b></summary>
+<summary><h3><b>Evaluating the Model.</h3></b></summary>
 
 - Set metric type.
 
@@ -369,7 +369,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 </details>
 
 <details>
-<summary><b>Inferencing Trained Models.</b></summary>
+<summary><h3><b>Inferencing Trained Models.</h3></b></summary>
 
 - In exported-models folder create my_model folder.
 - Export the model to */content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model*
