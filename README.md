@@ -920,9 +920,9 @@ table compare between Pre train and after fine-tune
 <details>
 <summary>Details</summary>
   
-- Evaluating the Model
+- **Evaluating the Model**
 
-  1. Set metric type.
+1. Set metric type.
 
 ```python
 from object_detection.protos import eval_pb2
@@ -930,14 +930,14 @@ eval_config = eval_pb2.EvalConfig()
 eval_config.metrics_set.extend(['coco_detection_metrics'])
 ```
   
-  2. Change directory to training_demo
+2. Change directory to training_demo
 
 ```python
 cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
 ---output---
 
-  3. Model evaluate using Tensorboard
+3. Model evaluate using Tensorboard
 
 ```python
 !python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1 --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1/pipeline.config --checkpoint_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1
@@ -950,17 +950,17 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```
 ---output---
   
-- Inferencing Trained Models
+- **Inferencing Trained Models**
   
-  - In exported-models folder create my_model folder
-  - Export the model to */content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model*
+1. In exported-models folder create my_model folder
+2. Export the model to */content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model*
   
 ```python
 !python exporter_main_v2.py --input_type image_tensor --pipeline_config_path /content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1/pipeline.config --trained_checkpoint_dir /content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1 --output_directory /content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model3_faster_R_CNN_1000
 ```
 ---output---
   
-  - Inferencing trained model
+3. Inferencing trained model
 
 ```python
 
