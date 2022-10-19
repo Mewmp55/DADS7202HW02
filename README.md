@@ -502,13 +502,11 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 table compare between Pre train and after fine-tune
 
+Pretrain-model | After fine-tune (5,000) | After fine-tune (10,000) | 
+------------ | ------------- | ------------- | 
 
------------- | ------------- | ------------- | ------------- | ------------- | -------------
-Pretrain-model | np.random.seed(1150)  tf.random.set_seed(1112) | 173 | 0.039 | 0.322 | 0.8020 
-![image](https://user-images.githubusercontent.com/97492504/196774983-0bf089d0-1224-49a8-9994-b6ff7252d92b.png) | np.random.seed(1234)  tf.random.set_seed(5678) | 188 | 0.106 | 0.353 | 0.8049 
-Round 3 | np.random.seed(1928)  tf.random.set_seed(3746) | 78 | 0.210 | 0.495 | 0.7869 
-Round 4 | np.random.seed(4321)  tf.random.set_seed(8765) | 82 | 0.225 | 0.499 | 0.7991 
-Round 5 | np.random.seed(1324)  tf.random.set_seed(5769) | 131 | 0.158 | 0.422 | 0.8083 
+  <img width="200" alt="image" src="https://user-images.githubusercontent.com/97492504/196775870-5b79146d-4855-4168-883d-4bbf7299c1e6.png"> | <img width="200" alt="image" src="https://user-images.githubusercontent.com/97492504/196775742-90f63f52-2c97-49c3-915e-30fdd06c9499.png"> | <img width="200" alt="image" src="https://user-images.githubusercontent.com/97492504/196776002-cdeea952-f333-4bf3-894c-2c5c2376b89d.png"> | 
+
 
 <details>
 <summary>Details</summary>
