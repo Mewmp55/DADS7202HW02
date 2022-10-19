@@ -304,7 +304,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 </details>
 </details>
 
-  - Setup Environment for Model 1 is **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**  
+  - Setup Environment for Model 1 is **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**.  
 In models folder (inside training_demo folder) create a new directory named my_ssd_resnet101_v1_fpn and **download pipeline.config** from pre-train-models/ssd_resnet101..., then re-upload to the newly created directory. Our training_demo should now look like this:
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517998-799e438a-4ee8-4836-89de-79ed5746e519.png">
@@ -389,7 +389,8 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
   
 </details>
 
-  - Setup Environment for Model 2 is **Faster R-CNN ResNet50 V1 640x640**
+  - Setup Environment for Model 2 is **Faster R-CNN ResNet50 V1 640x640**.  
+In models folder (inside training_demo folder) create a new directory named Faster_R-CNN_ResNet50_V1 and **download pipeline.config** from pre-train-models/faster_rcnn..., then re-upload to the newly created directory. Our training_demo should now look like this:
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196734498-b3a61946-0fbb-44c7-a666-d29e2aadc6ac.png">
 
@@ -411,6 +412,40 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 !tar -xvf faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.tar.gz
 ```
 ---output---
+
+- In the **training-demo** folder, upload the previously downloaded files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py** .
+  - This step is for easier to call this script.
+  - Able to call the script in research folder without download and re-upload step.
+  
+  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196741775-b9f116b9-3fe3-4c4c-b2f4-5fe6e6f3f198.png">
+
+- Download **partition_dataset.py** and **generate_tfrecord.py**
+  - Go to [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html).
+  - Download **Partition Dataset script**, then partition the dataset. (In this work we skip this step because we preprocessing dataset on [Roboflow](https://roboflow.com/) already.)
+  - Download **Generate TensorFlow Records script**.
+  - Upload file into **training_demo** folder.
+
+  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196742294-9c8c173a-dd8b-4c18-adea-73c72310a4e4.png">
+
+- Create TensorFlow Records.
+  - Change directory to **training_demo**.
+  - Run **generate_tfrecord.py** script to create tensorflow records.
+  - Check the train folder, test folder, label_map.pbtxt and the ourput path before running.
+  
+```
+cd /content/drive/MyDrive/DADS7202/workspace/training_demo
+```
+---output---
+
+```
+> Create train data:
+!python generate_tfrecord.py -x /content/drive/MyDrive/DADS7202/workspace/training_demo/images/train -l /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt -o /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/train.record
+
+> Create test data:
+!python generate_tfrecord.py -x /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test -l //content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt -o /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/test.record
+```
+---output---
+  
 </details>
 
 
