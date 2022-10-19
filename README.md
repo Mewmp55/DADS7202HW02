@@ -64,7 +64,7 @@ Model : X
 
 
 <details>
-<summary><b>Installation.</b></summary>
+<summary><h3><b>Installation.</h3></b></summary>
 
 <details>
 <summary>Install Tensorflow.</summary>
