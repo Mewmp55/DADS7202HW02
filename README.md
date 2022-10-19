@@ -1419,3 +1419,21 @@ SSD ResNet101 V1 FPN 640x640 | 5,000 | 8 | 0.784264 | 0.390598 | 0.343 |  |
 SSD ResNet101 V1 FPN 640x640 | 10,000 | 8 | 0.940915 | 0.395898 | 0.339 |  | 
 Faster R-CNN ResNet50 V1 640x640 | 1,000 | 8 | 0.951654 | 0.449221 | 0.253 |  | 
 Faster R-CNN ResNet50 V1 640x640 | 2,000 | 8 | 0.933264 | 0.499617 | 0.249 |  | 
+
+---
+
+## **Member**  
+6410412002  Mr. Kittipat Pattarajariya  
+6410412004  Miss Chonthanya Yosbuth  
+6410412010  Mr. Saran Ditjarern  
+6410412018  Miss Panumas sitthikarn  
+
+---
+
+## **Reference**  
+
+---
+
+## **End Credit**  
+This work is part of the DADS7202 Deep Learning in Master degree of Science at Faculty of Applied Statistics National Institute of Development Administration.
+---
