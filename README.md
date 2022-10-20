@@ -334,7 +334,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
 
 ---
 
-## **STEP 5: Training Custom Object Detector**
+## **STEP 5: Training Custom Object Detector and Evaluating the Model**
 
 ### **Model: SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
 
@@ -343,6 +343,8 @@ RetinaNet-101 Feature Pyramid Net Trained on MS-COCO Data, is a single-stage obj
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196790605-ccae3683-0ebc-44b9-844f-a990f18d437c.png">
 
 Ref: [https://resources.wolframcloud.com/NeuralNetRepository/resources/RetinaNet-101-Feature-Pyramid-Net-Trained-on-MS-COCO-Data/](https://resources.wolframcloud.com/NeuralNetRepository/resources/RetinaNet-101-Feature-Pyramid-Net-Trained-on-MS-COCO-Data/)
+
+- Training Custom Object Detector 
 
 <details>
 <summary>Details</summary>
@@ -442,6 +444,14 @@ For This Model, we play around with different setups to test things out and get 
 > Cause it depends on our resources as memory and GPU
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196518462-62833952-1c11-4428-8d16-06d8fc907e26.png">
+  
+</details>
+
+- Evaluating the Model 
+
+<details>
+<summary>Details</summary>  
+  
   
 </details>
 
