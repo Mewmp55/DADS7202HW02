@@ -1465,7 +1465,7 @@ We can see clearly that the Faster R-CNN ResNet50 V1 model is better than the SS
 
 Moreover, using the pre-train model to detect the Durian dataset, which not contains in the COCO dataset. The outcome of the Faster R-CNN ResNet50 V1 model is impressive. It can detect some Durians with a confidence level of around 70%- 90%  in images, although it can not tell the object's name. However, the SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model can not detect anything.
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196966630-50fc5490-d4be-43de-ab5c-40c0d853ec88.png">
+<center><img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196966630-50fc5490-d4be-43de-ab5c-40c0d853ec88.png"></center>
 
 ---
 
