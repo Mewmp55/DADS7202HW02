@@ -79,12 +79,11 @@ def collect_data(query, number = 50, train_ratio=0.7) :
 
 2. Download Durian images from the internet.  
 
-3. Prepare the images you want to use in the folder.
+Prepare the images you want to use in the folder.
+Once the Durian images data set from both methods have been obtained, we have 112 images in the dataset for this step.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196252482-65f86535-9a44-4862-95d2-8c8587fb10bb.png">
 
-
-Once the Durian images data set from both methods have been obtained, we have 112 images in the dataset for this step.
 
 ---
 
