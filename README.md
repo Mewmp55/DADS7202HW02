@@ -470,7 +470,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 Faster_R-CNN-ResNet50_V1 is a two-stage object detection model and the architecture of this model is complex because it has several moving parts.  
 
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/97492504/196794462-950de22a-3f18-4c62-9a88-db5bb382f3d1.png">  
+<p align="center"><img width="700" alt="image" src="https://user-images.githubusercontent.com/97492504/196794462-950de22a-3f18-4c62-9a88-db5bb382f3d1.png"></p>  
 
 The input images are represented as Height×Width×Depth tensors (multidimensional arrays), which are passed through a pre-trained CNN up until an intermediate layer, ending up with a convolutional feature map. We use this as a feature extractor for the next part.
 
