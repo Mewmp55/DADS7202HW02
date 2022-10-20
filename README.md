@@ -118,7 +118,7 @@ We use the Roboflow website to annotate images and augmentation at this stage. T
   - Click the **Add n images to Dataset** at the top right of the website.
   - Choose the method adjust required value, then click add images.
  
-   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196257692-58a054ec-7793-4116-879d-3d38a442be8d.png">
+   <img width="400" alt="image" src="https://user-images.githubusercontent.com/97492504/196257692-58a054ec-7793-4116-879d-3d38a442be8d.png">
 
 - Generate new version of dataset.
   - Click the generate button at the bottom left of the screen.
