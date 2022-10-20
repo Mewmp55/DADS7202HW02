@@ -545,6 +545,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 9. Configure the Training Pipeline.
   
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743916-572614fa-9738-44c4-967c-64cac14cab6d.png">
+
 ### *For This Model, we tune the parameters same as SSD ResNet101 V1 FPN 640x640 (RetinaNet101), except Number of steps:*
 *<b>Number of steps: 1,000, 2,000</b>*
 
