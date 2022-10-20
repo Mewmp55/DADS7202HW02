@@ -613,7 +613,6 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```python
 !python exporter_main_v2.py --input_type image_tensor --pipeline_config_path /content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config --trained_checkpoint_dir /content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --output_directory /content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model
 ```
----output---
   
 3. Inferencing trained model.
 
