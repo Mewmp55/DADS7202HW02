@@ -344,7 +344,7 @@ RetinaNet-101 Feature Pyramid Net Trained on MS-COCO Data, is a single-stage obj
 
 Ref: [https://resources.wolframcloud.com/NeuralNetRepository/resources/RetinaNet-101-Feature-Pyramid-Net-Trained-on-MS-COCO-Data/](https://resources.wolframcloud.com/NeuralNetRepository/resources/RetinaNet-101-Feature-Pyramid-Net-Trained-on-MS-COCO-Data/)
 
-- #### **Training Custom Object Detector** 
+-  ### **Training Custom Object Detector** 
 
 <details>
 <summary>Details</summary>
@@ -430,14 +430,14 @@ The TensorFlow Object Detection API allows model configuration via the pipeline.
 
 For This Model, we play around with different setups to test things out and get the best model performance. `As the following model parameters`:
 
-- Num_classes (int) : 1 :arrow_right: Because we only detect Durian, we set up as 1. 
-- Batch_size (int) : 8 :arrow_right: The batch size number must be divisible by 2 and due to the constrain of available memory, so we choose 8. 
-- Fine_tune_checkpoint (str): put a path to the pre-trained model of ResNet101 V1 FPN 640x640 (RetinaNet101)  model checkpoint. 
-- Fine_tune_checkpoint_type (str): set to detection because we want to train a detection model.
-- Use_bfloat16 (boolean): set to ‘false’ cause we are not going to train a model on a TPU.
-- Label_map_path (str): provide a path to the **label_map.pbtxt** was created previously. 
-- Train_input_reader (str): set a path to training TFRecord file train_input_reader.
-- Eval_input_reader(str): set a path to testing TFRecord file.
+- **Num_classes (int)** : 1 :arrow_right: Because we only detect Durian, we set up as 1. 
+- **Batch_size (int)** : 8 :arrow_right: The batch size number must be divisible by 2 and due to the constrain of available memory, so we choose 8. 
+- **Fine_tune_checkpoint (str)**: put a path to the pre-trained model of ResNet101 V1 FPN 640x640 (RetinaNet101)  model checkpoint. 
+- **Fine_tune_checkpoint_type (str)**: set to detection because we want to train a detection model.
+- **Use_bfloat16 (boolean)**: set to ‘false’ cause we are not going to train a model on a TPU.
+- **Label_map_path (str)**: provide a path to the `label_map.pbtxt` was created previously. 
+- **Train_input_reader (str)**: set a path to training TFRecord file train_input_reader.
+- **Eval_input_reader(str)**: set a path to testing TFRecord file.
 
 ### *For The Steps of Training. We try several numbers, Begin from 5,000 steps.*
 *<b>Number of steps: 2,000 , 5,000 , 10,000</b>* 
@@ -447,9 +447,9 @@ For This Model, we play around with different setups to test things out and get 
   
 </details>
 
-- #### **Evaluating the Model**
+- ### **Evaluating the Model**
 
-Image Total Loss
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196941423-eb99fcb2-34d1-4dad-9a75-6a6f5ddf0e38.png">  
 
 **The more steps, the more model performance.**  
 The total loss tends to decline while training more steps.
