@@ -324,9 +324,6 @@ RetinaNet-101 Feature Pyramid Net Trained on MS-COCO Data, is a single-stage obj
 
 ### *<b>Training Custom Object Detector</b>* 
 
-<details>
-<summary>Details</summary>
-
 1. Change directory to pre-trained-models folder.
 
 ```python
@@ -423,8 +420,6 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 !python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn_3 --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn_3/pipeline.config
 ```
 
-</details>
-
 
 ### *<b>Evaluating the Model</b>*
 
@@ -480,9 +475,6 @@ Faster_R-CNN-ResNet50_V1 is a two-stage object detection model and the architect
 The input images are represented as Height×Width×Depth tensors (multidimensional arrays), which are passed through a pre-trained CNN up until an intermediate layer, ending up with a convolutional feature map. We use this as a feature extractor for the next part.
 
 ### *<b>Training Custom Object Detector</b>* 
-
-<details>
-<summary>Details</summary>
 
 1. Change directory to pre-trained-models folder.
 
@@ -566,8 +558,6 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```python
 !python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1 --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1/pipeline.config
 ```
-
-</details>
 
 
 ### *<b>Evaluating the Model</b>*
