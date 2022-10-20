@@ -447,7 +447,7 @@ For This Model, we play around with different setups to test things out and get 
 
 ### **Model: Faster R-CNN ResNet50 V1 640x640**
 
-Faster_R-CNN-ResNet50_V1 is a single-stage object detection model and the architecture of this model is complex because it has several moving parts.  
+Faster_R-CNN-ResNet50_V1 is a two-stage object detection model and the architecture of this model is complex because it has several moving parts.  
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196794462-950de22a-3f18-4c62-9a88-db5bb382f3d1.png">
 
@@ -548,8 +548,8 @@ table compare between pre-trained-model and after fine-tune model
 
 Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
 :----: | :----: | :----: | :----: | :----: | :----: 
-SSD ResNet101 V1 FPN (tuning) | 5,000 | 8 |  |  |  
-SSD ResNet101 V1 FPN (tuning) | 10,000 | 8 |  |  |  
+SSD ResNet101 V1 FPN | 5,000 | 8 |  |  |  
+SSD ResNet101 V1 FPN | 10,000 | 8 |  |  |  
 
 
 <details>
@@ -979,8 +979,8 @@ table compare between pre-trained-model and after fine-tune model
 
 Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
 :----: | :----: | :----: | :----: | :----: | :----:
-Faster R-CNN ResNet50 V1 (tuning) | 1,000 | 8 |  |  |  
-Faster R-CNN ResNet50 V1 (tuning) | 2,000 | 8 |  |  |  
+Faster R-CNN ResNet50 V1 | 1,000 | 8 |  |  |  
+Faster R-CNN ResNet50 V1 | 2,000 | 8 |  |  |  
 
 <details>
 <summary>Details</summary>
