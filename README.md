@@ -919,10 +919,10 @@ Faster R-CNN ResNet50 V1 | 2,000 | 8 | 0.933264 | 0.499617 | 0.249 |
 
 Based on warming up `step 10%` and `GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)`.
 
-As the mAP (mean Average Precision) is shown in the table, we choose the mAP from the IoU value at 0.5 and 0.5:0.95.  
-We can see clearly that the Faster R-CNN ResNet50 V1 model is better than the SSD ResNet101 V1 FPN model while using the same parameters for the training.
+As the mAP (mean Average Precision) is shown in the table, we choose the mAP from the IoU value at 0.50 and 0.50:0.95.  
+We can see clearly that the Faster R-CNN ResNet50 V1 640x640 model is better than the SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model while using the same parameters for the training.
 
-Moreover, using the pre-train model to detect the Durian dataset, which not contains in the COCO dataset. The outcome of the Faster R-CNN ResNet50 V1 model is impressive. It can detect some Durians with a confidence level of around 70%- 90%  in images, although it can not tell the object's name. However, the SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model can not detect anything.
+Moreover, using the pre-train model to detect the Durian dataset, which not contains in the COCO dataset. The outcome of the Faster R-CNN ResNet50 V1 640x640 model is impressive. It can detect some Durians with a confidence level of around 70%- 90%  in images, although it can not tell the object's name. However, the SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model can not detect anything.
 
 <p align="center"><img width="750" alt="image" src="https://user-images.githubusercontent.com/97492504/196966630-50fc5490-d4be-43de-ab5c-40c0d853ec88.png"></p>
 
