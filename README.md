@@ -137,7 +137,7 @@ We use the Roboflow website to annotate images and augmentation at this stage. T
 
 - Export dataset.
 
-   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196258535-d99d1a9b-ecd7-42d6-8611-cdca47147589.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196258535-d99d1a9b-ecd7-42d6-8611-cdca47147589.png">
 
 </details>
 
@@ -193,7 +193,7 @@ Before we start, we need to Install and set up the prerequisites that are essent
 !pip install tensorflow-gpu
 ```
 
-Check `Tensorflow version is 2.9.2` :
+`Tensorflow version is 2.9.2` using:
 ```python
 import tensorflow as tf
 print(tf.__version__)
@@ -294,7 +294,7 @@ cp object_detection/packages/tf2/setup.py .
 !python -m pip install .
 ```
 
-3. Test Installation</summary>
+3. Test Installation
 
 ```python
 !python object_detection/builders/model_builder_tf2_test.py
@@ -322,7 +322,7 @@ The TensorFlow Object Detection API needs A Label Map file is a simple .txt file
 
 3. In the **test** and **train** folders, upload the images to use train and test the model. In this work uses JPG+XML files.
 
-  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196513043-0177688f-0c77-428a-ad49-785537b3acd5.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196513043-0177688f-0c77-428a-ad49-785537b3acd5.png">
 
 </details>
 
@@ -425,7 +425,17 @@ For This Model, we play around with different setups to test things out and get 
 ### *For The Steps of Training. We try several numbers, Begin from 5,000 steps.*
 *<b>Number of steps: 2,000 , 5,000 , 10,000</b>* 
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196961922-38d42a27-ef56-4523-be52-01a745df0fdb.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196981387-f3d86770-7dab-49b5-9af8-59d46004452a.png">
+
+10. Training the model
+  - Change directory to training_demo using 
+```python
+cd /content/drive/MyDrive/DADS7202/workspace/training_demo
+```
+  - Training the model
+```python
+!python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn_3 --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn_3/pipeline.config
+```
   
 </details>
 
