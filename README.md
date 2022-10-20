@@ -563,7 +563,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 ### *<b>Evaluating the Model</b>*
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196943241-824283a3-16f9-4420-86c2-dc1da18c0e2b.png">
+<p align="center"><img width="700" alt="image" src="https://user-images.githubusercontent.com/97492504/196943241-824283a3-16f9-4420-86c2-dc1da18c0e2b.png"></p>
 
 Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
 :----: | :----: | :----: | :----: | :----: | :----:
