@@ -165,7 +165,7 @@ for i, gpu in enumerate(gpus):
   print( f".... GPU No. {i}: Name = {gpu.name} , Type = {gpu.device_type}" )
 ```
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196757486-ae014929-9763-456f-8d1d-90cfb5cbabaa.png">
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/97492504/196757486-ae014929-9763-456f-8d1d-90cfb5cbabaa.png">
 
 ---
 
