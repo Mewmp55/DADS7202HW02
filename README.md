@@ -295,7 +295,7 @@ Transforming each dataset is required (training, validation, and testing). We sh
   
 1. In the DADS7202 folder (or other created folder in cloning TFOD github step), create a workspace folder and a subfolder, as shown below.
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512776-d4ddc051-f929-4215-b592-744c34821783.png">
+<img width="350" alt="image" src="https://user-images.githubusercontent.com/97492504/196512776-d4ddc051-f929-4215-b592-744c34821783.png">
 
 We will use the workspace folder to store all of the model-related attributes, including data. 
   
@@ -304,11 +304,11 @@ We will use the workspace folder to store all of the model-related attributes, i
 The TensorFlow Object Detection API needs A Label Map file is a simple .txt file, It links labels to some integer values, for training and detection purposes.
   - Double click on label_map.pbtxt and edit the label.
   
-  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512933-eea5a62b-1a52-45f5-b059-84c77e1fba5d.png">
+  <img width="200" alt="image" src="https://user-images.githubusercontent.com/97492504/196512933-eea5a62b-1a52-45f5-b059-84c77e1fba5d.png">
 
 3. In the **test** and **train** folders, upload the images to use train and test the model. In this work uses JPG+XML files.
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196513043-0177688f-0c77-428a-ad49-785537b3acd5.png">
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/97492504/196513043-0177688f-0c77-428a-ad49-785537b3acd5.png">
 
 </details>
 
