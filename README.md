@@ -601,29 +601,37 @@ We use this code for Inferencing Models, while the model's path depends on each 
 
 **At path for model: SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
 
-`
 > PROVIDE PATH TO IMAGE DIRECTORY
+```python
 IMAGE_PATHS = '/content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg'
+```
 
 > PROVIDE PATH TO MODEL DIRECTORY
+```python
 PATH_TO_MODEL_DIR = '/content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models/ssd_resnet101_v1_fpn_640x640_coco17_tpu-8'
+```
 
 > PROVIDE PATH TO LABEL MAP
+```python
 PATH_TO_LABELS = '/content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt'
-`
+```
 
 **At path for model: Faster R-CNN ResNet50 V1 640x640**
 
-`
 > PROVIDE PATH TO IMAGE DIRECTORY
+```python
 IMAGE_PATHS = '/content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg'
+```
 
 > PROVIDE PATH TO MODEL DIRECTORY
+```python
 PATH_TO_MODEL_DIR = '/content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8'
+```
 
 > PROVIDE PATH TO LABEL MAP
+```python
 PATH_TO_LABELS = '/content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt'
-`
+```
 
 <details>
 <summary>Inferencing Model details</summary>
@@ -1422,25 +1430,24 @@ we reduce it into a range of 1,000 - 10,000 steps. For The SSD ResNet101 (Retina
 The  Inferencing Models Outcomes.
 ### **Model : SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**  
 After we Inferencing Models which are the Pre-train model, finetuning model with 2,000 steps, 5,000 steps, and 10,000 steps.  
-Here is the result:
+`Here is the result`:
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196964535-4dd428a7-f11e-49cf-9fb8-e2a939e84065.png">
 
-Pre-train ResNet101  (RetinaNet101) model cannot detect Durians at all.  
-Next, inferencing the finetune model with 2,000 steps. The output looks better. The model can detect and know some Durians with confidentiality at 91% and 94%.  
-At 5,000 steps, the model still detects and knows some Durians but has a better confidence level at 95% and 99%.  
-Add the number of steps to 10,000. Then, the model has more potential. It can detect all Durians on the image at a confidence level of 97% to 100%.
+- Pre-train ResNet101  (RetinaNet101) model cannot detect Durians at all.  
+- Next, inferencing the finetune model with 2,000 steps. The output looks better. The model can detect and know some Durians with confidentiality at 91% and 94%.  
+- At 5,000 steps, the model still detects and knows some Durians but has a better confidence level at 95% and 99%.  
+- Add the number of steps to 10,000. Then, the model has more potential. It can detect all Durians on the image at a confidence level of 97% to 100%.
 
 ### **Model: Faster R-CNN ResNet50 V1 640x640**  
 Inferencing Models which are the Pre-train model, finetuning model with 1,000 steps, and finetuning model with 2,000 steps.  
-Here is the result:
+`Here is the result`:
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196965456-e90db92b-971e-4203-9d48-1e894efacf8a.png">
 
-**Pre-train** Faster_R-CNN-ResNet50_V1 model can detect Durians, but it does not know what kind of object.  
-Next, inferencing the finetune model with 1,000 steps. The output looks better. The model can detect and know Durians with confidentiality at 100%.
-
-Then, we try 2,000 steps on finetuning model. The output is the same as 1,000 steps. 
+- **Pre-train** Faster_R-CNN-ResNet50_V1 model can detect Durians, but it does not know what kind of object.  
+- Next, inferencing the finetune model with 1,000 steps. The output looks better. The model can detect and know Durians with confidentiality at 100%.
+- Then, we try 2,000 steps on finetuning model. The output is the same as 1,000 steps. 
 
 ### *<b>To compare between SSD ResNet101 V1 FPN 640x640 (RetinaNet101) VS Faster R-CNN ResNet50 V1 640x640</b>*  
 Estimating the model from mAP and running time to compare as shown in the table.
