@@ -604,8 +604,6 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 ---
 
-We use this code for Inferencing Models, while the model's path depends on each model, so we change the model path. 
-
 
 ## **STEP 6: Inferencing Model**
 
