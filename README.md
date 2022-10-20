@@ -344,7 +344,7 @@ RetinaNet-101 Feature Pyramid Net Trained on MS-COCO Data, is a single-stage obj
 
 Ref: [https://resources.wolframcloud.com/NeuralNetRepository/resources/RetinaNet-101-Feature-Pyramid-Net-Trained-on-MS-COCO-Data/](https://resources.wolframcloud.com/NeuralNetRepository/resources/RetinaNet-101-Feature-Pyramid-Net-Trained-on-MS-COCO-Data/)
 
-- Training Custom Object Detector 
+- #### **Training Custom Object Detector** 
 
 <details>
 <summary>Details</summary>
@@ -447,11 +447,43 @@ For This Model, we play around with different setups to test things out and get 
   
 </details>
 
-- Evaluating the Model 
+- #### **Evaluating the Model**
+
+Image Total Loss
+
+**The more steps, the more model performance.**  
+The total loss tends to decline while training more steps.
+
 
 <details>
 <summary>Details</summary>  
-  
+
+1. Set metric type.
+
+```python
+from object_detection.protos import eval_pb2
+eval_config = eval_pb2.EvalConfig()
+eval_config.metrics_set.extend(['coco_detection_metrics'])
+```
+
+2. Change directory to training_demo.
+
+```python
+cd /content/drive/MyDrive/DADS7202/workspace/training_demo
+```
+
+3. Model evaluate using Tensorboard.
+
+```python
+!python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config --checkpoint_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn
+```
+---output---
+
+```
+%load_ext tensorboard
+%tensorboard --logdir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn
+```
+---output---
   
 </details>
 
