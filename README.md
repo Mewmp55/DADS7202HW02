@@ -202,7 +202,7 @@ drive.mount('/content/drive')
 2. Go to the folder symbol on the left side of the screen.
 3. Create the folder you want to clone the repository into.
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510070-ba902de7-9c4b-4f42-9003-ae7fefddeedf.png">
+<img width="350" alt="image" src="https://user-images.githubusercontent.com/97492504/196510070-ba902de7-9c4b-4f42-9003-ae7fefddeedf.png">
 
 4. Change directory to your folder.
 
@@ -214,7 +214,7 @@ cd /content/drive/MyDrive/DADS7202
 !git clone https://github.com/tensorflow/models.git
 ```
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196786008-0f7faa81-2da7-4883-8d6a-192e2f5e024b.png">
+<img width="350" alt="image" src="https://user-images.githubusercontent.com/97492504/196786008-0f7faa81-2da7-4883-8d6a-192e2f5e024b.png">
 
 5. Cloning Tensorflow github repository.
 6. In the created folder, you will see a new folder.
