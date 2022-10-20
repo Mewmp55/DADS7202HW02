@@ -298,10 +298,10 @@ Transforming each dataset is required (training, validation, and testing). We sh
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512776-d4ddc051-f929-4215-b592-744c34821783.png">
 
 We will use the workspace folder to store all of the model-related attributes, including data. 
-
-The TensorFlow Object Detection API needs A Label Map file is a simple .txt file, It links labels to some integer values, for training and detection purposes.
   
-2. In the **annotations** folder right click + new file create **label_map.pbtxt**
+2. In the **annotations** folder right click + new file create **label_map.pbtxt**  
+  
+The TensorFlow Object Detection API needs A Label Map file is a simple .txt file, It links labels to some integer values, for training and detection purposes.
   - Double click on label_map.pbtxt and edit the label.
   
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196512933-eea5a62b-1a52-45f5-b059-84c77e1fba5d.png">
