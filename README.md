@@ -342,8 +342,6 @@ RetinaNet-101 Feature Pyramid Net Trained on MS-COCO Data, is a single-stage obj
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196790605-ccae3683-0ebc-44b9-844f-a990f18d437c.png">
 
-Ref: [https://resources.wolframcloud.com/NeuralNetRepository/resources/RetinaNet-101-Feature-Pyramid-Net-Trained-on-MS-COCO-Data/](https://resources.wolframcloud.com/NeuralNetRepository/resources/RetinaNet-101-Feature-Pyramid-Net-Trained-on-MS-COCO-Data/)
-
 -  ### **Training Custom Object Detector** 
 
 <details>
@@ -411,14 +409,12 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 8. Configure the Training Pipeline.
 
-This model pre-trained on the Common Objects in Context (COCO) dataset, which don’t contains Durian pictures. Therefore this project required configuring and training the models on Durian Dataset.
-
-The TensorFlow Object Detection API allows model configuration via the pipeline.config file that goes along with the pre-trained model. 
-
+This model pre-trained on the Common Objects in Context (COCO) dataset, which don’t contains Durian pictures. Therefore this project required configuring and training the models on Durian Dataset.    
+The TensorFlow Object Detection API allows model configuration via the pipeline.config file that goes along with the pre-trained model.  
 For This Model, we play around with different setups to test things out and get the best model performance. `As the following model parameters`:
 
-- **Num_classes (int)** : 1 :arrow_right: Because we only detect Durian, we set up as 1. 
-- **Batch_size (int)** : 8 :arrow_right: The batch size number must be divisible by 2 and due to the constrain of available memory, so we choose 8. 
+- **Num_classes (int)** : 1 because we only detect Durian, we set up as 1. 
+- **Batch_size (int)** : 8 as the batch size number must be divisible by 2 and due to the constrain of available memory, so we choose 8. 
 - **Fine_tune_checkpoint (str)**: put a path to the pre-trained model of ResNet101 V1 FPN 640x640 (RetinaNet101)  model checkpoint. 
 - **Fine_tune_checkpoint_type (str)**: set to detection because we want to train a detection model.
 - **Use_bfloat16 (boolean)**: set to ‘false’ cause we are not going to train a model on a TPU.
@@ -428,11 +424,11 @@ For This Model, we play around with different setups to test things out and get 
 
 ### *For The Steps of Training. We try several numbers, Begin from 5,000 steps.*
 *<b>Number of steps: 2,000 , 5,000 , 10,000</b>* 
-> Cause it depends on our resources as memory and GPU
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196518462-62833952-1c11-4428-8d16-06d8fc907e26.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196961922-38d42a27-ef56-4523-be52-01a745df0fdb.png">
   
 </details>
+
 
 - ### **Evaluating the Model**
 
@@ -440,8 +436,6 @@ For This Model, we play around with different setups to test things out and get 
 
 **The more steps, the more model performance.**  
 The total loss tends to decline while training more steps.
-
-table compare between 2,000, 5,000 10,000
 
 Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
 :----: | :----: | :----: | :----: | :----: | :----: 
@@ -471,13 +465,11 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```python
 !python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config --checkpoint_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn
 ```
----output---
 
 ```
 %load_ext tensorboard
 %tensorboard --logdir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn
 ```
----output---
   
 </details>
 
@@ -488,8 +480,6 @@ Faster_R-CNN-ResNet50_V1 is a two-stage object detection model and the architect
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196794462-950de22a-3f18-4c62-9a88-db5bb382f3d1.png">  
 
 The input images are represented as Height×Width×Depth tensors (multidimensional arrays), which are passed through a pre-trained CNN up until an intermediate layer, ending up with a convolutional feature map. We use this as a feature extractor for the next part.
-
-Ref: [https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection](https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection)
 
 -  ### **Training Custom Object Detector** 
 
@@ -557,31 +547,16 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743456-8a7b9c17-ab62-4530-99ed-ca8c8b1c6305.png">
 
 8. Configure the Training Pipeline.
-  - Double click into pipeline.config in **models/Faster_R-CNN_ResNet50_V1**
-  - **Looking at line 10, let's change the number of different label classes.**
-  - Line 13,14 can set image resizer height and width.
-  - **Line 93 to set batch size.**
-  - **Line 97,103 change number of step.**
-  - **Line 113 change the Path to checkpoint of pre-trained model.**
-  - **Line 114 change fine tune checkpoint type to detection.**
-  - **Line 122 set it to false.**
-  - **Line 126 change Path to label map file.**
-  - **Line 128 change Path to training TFRecord file.**
-  - **Line 139 change Path to label map file.**
-  - **Line 143 change Path to testing TFRecord.**
-
+  
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743916-572614fa-9738-44c4-967c-64cac14cab6d.png">
 ### *For This Model, we tune the parameters same as SSD ResNet101 V1 FPN 640x640 (RetinaNet101), except Number of steps:*
 *<b>Number of steps: 1,000, 2,000</b>*
-  
-  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743916-572614fa-9738-44c4-967c-64cac14cab6d.png">
 
 </details>
 
 - ### **Evaluating the Model**
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196943241-824283a3-16f9-4420-86c2-dc1da18c0e2b.png">
-
-table compare between pre-trained-model and after fine-tune model
 
 Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
 :----: | :----: | :----: | :----: | :----: | :----:
@@ -610,24 +585,48 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```python
 !python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1 --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1/pipeline.config --checkpoint_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1
 ```
----output---
   
 ```python
 %load_ext tensorboard
 %tensorboard --logdir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1
 ```
----output---
 
 </details>
 
 ---
 
-## **STEP 6: Inferencing Trained Model**
+## **STEP 6: Inferencing Model**
 
-อธิบายว่าทั้งสอง Model มีข้อแตกต่างกันครง PATH 
+We use this code for Inferencing Models, while the model's path depends on each model, so we change the model path in line 19. 
+
+**At path for model: SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
+
+`
+> PROVIDE PATH TO IMAGE DIRECTORY
+IMAGE_PATHS = '/content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg'
+
+> PROVIDE PATH TO MODEL DIRECTORY
+PATH_TO_MODEL_DIR = '/content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models/ssd_resnet101_v1_fpn_640x640_coco17_tpu-8'
+
+> PROVIDE PATH TO LABEL MAP
+PATH_TO_LABELS = '/content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt'
+`
+
+**At path for model: Faster R-CNN ResNet50 V1 640x640**
+
+`
+> PROVIDE PATH TO IMAGE DIRECTORY
+IMAGE_PATHS = '/content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg'
+
+> PROVIDE PATH TO MODEL DIRECTORY
+PATH_TO_MODEL_DIR = '/content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8'
+
+> PROVIDE PATH TO LABEL MAP
+PATH_TO_LABELS = '/content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt'
+`
 
 <details>
-<summary>Details</summary>
+<summary>Inferencing Model details</summary>
 
 1. In exported-models folder create my_model folder.
 2. Export the model to */content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model*
@@ -1410,17 +1409,56 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
 
 ## **Dissussion**
 
+1. The default step in both models' pre-train model is high; therefore
+we reduce it into a range of 1,000 - 10,000 steps. For The SSD ResNet101 (RetinaNet101) model, we start at 2,000 steps and increase to 5,000 and 10,000 steps, respectively. And for the Faster_R-CNN-ResNet50_V1 model, beginning with 1,000 steps and 2,000 steps, the outcome while inferencing the models can imply that the Faster_R-CNN-ResNet50_V1 model is better than SSD ResNet101 (RetinaNet101) model.  
+2. For fine-tuning models. Overview: We tune some basic parameters as described above, but in the advanced configuration process, we use the default from the pre-train model as a loss function setting.  
+3. To boost the performance of models, we can add more images to the training dataset. The result from our dataset used in this project is immensely satisfying. 
+4. We found the out-of-memory problem on GPU tesla t4 by using the model default setting, so we adjust the smaller batch size to 8.
+
 ---
 
 
-## **Conclusion**
+## **Conclusion**  
+The  Inferencing Models Outcomes.
+### **Model : SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**  
+After we Inferencing Models which are the Pre-train model, finetuning model with 2,000 steps, 5,000 steps, and 10,000 steps.  
+Here is the result:
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196964535-4dd428a7-f11e-49cf-9fb8-e2a939e84065.png">
+
+Pre-train ResNet101  (RetinaNet101) model cannot detect Durians at all.  
+Next, inferencing the finetune model with 2,000 steps. The output looks better. The model can detect and know some Durians with confidentiality at 91% and 94%.  
+At 5,000 steps, the model still detects and knows some Durians but has a better confidence level at 95% and 99%.  
+Add the number of steps to 10,000. Then, the model has more potential. It can detect all Durians on the image at a confidence level of 97% to 100%.
+
+### **Model: Faster R-CNN ResNet50 V1 640x640**  
+Inferencing Models which are the Pre-train model, finetuning model with 1,000 steps, and finetuning model with 2,000 steps.  
+Here is the result:
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196965456-e90db92b-971e-4203-9d48-1e894efacf8a.png">
+
+**Pre-train** Faster_R-CNN-ResNet50_V1 model can detect Durians, but it does not know what kind of object.  
+Next, inferencing the finetune model with 1,000 steps. The output looks better. The model can detect and know Durians with confidentiality at 100%.
+
+Then, we try 2,000 steps on finetuning model. The output is the same as 1,000 steps. 
+
+### *<b>To compare between SSD ResNet101 V1 FPN 640x640 (RetinaNet101) VS Faster R-CNN ResNet50 V1 640x640</b>*  
+Estimating the model from mAP and running time to compare as shown in the table.
 
 Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
 :----: | :----: | :----: | :----: | :----: | :----:
-SSD ResNet101 V1 FPN | 5,000 | 8 | 0.784264 | 0.390598 | 0.343 | 
-SSD ResNet101 V1 FPN | 10,000 | 8 | 0.940915 | 0.395898 | 0.339 | 
-Faster R-CNN ResNet50 V1 | 1,000 | 8 | 0.951654 | 0.449221 | 0.253 | 
-Faster R-CNN ResNet50 V1 | 2,000 | 8 | 0.933264 | 0.499617 | 0.249 | 
+SSD ResNet101 V1 FPN | 2,000 | 8 |  |  |  | 
+SSD ResNet101 V1 FPN | 5,000 | 8 | |  |  | 
+SSD ResNet101 V1 FPN | 10,000 | 8 | | | | 
+Faster R-CNN ResNet50 V1 | 1,000 | 8 |  |  |  | 
+Faster R-CNN ResNet50 V1 | 2,000 | 8 |  |  |  | 
+
+As the mAP (mean Average Precision) is shown in the table, we choose the mAP from the IoU value at 0.5 and 0.95.  
+We can see clearly that the Faster R-CNN ResNet50 V1 model is better than the SSD ResNet101 V1 FPN model while using the same parameters for the training.
+
+Moreover, using the pre-train model to detect the Durian dataset, which not contains in the COCO dataset. The outcome of the Faster R-CNN ResNet50 V1 model is impressive. It can detect some Durians with a confidence level of around 70%- 90%  in images, although it can not tell the object's name. However, the SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model can not detect anything.
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196966630-50fc5490-d4be-43de-ab5c-40c0d853ec88.png">
 
 ---
 
@@ -1434,12 +1472,14 @@ Faster R-CNN ResNet50 V1 | 2,000 | 8 | 0.933264 | 0.499617 | 0.249 |
 
 ## **Reference**  
 
-Morgunov, A. (2022). How to Train Your Own Object Detector Using TensorFlow Object Detection API. Retrieved from https://neptune.ai/blog/how-to-train-your-own-object-detector-using-tensorflow-object-detection-api  
+Morgunov, A. (2022). How to Train Your Own Object Detector Using TensorFlow Object Detection API. Retrieved from https://neptune.ai/blog/how-to-train-your-own-object-detector-using-tensorflow-object-detection-api
+Birodkar, V. (2021). TensorFlow 2 Detection Model Zoo. Retrieved from https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md  
 Naik, K. (2021). TFOD 2.0 Custom Object Detection Step By Step Tutorial. Retrieved from https://www.youtube.com/watch?v=XoMiveY_1Z4  
-Anonymous. (2020). TensorFlow 2 Object Detection API tutorial. Retrieved from https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html  
 Renotte, N. (2021). Tensorflow Object Detection in 5 Hours with Python | Full Course with 3 Projects. Retrieved from https://www.youtube.com/watch?v=yqkISICHH-U  
+Anonymous. (2020). TensorFlow 2 Object Detection API tutorial. Retrieved from https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html  
+Francis, W. (2020). RetinaNet-101 Feature Pyramid Net Trained on MS-COCO Data. Retrieved from https://resources.wolframcloud.com/NeuralNetRepository/resources/RetinaNet-101-Feature-Pyramid-Net-Trained-on-MS-COCO-Data/  
 Yohanandan, S. (2020). mAP (mean Average Precision) might confuse you!. Retrieved from https://towardsdatascience.com/map-mean-average-precision-might-confuse-you-5956f1bfa9e2  
-Birodkar, V. (2021). TensorFlow 2 Detection Model Zoo. Retrieved from https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md
+Rey, J. (2018). Faster R-CNN: Down the rabbit hole of modern object detection. Retrieved from https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection
 
 ---
 
