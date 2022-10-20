@@ -442,6 +442,7 @@ Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
 SSD ResNet101 V1 FPN | 2,000 | 8 | 0.775390 | 0.383690 | 0.341 s | 
 SSD ResNet101 V1 FPN | 5,000 | 8 | 0.902139 | 0.420110 | 0.342 s | 
 SSD ResNet101 V1 FPN | 10,000 | 8 | 0.940915 | 0.395898 | 0.339 s | 
+
 Based on warming up `step 10%` and `GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)`.
 
 <details>
@@ -569,6 +570,7 @@ Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
 :----: | :----: | :----: | :----: | :----: | :----:
 Faster R-CNN ResNet50 V1 | 1,000 | 8 | 0.951654 | 0.449221 | 0.253 s | 
 Faster R-CNN ResNet50 V1 | 2,000 | 8 | 0.933264 | 0.499617 | 0.249 s | 
+
 Based on warming up `step 10%` and `GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)`.
 
 <details>
@@ -1467,6 +1469,7 @@ SSD ResNet101 V1 FPN | 5,000 | 8 | 0.902139 | 0.420110 | 0.342 s |
 SSD ResNet101 V1 FPN | 10,000 | 8 | 0.940915 | 0.395898 | 0.339 s | 
 Faster R-CNN ResNet50 V1 | 1,000 | 8 | 0.951654 | 0.449221 | 0.253 s | 
 Faster R-CNN ResNet50 V1 | 2,000 | 8 | 0.933264 | 0.499617 | 0.249 s | 
+
 Based on warming up `step 10%` and `GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)`.
 
 As the mAP (mean Average Precision) is shown in the table, we choose the mAP from the IoU value at 0.5 and 0.95.  
