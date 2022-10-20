@@ -449,11 +449,17 @@ For This Model, we play around with different setups to test things out and get 
 
 - ### **Evaluating the Model**
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196941423-eb99fcb2-34d1-4dad-9a75-6a6f5ddf0e38.png">  
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196941423-eb99fcb2-34d1-4dad-9a75-6a6f5ddf0e38.png">
 
 **The more steps, the more model performance.**  
 The total loss tends to decline while training more steps.
 
+table compare between pre-trained-model and after fine-tune model
+
+Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
+:----: | :----: | :----: | :----: | :----: | :----: 
+SSD ResNet101 V1 FPN | 5,000 | 8 |  |  |  
+SSD ResNet101 V1 FPN | 10,000 | 8 |  |  | 
 
 <details>
 <summary>Details</summary>  
@@ -491,10 +497,13 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 Faster_R-CNN-ResNet50_V1 is a two-stage object detection model and the architecture of this model is complex because it has several moving parts.  
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196794462-950de22a-3f18-4c62-9a88-db5bb382f3d1.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196794462-950de22a-3f18-4c62-9a88-db5bb382f3d1.png">  
+
+The input images are represented as Height×Width×Depth tensors (multidimensional arrays), which are passed through a pre-trained CNN up until an intermediate layer, ending up with a convolutional feature map. We use this as a feature extractor for the next part.
 
 Ref: [https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection](https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection)
 
+-  ### **Training Custom Object Detector** 
 
 <details>
 <summary>Details</summary>
@@ -577,6 +586,49 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 *<b>Number of steps: 1,000, 2,000</b>*
   
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743916-572614fa-9738-44c4-967c-64cac14cab6d.png">
+
+</details>
+
+- ### **Evaluating the Model**
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196943241-824283a3-16f9-4420-86c2-dc1da18c0e2b.png">
+
+table compare between pre-trained-model and after fine-tune model
+
+Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
+:----: | :----: | :----: | :----: | :----: | :----:
+Faster R-CNN ResNet50 V1 | 1,000 | 8 |  |  |  
+Faster R-CNN ResNet50 V1 | 2,000 | 8 |  |  |  
+
+<details>
+<summary>Details</summary>
+
+1. Set metric type.
+
+```python
+from object_detection.protos import eval_pb2
+eval_config = eval_pb2.EvalConfig()
+eval_config.metrics_set.extend(['coco_detection_metrics'])
+```
+  
+2. Change directory to training_demo
+
+```python
+cd /content/drive/MyDrive/DADS7202/workspace/training_demo
+```
+
+3. Model evaluate using Tensorboard
+
+```python
+!python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1 --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1/pipeline.config --checkpoint_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1
+```
+---output---
+  
+```python
+%load_ext tensorboard
+%tensorboard --logdir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1
+```
+---output---
 
 </details>
 
