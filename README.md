@@ -214,7 +214,7 @@ cd /content/drive/MyDrive/DADS7202
 !git clone https://github.com/tensorflow/models.git
 ```
 
-<img width="350" alt="image" src="https://user-images.githubusercontent.com/97492504/196786008-0f7faa81-2da7-4883-8d6a-192e2f5e024b.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/97492504/196786008-0f7faa81-2da7-4883-8d6a-192e2f5e024b.png">
 
 5. Cloning Tensorflow github repository.
 6. In the created folder, you will see a new folder.
