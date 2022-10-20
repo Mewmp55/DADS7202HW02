@@ -1,7 +1,7 @@
 # DADS7202 - HW2
 
 ## **Introduction**
-This project is for **Image Object Detection** on Durian Dataset, using  Google's Machine Learning library, Tensorflow, Two Deep Learning Convolutional Neural Network models, which are SSD ResNet101 V1 FPN 640x640 (RetinaNet101) , and Faster R-CNN ResNet50 V1 640x640
+This project is for **Image Object Detection** on Durian Dataset, using  Google's Machine Learning library, Tensorflow, Two Deep Learning Convolutional Neural Network models, which are SSD ResNet101 V1 FPN 640x640 (RetinaNet101), and Faster R-CNN ResNet50 V1 640x640
 
 According to these models, pre-trained on the Common Objects in Context (COCO) dataset, which doesn’t contains Durian pictures. Therefore this project required finetuning and training the models on Durian Dataset.
 
