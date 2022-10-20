@@ -410,19 +410,6 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517998-799e438a-4ee8-4836-89de-79ed5746e519.png">
 
 8. Configure the Training Pipeline.
-  - Double click into pipeline.config in model/my_ssd_resnet101_v1_fpn
-  - **Looking at line 3, let's change the number of different label classes.**
-  - Line 6, 7 can set image resizer height and width.
-  - **Line 131 to set batch size**.
-  - Line 136 to set augmentation options.
-  - **Line 161 change the Path to checkpoint of pre-trained model**.
-  - **Line 152, 162 change number of step**.
-  - **Line 167 change fine tune checkpoint type to detection**.
-  - **Line 168 set it to false**.
-  - **Line 172 change Path to label map file**.
-  - **Line 174 change Path to training TFRecord file**.
-  - **Line 182 change Path to label map file**.
-  - **Line 186 change Path to testing TFRecord**.
 
 This model pre-trained on the Common Objects in Context (COCO) dataset, which don’t contains Durian pictures. Therefore this project required configuring and training the models on Durian Dataset.
 
@@ -454,10 +441,11 @@ For This Model, we play around with different setups to test things out and get 
 **The more steps, the more model performance.**  
 The total loss tends to decline while training more steps.
 
-table compare between pre-trained-model and after fine-tune model
+table compare between 2,000, 5,000 10,000
 
 Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
 :----: | :----: | :----: | :----: | :----: | :----: 
+SSD ResNet101 V1 FPN | 2,000 | 8 |  |  |  
 SSD ResNet101 V1 FPN | 5,000 | 8 |  |  |  
 SSD ResNet101 V1 FPN | 10,000 | 8 |  |  | 
 
@@ -1452,6 +1440,3 @@ Faster R-CNN ResNet50 V1 | 2,000 | 8 | 0.933264 | 0.499617 | 0.249 |
 This work is part of the DADS7202 Deep Learning in Master degree of Science at Faculty of Applied Statistics National Institute of Development Administration.
 
 ---
-
-
-## **Step 1: Prepare Dataset** 
