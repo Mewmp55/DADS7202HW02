@@ -337,7 +337,7 @@ To use this model, we will start from extract pre-trained-model folder.
 !wget http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet101_v1_fpn_640x640_coco17_tpu-8.tar.gz
 ```
 
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/97492504/196790933-e98f4fa9-5d0c-43e7-b918-44fe99776960.png">
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/97492504/196790933-e98f4fa9-5d0c-43e7-b918-44fe99776960.png">
 
 3. Extracted our pre-trained model and The **pre-trained-model** folder should look like this.
 
@@ -384,11 +384,11 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 7. The annotations folder should be look like this.
 
-<img width="350" alt="image" src="https://user-images.githubusercontent.com/97492504/196517704-15e14d48-0aa9-4872-8ca0-1a3ca4df162e.png">
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/97492504/196517704-15e14d48-0aa9-4872-8ca0-1a3ca4df162e.png">
 
 8. In **models** folder **(inside training_demo folder)** create a new directory named **my_ssd_resnet101_v1_fpn** and download **pipeline.config** from **pre-train-models/ssd_resnet101...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517998-799e438a-4ee8-4836-89de-79ed5746e519.png">
+<img width="350" alt="image" src="https://user-images.githubusercontent.com/97492504/196517998-799e438a-4ee8-4836-89de-79ed5746e519.png">
 
 9. Configure the Training Pipeline.
 
@@ -408,7 +408,7 @@ For This Model, we play around with different setups to test things out and get 
 ### *For The Steps of Training. We try several numbers, Begin from 2,000 steps.*
 *<b>Number of steps: 2,000, 5,000, 10,000</b>* 
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196981387-f3d86770-7dab-49b5-9af8-59d46004452a.png">
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/97492504/196981387-f3d86770-7dab-49b5-9af8-59d46004452a.png">
 
 10. Training the model
   - Change directory to training_demo using 
