@@ -394,6 +394,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 This model pre-trained on the Common Objects in Context (COCO) dataset, which don’t contains Durian pictures. Therefore this project required configuring and training the models on Durian Dataset.    
 The TensorFlow Object Detection API allows model configuration via the pipeline.config file that goes along with the pre-trained model.  
+
 For This Model, we play around with different setups to test things out and get the best model performance. `As the following model parameters`:
 
 - **Num_classes (int)** : 1 because we only detect Durian, we set up as 1. 
@@ -920,6 +921,7 @@ Faster R-CNN ResNet50 V1 | 2,000 | 8 | 0.933264 | 0.499617 | 0.249 |
 Based on warming up `step 10%` and `GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)`.
 
 As the mAP (mean Average Precision) is shown in the table, we choose the mAP from the IoU value at 0.50 and 0.50:0.95.  
+
 We can see clearly that the Faster R-CNN ResNet50 V1 640x640 model is better than the SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model while using the same parameters for the training.
 
 Moreover, using the pre-train model to detect the Durian dataset, which not contains in the COCO dataset. The outcome of the Faster R-CNN ResNet50 V1 640x640 model is impressive. It can detect some Durians with a confidence level of around 70%- 90%  in images, although it can not tell the object's name. However, the SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model can not detect anything.
