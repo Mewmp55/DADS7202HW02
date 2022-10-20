@@ -16,8 +16,6 @@ Because this model is the Durian image detection, we must prepare the Durian dat
 1. Scraping durian images from Google Images using the library, which will search for images based on the keywords "Durian" from Google and download them. Then the searchable image will be automatically divided into train and test folders with class folders.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196753569-3b3b3ad7-00d2-4f16-aaa9-b82ed28d3b76.png">
-  
-Ref: [https://www.google.com/search?q=Durian&rlz=1C1YTUH_thTH1010TH1010&sxsrf=ALiCzsZX2GVa-8q5oyA4choFQc_7X9Ir7A:1666211681021&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi_s_iaku36AhVDSWwGHSm2CmMQ_AUoAXoECAIQAw&biw=1536&bih=731&dpr=1.25](https://www.google.com/search?q=Durian&rlz=1C1YTUH_thTH1010TH1010&sxsrf=ALiCzsZX2GVa-8q5oyA4choFQc_7X9Ir7A:1666211681021&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi_s_iaku36AhVDSWwGHSm2CmMQ_AUoAXoECAIQAw&biw=1536&bih=731&dpr=1.25)
 
 ```python
 import os
