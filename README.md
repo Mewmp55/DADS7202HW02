@@ -138,9 +138,6 @@ Now we have 268 images, separate to a training set for 234 and a test set for 34
 
 Get the environment is `GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)`.
 
-<details>
-<summary>Details</summary>
-
 ```python
 !nvidia-smi -L
 ```
@@ -169,8 +166,6 @@ for i, gpu in enumerate(gpus):
 ```
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196757486-ae014929-9763-456f-8d1d-90cfb5cbabaa.png">
-
-</details>
 
 ---
 
