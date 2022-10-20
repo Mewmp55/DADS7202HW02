@@ -16,6 +16,8 @@ Because this model is the Durian image detection, we must prepare the Durian dat
 1. Scraping durian images from Google Images using the library, which will search for images based on the keywords "Durian" from Google and download them. Then the searchable image will be automatically divided into train and test folders with class folders.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196753569-3b3b3ad7-00d2-4f16-aaa9-b82ed28d3b76.png">
+  
+Ref: [https://www.google.com/search?q=Durian&rlz=1C1YTUH_thTH1010TH1010&sxsrf=ALiCzsZX2GVa-8q5oyA4choFQc_7X9Ir7A:1666211681021&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi_s_iaku36AhVDSWwGHSm2CmMQ_AUoAXoECAIQAw&biw=1536&bih=731&dpr=1.25](https://www.google.com/search?q=Durian&rlz=1C1YTUH_thTH1010TH1010&sxsrf=ALiCzsZX2GVa-8q5oyA4choFQc_7X9Ir7A:1666211681021&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi_s_iaku36AhVDSWwGHSm2CmMQ_AUoAXoECAIQAw&biw=1536&bih=731&dpr=1.25)
 
 ```python
 import os
@@ -322,12 +324,6 @@ The TensorFlow Object Detection API needs A Label Map file is a simple .txt file
 
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196513043-0177688f-0c77-428a-ad49-785537b3acd5.png">
 
-4. Change directory to pre-trained-models folder.
-
-```python
-cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
-```
-
 </details>
 
 ---
@@ -345,7 +341,13 @@ RetinaNet-101 Feature Pyramid Net Trained on MS-COCO Data, is a single-stage obj
 <details>
 <summary>Details</summary>
 
-1. Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) because in this work we try to use Pre-Train model as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**.
+1. Change directory to pre-trained-models folder.
+
+```python
+cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
+```
+
+2. Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) because in this work we try to use Pre-Train model as **SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**.
 
 To use this model, we will start from extract pre-trained-model folder.
 ```python
@@ -354,7 +356,7 @@ To use this model, we will start from extract pre-trained-model folder.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196790933-e98f4fa9-5d0c-43e7-b918-44fe99776960.png">
 
-2. Extracted our pre-trained model and The **pre-trained-model** folder should look like this.
+3. Extracted our pre-trained model and The **pre-trained-model** folder should look like this.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516271-a753f502-a217-41ec-b39a-a6ae2258592a.png">
 
@@ -364,13 +366,13 @@ To use this model, we will start from extract pre-trained-model folder.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196791279-76569959-6662-4007-9c41-d7992c0e147e.png">
 
-3. In the **training-demo** folder, upload the previously downloaded files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**.
+4. In the **training-demo** folder, upload the previously downloaded files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**.
   - This step is for easier to call this script.
   - Able to call the script in research folder without download and re-upload step.
   
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516574-10db4ccb-d2dd-48a7-b4a3-f62f01dc9d53.png">
 
-4. Download **partition_dataset.py** and **generate_tfrecord.py**
+5. Download **partition_dataset.py** and **generate_tfrecord.py**
   - Go to [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html).
   - Download **Partition Dataset script**, then partition the Dataset. (In this work we skip this step because we preprocessing dataset on [Roboflow](https://roboflow.com/) already.)
   - Download **Generate TensorFlow Records script**.
@@ -378,7 +380,7 @@ To use this model, we will start from extract pre-trained-model folder.
     
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516987-a58c2eb9-a3a3-48eb-8617-2ab2ab39d39d.png">
 
-5. Create TensorFlow Records.
+6. Create TensorFlow Records.
   - Change directory to **training_demo**.
   - Run **generate_tfrecord.py** script to create tensorflow records.
   - Check the train folder, test folder, label_map.pbtxt and the ourput path before running.
@@ -397,15 +399,15 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 !python generate_tfrecord.py -x /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test -l //content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt -o /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/test.record
 ```
 
-6. The annotations folder should be look like this.
+7. The annotations folder should be look like this.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517704-15e14d48-0aa9-4872-8ca0-1a3ca4df162e.png">
 
-7. In **models** folder **(inside training_demo folder)** create a new directory named **my_ssd_resnet101_v1_fpn** and download **pipeline.config** from **pre-train-models/ssd_resnet101...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
+8. In **models** folder **(inside training_demo folder)** create a new directory named **my_ssd_resnet101_v1_fpn** and download **pipeline.config** from **pre-train-models/ssd_resnet101...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517998-799e438a-4ee8-4836-89de-79ed5746e519.png">
 
-8. Configure the Training Pipeline.
+9. Configure the Training Pipeline.
 
 This model pre-trained on the Common Objects in Context (COCO) dataset, which don’t contains Durian pictures. Therefore this project required configuring and training the models on Durian Dataset.    
 The TensorFlow Object Detection API allows model configuration via the pipeline.config file that goes along with the pre-trained model.  
@@ -484,7 +486,13 @@ The input images are represented as Height×Width×Depth tensors (multidimension
 <details>
 <summary>Details</summary>
 
-1. Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) because in this work we try to use Pre-Train model as **Faster R-CNN ResNet50 V1 640x640.**.
+1. Change directory to pre-trained-models folder.
+
+```python
+cd /content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models
+```
+
+2. Download Pre-Trained Model which are listed in [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) because in this work we try to use Pre-Train model as **Faster R-CNN ResNet50 V1 640x640.**.
 
 To use this model, we will start from extract pre-trained-model folder.
 ```python
@@ -493,7 +501,7 @@ To use this model, we will start from extract pre-trained-model folder.
   
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196795446-7a18d794-7905-4587-9caf-8f30fa3a436f.png">
 
-2. Extracted our pre-trained model and The **pre-trained-model** folder should look like this.
+3. Extracted our pre-trained model and The **pre-trained-model** folder should look like this.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196734840-e66baa86-6e5f-410b-8547-95d7d3ed3b1d.png">
 
@@ -503,13 +511,13 @@ To use this model, we will start from extract pre-trained-model folder.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196795600-e572a3d7-ca22-42cc-9c1a-0eaacf80be22.png">
 
-3. In the **training-demo** folder, upload the previously downloaded files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py** .
+4. In the **training-demo** folder, upload the previously downloaded files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py** .
   - This step is for easier to call this script.
   - Able to call the script in research folder without download and re-upload step.
   
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196741775-b9f116b9-3fe3-4c4c-b2f4-5fe6e6f3f198.png">
 
-4. Download **partition_dataset.py** and **generate_tfrecord.py**
+5. Download **partition_dataset.py** and **generate_tfrecord.py**
   - Go to [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html).
   - Download **Partition Dataset script**, then partition the dataset. (In this work we skip this step because we preprocessing dataset on [Roboflow](https://roboflow.com/) already.)
   - Download **Generate TensorFlow Records script**.
@@ -517,7 +525,7 @@ To use this model, we will start from extract pre-trained-model folder.
 
   <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196742294-9c8c173a-dd8b-4c18-adea-73c72310a4e4.png">
 
-5. Create TensorFlow Records.
+6. Create TensorFlow Records.
   - Change directory to **training_demo**.
   - Run **generate_tfrecord.py** script to create tensorflow records.
   - Check the train folder, test folder, label_map.pbtxt and the ourput path before running.
@@ -536,15 +544,15 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 !python generate_tfrecord.py -x /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test -l //content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt -o /content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/test.record
 ```
 
-6. The annotations folder should be look like this.
+7. The annotations folder should be look like this.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743145-046586bf-b85b-4aa0-b38c-3e79788437dd.png">
 
-7. In **models** folder **(inside training_demo folder)** create a new directory named **Faster_R-CNN_ResNet50_V1** and download **pipeline.config** from **pre-train-models/faster_rcnn...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
+8. In **models** folder **(inside training_demo folder)** create a new directory named **Faster_R-CNN_ResNet50_V1** and download **pipeline.config** from **pre-train-models/faster_rcnn...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743456-8a7b9c17-ab62-4530-99ed-ca8c8b1c6305.png">
 
-8. Configure the Training Pipeline.
+9. Configure the Training Pipeline.
   
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743916-572614fa-9738-44c4-967c-64cac14cab6d.png">
 ### *For This Model, we tune the parameters same as SSD ResNet101 V1 FPN 640x640 (RetinaNet101), except Number of steps:*
@@ -1463,7 +1471,7 @@ We can see clearly that the Faster R-CNN ResNet50 V1 model is better than the SS
 
 Moreover, using the pre-train model to detect the Durian dataset, which not contains in the COCO dataset. The outcome of the Faster R-CNN ResNet50 V1 model is impressive. It can detect some Durians with a confidence level of around 70%- 90%  in images, although it can not tell the object's name. However, the SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model can not detect anything.
 
-<p align="center"><img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196966630-50fc5490-d4be-43de-ab5c-40c0d853ec88.png"></p>
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196966630-50fc5490-d4be-43de-ab5c-40c0d853ec88.png">
 
 ---
 
