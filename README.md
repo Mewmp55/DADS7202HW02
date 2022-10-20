@@ -634,51 +634,12 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 ---
 
-## **STEP 6:  Evaluating the Model**
+## **STEP 6: Inferencing Trained Model**
 
-### **Model: SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
-
-table compare between pre-trained-model and after fine-tune model
-
-Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
-:----: | :----: | :----: | :----: | :----: | :----: 
-SSD ResNet101 V1 FPN | 5,000 | 8 |  |  |  
-SSD ResNet101 V1 FPN | 10,000 | 8 |  |  |  
-
+อธิบายว่าทั้งสอง Model มีข้อแตกต่างกันครง PATH 
 
 <details>
 <summary>Details</summary>
-  
-## **Evaluating the Model**
-
-1. Set metric type.
-
-```python
-from object_detection.protos import eval_pb2
-eval_config = eval_pb2.EvalConfig()
-eval_config.metrics_set.extend(['coco_detection_metrics'])
-```
-
-2. Change directory to training_demo.
-
-```python
-cd /content/drive/MyDrive/DADS7202/workspace/training_demo
-```
-
-3. Model evaluate using Tensorboard.
-
-```python
-!python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn/pipeline.config --checkpoint_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn
-```
----output---
-
-```
-%load_ext tensorboard
-%tensorboard --logdir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn
-```
----output---
-
-## **Inferencing Trained Models.**
 
 1. In exported-models folder create my_model folder.
 2. Export the model to */content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model*
@@ -689,6 +650,11 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ---output---
   
 3. Inferencing trained model.
+
+**Coding for model: SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
+  
+<details>
+<summary>Details</summary>
 
 ```python
 
@@ -1067,58 +1033,10 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
    
 </details>
 
-### **Model: Faster R-CNN ResNet50 V1 640x640**
-
-table compare between pre-trained-model and after fine-tune model
-
-Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
-:----: | :----: | :----: | :----: | :----: | :----:
-Faster R-CNN ResNet50 V1 | 1,000 | 8 |  |  |  
-Faster R-CNN ResNet50 V1 | 2,000 | 8 |  |  |  
-
+**Coding for model: Faster R-CNN ResNet50 V1 640x640**
+  
 <details>
 <summary>Details</summary>
-  
-## **Evaluating the Model**
-
-1. Set metric type.
-
-```python
-from object_detection.protos import eval_pb2
-eval_config = eval_pb2.EvalConfig()
-eval_config.metrics_set.extend(['coco_detection_metrics'])
-```
-  
-2. Change directory to training_demo
-
-```python
-cd /content/drive/MyDrive/DADS7202/workspace/training_demo
-```
-
-3. Model evaluate using Tensorboard
-
-```python
-!python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1 --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1/pipeline.config --checkpoint_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1
-```
----output---
-  
-```python
-%load_ext tensorboard
-%tensorboard --logdir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1
-```
----output---
-  
-## **Inferencing Trained Models**
-  
-1. In exported-models folder create my_model folder
-2. Export the model to */content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model*
-  
-```python
-!python exporter_main_v2.py --input_type image_tensor --pipeline_config_path /content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1/pipeline.config --trained_checkpoint_dir /content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1 --output_directory /content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model3_faster_R_CNN_1000
-```
----output---
-  
-3. Inferencing trained model
 
 ```python
 
@@ -1496,6 +1414,8 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196771728-79acf142-cf3a-40ac-b14b-460f21b6ba66.png">
 
+</details>
+  
 </details>
 
 ---
