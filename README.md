@@ -1434,6 +1434,19 @@ Faster R-CNN ResNet50 V1 | 2,000 | 8 | 0.933264 | 0.499617 | 0.249 |
 
 ## **Reference**  
 
+Morgunov, A. (2022). How to Train Your Own Object Detector Using TensorFlow Object Detection API. Retrieved from https://neptune.ai/blog/how-to-train-your-own-object-detectorusing-tensorflow-object-detection-api
+
+Naik, K. (2021). TFOD 2.0 Custom Object Detection Step By Step Tutorial. Retrieved from https://www.youtube.com/watch?v=XoMiveY_1Z4
+
+Anonymous. (2020). TensorFlow 2 Object Detection API tutorial. Retrieved from https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html
+
+Renotte, N. (2021). Tensorflow Object Detection in 5 Hours with Python | Full Course with 3 Projects. Retrieved from https://www.youtube.com/watch?v=yqkISICHH-U
+
+Yohanandan, S. (2020). mAP (mean Average Precision) might confuse you!. Retrieved from https://towardsdatascience.com/map-mean-average-precision-might-confuse-you-5956f1bfa9e2
+
+Birodkar, V. (2021). TensorFlow 2 Detection Model Zoo. Retrieved from https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detec
+tion_zoo.md
+
 ---
 
 ## **End Credit**  
