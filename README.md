@@ -219,7 +219,7 @@ cd /content/drive/MyDrive/DADS7202
 5. Cloning Tensorflow github repository.
 6. In the created folder, you will see a new folder.
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196510281-b8e23663-5209-4b88-957e-5438d5b4bbab.png">
+<img width="350" alt="image" src="https://user-images.githubusercontent.com/97492504/196510281-b8e23663-5209-4b88-957e-5438d5b4bbab.png">
 
 7. In the **models folder**, go to **research** folder, then go to the **object_detection** folder and download files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**
 
