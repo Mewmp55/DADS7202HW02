@@ -79,7 +79,7 @@ def collect_data(query, number = 50, train_ratio=0.7) :
 
 2. Download Durian images from the internet.  
 
-Prepare the images you want to use in the folder.
+Prepare the images we want to use in the folder.  
 Once the Durian images data set from both methods have been obtained, we have 112 images in the dataset for this step.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196252482-65f86535-9a44-4862-95d2-8c8587fb10bb.png">
@@ -90,7 +90,7 @@ Once the Durian images data set from both methods have been obtained, we have 11
 ## **Step 2: Images Annotation And Data Augmentation**
 We use the Roboflow website to annotate images and augmentation at this stage. The steps to do it are as follows.
 
-- From the folder you have prepared.
+- From the folder we have prepared.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196252482-65f86535-9a44-4862-95d2-8c8587fb10bb.png">
 
