@@ -423,7 +423,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 ### *<b>Evaluating the Model</b>*
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196941423-eb99fcb2-34d1-4dad-9a75-6a6f5ddf0e38.png">
+<p align="center"><img width="700" alt="image" src="https://user-images.githubusercontent.com/97492504/196941423-eb99fcb2-34d1-4dad-9a75-6a6f5ddf0e38.png"></p>
 
 **The more steps, the more model performance.**  
 The total loss tends to decline while training more steps.
