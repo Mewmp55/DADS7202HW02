@@ -13,8 +13,6 @@ Because this model is the Durian image detection, we must prepare the Durian dat
 1. Scraping durian images from Google Images using the library, which will search for images based on the keywords "Durian" from Google and download them. Then the searchable image will be automatically divided into train and test folders with class folders.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196753569-3b3b3ad7-00d2-4f16-aaa9-b82ed28d3b76.png">
-  
-Ref: [https://www.google.com/search?q=Durian&rlz=1C1YTUH_thTH1010TH1010&sxsrf=ALiCzsZX2GVa-8q5oyA4choFQc_7X9Ir7A:1666211681021&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi_s_iaku36AhVDSWwGHSm2CmMQ_AUoAXoECAIQAw&biw=1536&bih=731&dpr=1.25](https://www.google.com/search?q=Durian&rlz=1C1YTUH_thTH1010TH1010&sxsrf=ALiCzsZX2GVa-8q5oyA4choFQc_7X9Ir7A:1666211681021&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi_s_iaku36AhVDSWwGHSm2CmMQ_AUoAXoECAIQAw&biw=1536&bih=731&dpr=1.25)
 
 ```python
 import os
@@ -80,19 +78,18 @@ def collect_data(query, number = 50, train_ratio=0.7) :
 ```
 
 2. Download Durian images from the internet.  
-Once the Durian image data set from both methods has been obtained, select the images to be used in Annotate.  
 
 3. Prepare the images you want to use in the folder.
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196252482-65f86535-9a44-4862-95d2-8c8587fb10bb.png">
 
+
+Once the Durian images data set from both methods have been obtained, we have 112 images in the dataset for this step.
+
 ---
 
 ## **Step 2: Images Annotation And Data Augmentation**
 We use the Roboflow website to annotate images and augmentation at this stage. The steps to do it are as follows.
-
-<details>
-<summary>Details</summary>
 
 - From the folder you have prepared.
 
@@ -134,7 +131,7 @@ We use the Roboflow website to annotate images and augmentation at this stage. T
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196258535-d99d1a9b-ecd7-42d6-8611-cdca47147589.png">
 
-</details>
+Now we have 268 images, separate to a training set for 234 and a test set for 34.
 
 ---
 
