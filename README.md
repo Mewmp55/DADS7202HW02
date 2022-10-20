@@ -1,4 +1,4 @@
-# DADS7202HW02
+# DADS7202HW02 
 
 ## **Introduction**
 This project is for **Image Object Detection** on Durian Dataset, using  Google's Machine Learning library, Tensorflow, Two Deep Learning Convolutional Neural Network models, which are Resnet 101, and Faster R CNN.
