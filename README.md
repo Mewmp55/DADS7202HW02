@@ -898,6 +898,7 @@ PATH_TO_MODEL_DIR = '/content/drive/MyDrive/DADS7202/workspace/training_demo/pre
 ```
 
 > <b>Pretrain-model Faster R-CNN without training.</b>
+
 `
 Loading model...Done! Took 9.365224361419678 seconds
 Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
@@ -905,7 +906,7 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/197007527-03edc2fe-fc28-4888-9a8b-415256397753.png">
 
-> <b>Fater R-CNN as 1,000 Steps.</b>
+> <b>Fater R-CNN with 1,000 Steps.</b>
 
 `
 Loading model...Done! Took 8.798496007919312 seconds
@@ -913,7 +914,7 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
 `
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/197007773-ef49386f-bfd9-4f70-88cf-479972b72580.png">
 
-> <b>Fater R-CNN as 2,000 Steps.</b>
+> <b>Fater R-CNN with 2,000 Steps.</b>
 
 `
 Loading model...Done! Took 8.783716917037964 seconds
