@@ -891,7 +891,7 @@ After we Inferencing Models which are the Pre-train model, finetuning model with
 
 <p align="center"><img width="750" alt="image" src="https://user-images.githubusercontent.com/97492504/196964535-4dd428a7-f11e-49cf-9fb8-e2a939e84065.png"></p>
 
-- Pre-train ResNet101  (RetinaNet101) model cannot detect Durians at all.  
+- Pre-train the SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model cannot detect Durians at all.  
 - Next, inferencing the finetune model with 2,000 steps. The output looks better. The model can detect and know some Durians with confidentiality at 91% and 94%.  
 - At 5,000 steps, the model still detects and knows some Durians but has a better confidence level at 95% and 99%.  
 - Add the number of steps to 10,000. Then, the model has more potential. It can detect all Durians on the image at a confidence level of 97% to 100%.
@@ -902,7 +902,7 @@ Inferencing Models which are the Pre-train model, finetuning model with 1,000 st
 
 <p align="center"><img width="750" alt="image" src="https://user-images.githubusercontent.com/97492504/196965456-e90db92b-971e-4203-9d48-1e894efacf8a.png"></p>
 
-- **Pre-train** Faster_R-CNN-ResNet50_V1 model can detect Durians, but it does not know what kind of object.  
+- Pre-train Faster R-CNN ResNet50 V1 640x640 model can detect Durians, but it does not know what kind of object.  
 - Next, inferencing the finetune model with 1,000 steps. The output looks better. The model can detect and know Durians with confidentiality at 100%.
 - Then, we try 2,000 steps on finetuning model. The output is the same as 1,000 steps. 
 
