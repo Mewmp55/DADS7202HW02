@@ -546,11 +546,10 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 table compare between pre-trained-model and after fine-tune model
 
-Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.) | Accuracy
-:----: | :----: | :----: | :----: | :----: | :----: | :----:
-SSD ResNet101 V1 FPN (without tuning) | 2,000 | 8 |  |  |  | 
-SSD ResNet101 V1 FPN (tuning) | 5,000 | 8 |  |  |  | 
-SSD ResNet101 V1 FPN (tuning) | 10,000 | 8 |  |  |  | 
+Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
+:----: | :----: | :----: | :----: | :----: | :----: 
+SSD ResNet101 V1 FPN (tuning) | 5,000 | 8 |  |  |  
+SSD ResNet101 V1 FPN (tuning) | 10,000 | 8 |  |  |  
 
 
 <details>
@@ -978,11 +977,10 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
 
 table compare between pre-trained-model and after fine-tune model
 
-Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.) | Accuracy
-:----: | :----: | :----: | :----: | :----: | :----: | :----:
-Faster R-CNN ResNet50 V1 (without tuning) | | 8 |  |  |  | 
-Faster R-CNN ResNet50 V1 (tuning) | 1,000 | 8 |  |  |  | 
-Faster R-CNN ResNet50 V1 (tuning) | 2,000 | 8 |  |  |  | 
+Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
+:----: | :----: | :----: | :----: | :----: | :----:
+Faster R-CNN ResNet50 V1 (tuning) | 1,000 | 8 |  |  |  
+Faster R-CNN ResNet50 V1 (tuning) | 2,000 | 8 |  |  |  
 
 <details>
 <summary>Details</summary>
@@ -1415,12 +1413,12 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
 
 ## **Conclusion**
 
-Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.) | Accuracy
-:----: | :----: | :----: | :----: | :----: | :----: | :----:
-SSD ResNet101 V1 FPN | 5,000 | 8 | 0.784264 | 0.390598 | 0.343 |  |
-SSD ResNet101 V1 FPN | 10,000 | 8 | 0.940915 | 0.395898 | 0.339 |  | 
-Faster R-CNN ResNet50 V1 | 1,000 | 8 | 0.951654 | 0.449221 | 0.253 |  | 
-Faster R-CNN ResNet50 V1 | 2,000 | 8 | 0.933264 | 0.499617 | 0.249 |  | 
+Model (640x640) | Step | Batch_size | mAP  (.50) | mAP  (.50: .95) | Time (sec.)
+:----: | :----: | :----: | :----: | :----: | :----:
+SSD ResNet101 V1 FPN | 5,000 | 8 | 0.784264 | 0.390598 | 0.343 | 
+SSD ResNet101 V1 FPN | 10,000 | 8 | 0.940915 | 0.395898 | 0.339 | 
+Faster R-CNN ResNet50 V1 | 1,000 | 8 | 0.951654 | 0.449221 | 0.253 | 
+Faster R-CNN ResNet50 V1 | 2,000 | 8 | 0.933264 | 0.499617 | 0.249 | 
 
 ---
 
