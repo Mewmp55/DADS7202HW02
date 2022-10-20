@@ -337,23 +337,23 @@ To use this model, we will start from extract pre-trained-model folder.
 !wget http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet101_v1_fpn_640x640_coco17_tpu-8.tar.gz
 ```
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196790933-e98f4fa9-5d0c-43e7-b918-44fe99776960.png">
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/97492504/196790933-e98f4fa9-5d0c-43e7-b918-44fe99776960.png">
 
 3. Extracted our pre-trained model and The **pre-trained-model** folder should look like this.
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516271-a753f502-a217-41ec-b39a-a6ae2258592a.png">
+<img width="350" alt="image" src="https://user-images.githubusercontent.com/97492504/196516271-a753f502-a217-41ec-b39a-a6ae2258592a.png">
 
 ```python
 !tar -xvf ssd_resnet101_v1_fpn_640x640_coco17_tpu-8.tar.gz
 ```
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196791279-76569959-6662-4007-9c41-d7992c0e147e.png">
+<img width="650" alt="image" src="https://user-images.githubusercontent.com/97492504/196791279-76569959-6662-4007-9c41-d7992c0e147e.png">
 
 4. In the **training-demo** folder, upload the previously downloaded files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py**.
   - This step is for easier to call this script.
   - Able to call the script in research folder without download and re-upload step.
   
-  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516574-10db4ccb-d2dd-48a7-b4a3-f62f01dc9d53.png">
+  <img width="350" alt="image" src="https://user-images.githubusercontent.com/97492504/196516574-10db4ccb-d2dd-48a7-b4a3-f62f01dc9d53.png">
 
 5. Download **partition_dataset.py** and **generate_tfrecord.py**
   - Go to [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html).
@@ -361,7 +361,7 @@ To use this model, we will start from extract pre-trained-model folder.
   - Download **Generate TensorFlow Records script**.
   - Upload file into **training_demo** folder.
     
-  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196516987-a58c2eb9-a3a3-48eb-8617-2ab2ab39d39d.png">
+  <img width="350" alt="image" src="https://user-images.githubusercontent.com/97492504/196516987-a58c2eb9-a3a3-48eb-8617-2ab2ab39d39d.png">
 
 6. Create TensorFlow Records.
   - Change directory to **training_demo**.
@@ -384,7 +384,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 7. The annotations folder should be look like this.
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196517704-15e14d48-0aa9-4872-8ca0-1a3ca4df162e.png">
+<img width="350" alt="image" src="https://user-images.githubusercontent.com/97492504/196517704-15e14d48-0aa9-4872-8ca0-1a3ca4df162e.png">
 
 8. In **models** folder **(inside training_demo folder)** create a new directory named **my_ssd_resnet101_v1_fpn** and download **pipeline.config** from **pre-train-models/ssd_resnet101...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
 
