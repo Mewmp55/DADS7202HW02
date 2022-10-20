@@ -316,7 +316,7 @@ The TensorFlow Object Detection API needs A Label Map file is a simple .txt file
 
 ## **STEP 5: Training Custom Object Detector and Evaluating the Model**
 
-### **Model: SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
+## **Model: SSD ResNet101 V1 FPN 640x640 (RetinaNet101)**
 
 RetinaNet-101 Feature Pyramid Net Trained on MS-COCO Data, is a single-stage object detection model that goes straight from image pixels to bounding box coordinates and class probabilities. It is able to exceed the accuracy of the best two-stage detectors while offering comparable speed performance to that of the single-stage detectors. The model architecture is based on a Feature Pyramid Network on top of a feedforward ResNet-101 backbone. The model has been trained using a new loss function, "Focal Loss", which addresses the imbalance between foreground and background classes that arises within single-stage detectors.
 
@@ -466,7 +466,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
   
 </details>
 
-### **Model: Faster R-CNN ResNet50 V1 640x640**
+## **Model: Faster R-CNN ResNet50 V1 640x640**
 
 Faster_R-CNN-ResNet50_V1 is a two-stage object detection model and the architecture of this model is complex because it has several moving parts.  
 
