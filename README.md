@@ -336,7 +336,7 @@ RetinaNet-101 Feature Pyramid Net Trained on MS-COCO Data, is a single-stage obj
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196790605-ccae3683-0ebc-44b9-844f-a990f18d437c.png">
 
--  ### **Training Custom Object Detector** 
+### *<b>Training Custom Object Detector</b>* 
 
 <details>
 <summary>Details</summary>
@@ -436,11 +436,11 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ```python
 !python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn_3 --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/my_ssd_resnet101_v1_fpn_3/pipeline.config
 ```
-  
+
 </details>
 
 
-- ### **Evaluating the Model**
+### *<b>Evaluating the Model</b>*
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196941423-eb99fcb2-34d1-4dad-9a75-6a6f5ddf0e38.png">
 
@@ -493,7 +493,7 @@ Faster_R-CNN-ResNet50_V1 is a two-stage object detection model and the architect
 
 The input images are represented as Height×Width×Depth tensors (multidimensional arrays), which are passed through a pre-trained CNN up until an intermediate layer, ending up with a convolutional feature map. We use this as a feature extractor for the next part.
 
--  ### **Training Custom Object Detector** 
+### *<b>Training Custom Object Detector</b>* 
 
 <details>
 <summary>Details</summary>
@@ -570,9 +570,21 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 ### *For This Model, we tune the parameters same as SSD ResNet101 V1 FPN 640x640 (RetinaNet101), except Number of steps:*
 *<b>Number of steps: 1,000, 2,000</b>*
 
+10. Training the model
+  - Change directory to training_demo
+```python
+cd /content/drive/MyDrive/DADS7202/workspace/training_demo
+```
+
+  - Training the model
+```python
+!python model_main_tf2.py --model_dir=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1 --pipeline_config_path=/content/drive/MyDrive/DADS7202/workspace/training_demo/models/Faster_R-CNN_ResNet50_V1/pipeline.config
+```
+
 </details>
 
-- ### **Evaluating the Model**
+
+### *<b>Evaluating the Model</b>*
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196943241-824283a3-16f9-4420-86c2-dc1da18c0e2b.png">
 
@@ -815,7 +827,7 @@ for gpu in gpus:
 IMAGE_PATHS = '/content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg'
 
 # PROVIDE PATH TO MODEL DIRECTORY
-PATH_TO_MODEL_DIR = '/content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model'
+PATH_TO_MODEL_DIR = '/content/drive/MyDrive/DADS7202/workspace/training_demo/exported-models/my_model5'
 
 # PROVIDE PATH TO LABEL MAP
 PATH_TO_LABELS = '/content/drive/MyDrive/DADS7202/workspace/training_demo/annotations/label_map.pbtxt'
@@ -912,16 +924,19 @@ cv2_imshow(image_with_detections)
 # CLOSES WINDOW ONCE KEY IS PRESSED
 ```
 
-> <b>With 5,000 steps of training, the results are still unsatisfactory. After this, try 10,000 training steps.</b>
-  
+> <b>SSD ResNet101 V1 FPN 640x640 (RetinaNet101) with 2,000 steps</b>
+
 `
-Loading model...Done! Took 20.713525533676147 seconds
+Loading model...Done! Took 20.441354274749756 seconds
 Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
 `
-  
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196521564-44488043-7a83-4159-b702-4e7aa03443a4.png">
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196985726-4f940892-27c8-4022-91b3-b874c63a01e4.png">
+
+รอเฟิม
 
 ```python
+
 
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'    # Suppress TensorFlow logging (1)
@@ -1044,8 +1059,8 @@ Loading model...Done! Took 21.366928339004517 seconds
 Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
 `
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196521952-64671dc6-717c-4ef9-a38a-93bed9b177e5.png">
-   
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196995974-bb219911-a3c1-490f-832e-55b5d6cab4c8.png">
+
 </details>
 
 **Coding for model: Faster R-CNN ResNet50 V1 640x640**
@@ -1054,6 +1069,7 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
 <summary>Details</summary>
 
 ```python
+
 
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'    # Suppress TensorFlow logging (1)
@@ -1176,10 +1192,10 @@ Loading model...Done! Took 9.365224361419678 seconds
 Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
 `
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196767560-f524d772-dea6-4c40-8a72-a8129f59b175.png">
-
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196990820-a4b261d9-57b1-4db7-ab5b-22ac6892317f.png">
 
 ```python
+
 
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'    # Suppress TensorFlow logging (1)
@@ -1302,7 +1318,7 @@ Loading model...Done! Took 8.798496007919312 seconds
 Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
 `
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196767967-65d71df4-0692-4e87-b51b-260b9801db1b.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196991641-c1023ac8-32b6-4451-9d3a-c6eaa7fd4435.png">
 
 ```python
   
@@ -1427,7 +1443,7 @@ Loading model...Done! Took 8.783716917037964 seconds
 Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
 `
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196771728-79acf142-cf3a-40ac-b14b-460f21b6ba66.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196991925-45774cfe-d272-424e-b2a4-aa72a92497a6.png">
 
 </details>
   
@@ -1435,10 +1451,10 @@ Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/im
 
 ---
 
-## **Dissussion**
+## **Discussion**
 
 1. The default step in both models' pre-train model is high; therefore
-we reduce it into a range of 1,000 - 10,000 steps. For The SSD ResNet101 (RetinaNet101) model, we start at 2,000 steps and increase to 5,000 and 10,000 steps, respectively. And for the Faster_R-CNN-ResNet50_V1 model, beginning with 1,000 steps and 2,000 steps, the outcome while inferencing the models can imply that the Faster_R-CNN-ResNet50_V1 model is better than SSD ResNet101 (RetinaNet101) model.  
+we reduce it into a range of 1,000 - 10,000 steps. For the SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model, we start at 2,000 steps and increase to 5,000 and 10,000 steps, respectively. And for the Faster R-CNN ResNet50 V1 640x640 model, beginning with 1,000 steps and 2,000 steps, the outcome while inferencing the models can imply that the Faster R-CNN ResNet50 V1 640x640 model is better than SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model. 
 2. For fine-tuning models. Overview: We tune some basic parameters as described above, but in the advanced configuration process, we use the default from the pre-train model as a loss function setting.  
 3. To boost the performance of models, we can add more images to the training dataset. The result from our dataset used in this project is immensely satisfying. 
 4. We found the out-of-memory problem on GPU tesla t4 by using the model default setting, so we adjust the smaller batch size to 8.
