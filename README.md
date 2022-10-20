@@ -874,10 +874,10 @@ PATH_TO_MODEL_DIR = '/content/drive/MyDrive/DADS7202/workspace/training_demo/pre
 
 ## **Discussion**
 
-1. The default step in both models' pre-train model is high; therefore
-we reduce it into a range of 1,000 - 10,000 steps. For the SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model, we start at 2,000 steps and increase to 5,000 and 10,000 steps, respectively. And for the Faster R-CNN ResNet50 V1 640x640 model, beginning with 1,000 steps and 2,000 steps, the outcome while inferencing the models can imply that the Faster R-CNN ResNet50 V1 640x640 model is better than SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model. 
-2. For fine-tuning models. Overview: We tune some basic parameters as described above, but in the advanced configuration process, we use the default from the pre-train model as a loss function setting.  
-3. To boost the performance of models, we can add more images to the training dataset. The result from our dataset used in this project is immensely satisfying. 
+1. The default training steps in both models' pre-train model is high; therefore
+we reduce it into a range of 1,000 - 10,000 steps. For The SSD ResNet101 (RetinaNet101) model, we start training at 2,000 steps and increase to 5,000 and 10,000 steps, respectively. And for the Faster_R-CNN-ResNet50_V1 model, beginning with 1,000 steps and 2,000 steps, the outcome while inferencing the models can imply that the Faster_R-CNN-ResNet50_V1 model is better than SSD ResNet101 (RetinaNet101) model.
+2. For fine-tuning models. Overview: We tune some basic parameters as described above, but in the advanced configuration process, we use the default from the pre-train model as a loss function setting. 
+3. To boost the performance of models, we can add more images to the training dataset.By the way, the result from our dataset used in this project is immensely satisfying. 
 4. We found the out-of-memory problem on GPU tesla t4 by using the model default setting, so we adjust the smaller batch size to 8.
 
 ---
@@ -889,7 +889,7 @@ The  Inferencing Models Outcomes.
 After we Inferencing Models which are the Pre-train model, finetuning model with 2,000 steps, 5,000 steps, and 10,000 steps.  
 `Here is the result`:
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196964535-4dd428a7-f11e-49cf-9fb8-e2a939e84065.png">
+<p aling="center"><img width="750" alt="image" src="https://user-images.githubusercontent.com/97492504/196964535-4dd428a7-f11e-49cf-9fb8-e2a939e84065.png"></p>
 
 - Pre-train ResNet101  (RetinaNet101) model cannot detect Durians at all.  
 - Next, inferencing the finetune model with 2,000 steps. The output looks better. The model can detect and know some Durians with confidentiality at 91% and 94%.  
@@ -900,7 +900,7 @@ After we Inferencing Models which are the Pre-train model, finetuning model with
 Inferencing Models which are the Pre-train model, finetuning model with 1,000 steps, and finetuning model with 2,000 steps.  
 `Here is the result`:
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196965456-e90db92b-971e-4203-9d48-1e894efacf8a.png">
+<p aling="center"><img width="750" alt="image" src="https://user-images.githubusercontent.com/97492504/196965456-e90db92b-971e-4203-9d48-1e894efacf8a.png"></p>
 
 - **Pre-train** Faster_R-CNN-ResNet50_V1 model can detect Durians, but it does not know what kind of object.  
 - Next, inferencing the finetune model with 1,000 steps. The output looks better. The model can detect and know Durians with confidentiality at 100%.
@@ -919,12 +919,12 @@ Faster R-CNN ResNet50 V1 | 2,000 | 8 | 0.933264 | 0.499617 | 0.249 |
 
 Based on warming up `step 10%` and `GPU 0: A100-SXM4-40GB (UUID: GPU-97cd2fcd-6af8-7668-6823-d5e2473eb828)`.
 
-As the mAP (mean Average Precision) is shown in the table, we choose the mAP from the IoU value at 0.5 and 0.95.  
+As the mAP (mean Average Precision) is shown in the table, we choose the mAP from the IoU value at 0.5 and 0.5:0.95.  
 We can see clearly that the Faster R-CNN ResNet50 V1 model is better than the SSD ResNet101 V1 FPN model while using the same parameters for the training.
 
 Moreover, using the pre-train model to detect the Durian dataset, which not contains in the COCO dataset. The outcome of the Faster R-CNN ResNet50 V1 model is impressive. It can detect some Durians with a confidence level of around 70%- 90%  in images, although it can not tell the object's name. However, the SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model can not detect anything.
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196966630-50fc5490-d4be-43de-ab5c-40c0d853ec88.png">
+<p aling="center"><img width="750" alt="image" src="https://user-images.githubusercontent.com/97492504/196966630-50fc5490-d4be-43de-ab5c-40c0d853ec88.png"></p>
 
 ---
 
