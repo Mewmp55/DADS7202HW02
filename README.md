@@ -889,7 +889,7 @@ The  Inferencing Models Outcomes.
 After we Inferencing Models which are the Pre-train model, finetuning model with 2,000 steps, 5,000 steps, and 10,000 steps.  
 `Here is the result`:
 
-<p aling="center"><img width="750" alt="image" src="https://user-images.githubusercontent.com/97492504/196964535-4dd428a7-f11e-49cf-9fb8-e2a939e84065.png"></p>
+<p align="center"><img width="750" alt="image" src="https://user-images.githubusercontent.com/97492504/196964535-4dd428a7-f11e-49cf-9fb8-e2a939e84065.png"></p>
 
 - Pre-train ResNet101  (RetinaNet101) model cannot detect Durians at all.  
 - Next, inferencing the finetune model with 2,000 steps. The output looks better. The model can detect and know some Durians with confidentiality at 91% and 94%.  
@@ -900,7 +900,7 @@ After we Inferencing Models which are the Pre-train model, finetuning model with
 Inferencing Models which are the Pre-train model, finetuning model with 1,000 steps, and finetuning model with 2,000 steps.  
 `Here is the result`:
 
-<p aling="center"><img width="750" alt="image" src="https://user-images.githubusercontent.com/97492504/196965456-e90db92b-971e-4203-9d48-1e894efacf8a.png"></p>
+<p align="center"><img width="750" alt="image" src="https://user-images.githubusercontent.com/97492504/196965456-e90db92b-971e-4203-9d48-1e894efacf8a.png"></p>
 
 - **Pre-train** Faster_R-CNN-ResNet50_V1 model can detect Durians, but it does not know what kind of object.  
 - Next, inferencing the finetune model with 1,000 steps. The output looks better. The model can detect and know Durians with confidentiality at 100%.
@@ -924,7 +924,7 @@ We can see clearly that the Faster R-CNN ResNet50 V1 model is better than the SS
 
 Moreover, using the pre-train model to detect the Durian dataset, which not contains in the COCO dataset. The outcome of the Faster R-CNN ResNet50 V1 model is impressive. It can detect some Durians with a confidence level of around 70%- 90%  in images, although it can not tell the object's name. However, the SSD ResNet101 V1 FPN 640x640 (RetinaNet101) model can not detect anything.
 
-<p aling="center"><img width="750" alt="image" src="https://user-images.githubusercontent.com/97492504/196966630-50fc5490-d4be-43de-ab5c-40c0d853ec88.png"></p>
+<p align="center"><img width="750" alt="image" src="https://user-images.githubusercontent.com/97492504/196966630-50fc5490-d4be-43de-ab5c-40c0d853ec88.png"></p>
 
 ---
 
