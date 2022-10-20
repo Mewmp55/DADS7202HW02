@@ -470,7 +470,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 Faster_R-CNN-ResNet50_V1 is a two-stage object detection model and the architecture of this model is complex because it has several moving parts.  
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196794462-950de22a-3f18-4c62-9a88-db5bb382f3d1.png">  
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/97492504/196794462-950de22a-3f18-4c62-9a88-db5bb382f3d1.png">  
 
 The input images are represented as Height×Width×Depth tensors (multidimensional arrays), which are passed through a pre-trained CNN up until an intermediate layer, ending up with a convolutional feature map. We use this as a feature extractor for the next part.
 
@@ -489,23 +489,23 @@ To use this model, we will start from extract pre-trained-model folder.
 !wget http://download.tensorflow.org/models/object_detection/tf2/20200711/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.tar.gz
 ```
   
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196795446-7a18d794-7905-4587-9caf-8f30fa3a436f.png">
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/97492504/196795446-7a18d794-7905-4587-9caf-8f30fa3a436f.png">
 
 3. Extracted our pre-trained model and The **pre-trained-model** folder should look like this.
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196734840-e66baa86-6e5f-410b-8547-95d7d3ed3b1d.png">
+<img width="350" alt="image" src="https://user-images.githubusercontent.com/97492504/196734840-e66baa86-6e5f-410b-8547-95d7d3ed3b1d.png">
 
 ```
 !tar -xvf faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.tar.gz
 ```
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196795600-e572a3d7-ca22-42cc-9c1a-0eaacf80be22.png">
+<img width="650" alt="image" src="https://user-images.githubusercontent.com/97492504/196795600-e572a3d7-ca22-42cc-9c1a-0eaacf80be22.png">
 
 4. In the **training-demo** folder, upload the previously downloaded files **export_tflite_graph_tf2.py**, **exporter_main_v2.py** and **model_main_tf2.py** .
   - This step is for easier to call this script.
   - Able to call the script in research folder without download and re-upload step.
   
-  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196741775-b9f116b9-3fe3-4c4c-b2f4-5fe6e6f3f198.png">
+  <img width="350" alt="image" src="https://user-images.githubusercontent.com/97492504/196741775-b9f116b9-3fe3-4c4c-b2f4-5fe6e6f3f198.png">
 
 5. Download **partition_dataset.py** and **generate_tfrecord.py**
   - Go to [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html).
@@ -513,7 +513,7 @@ To use this model, we will start from extract pre-trained-model folder.
   - Download **Generate TensorFlow Records script**.
   - Upload file into **training_demo** folder.
 
-  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196742294-9c8c173a-dd8b-4c18-adea-73c72310a4e4.png">
+  <img width="350" alt="image" src="https://user-images.githubusercontent.com/97492504/196742294-9c8c173a-dd8b-4c18-adea-73c72310a4e4.png">
 
 6. Create TensorFlow Records.
   - Change directory to **training_demo**.
@@ -536,7 +536,7 @@ cd /content/drive/MyDrive/DADS7202/workspace/training_demo
 
 7. The annotations folder should be look like this.
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196743145-046586bf-b85b-4aa0-b38c-3e79788437dd.png">
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/97492504/196743145-046586bf-b85b-4aa0-b38c-3e79788437dd.png">
 
 8. In **models** folder **(inside training_demo folder)** create a new directory named **Faster_R-CNN_ResNet50_V1** and download **pipeline.config** from **pre-train-models/faster_rcnn...**, then re-upload to the newly created directory. Our **training_demo** should now look like this:
 
