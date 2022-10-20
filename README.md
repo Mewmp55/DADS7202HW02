@@ -1439,8 +1439,7 @@ Naik, K. (2021). TFOD 2.0 Custom Object Detection Step By Step Tutorial. Retriev
 Anonymous. (2020). TensorFlow 2 Object Detection API tutorial. Retrieved from https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html  
 Renotte, N. (2021). Tensorflow Object Detection in 5 Hours with Python | Full Course with 3 Projects. Retrieved from https://www.youtube.com/watch?v=yqkISICHH-U  
 Yohanandan, S. (2020). mAP (mean Average Precision) might confuse you!. Retrieved from https://towardsdatascience.com/map-mean-average-precision-might-confuse-you-5956f1bfa9e2  
-Birodkar, V. (2021). TensorFlow 2 Detection Model Zoo. Retrieved from https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detec
-tion_zoo.md
+Birodkar, V. (2021). TensorFlow 2 Detection Model Zoo. Retrieved from https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md
 
 ---
 
