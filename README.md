@@ -406,7 +406,7 @@ For This Model, we play around with different setups to test things out and get 
 - **Eval_input_reader(str)**: set a path to testing TFRecord file.
 
 ### *For The Steps of Training. We try several numbers, Begin from 2,000 steps.*
-*<b>Number of steps: 2,000 , 5,000 , 10,000</b>* 
+*<b>Number of steps: 2,000, 5,000, 10,000</b>* 
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196981387-f3d86770-7dab-49b5-9af8-59d46004452a.png">
 
