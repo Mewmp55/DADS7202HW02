@@ -743,33 +743,6 @@ We use this code for Inferencing Models, while the model's path depends on each 
 PATH_TO_MODEL_DIR = '/content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models/ssd_resnet101_v1_fpn_640x640_coco17_tpu-8'
 ```
 
-> <b>Pre-trained-model SSD_resnet101_v1_fpn without training.</b>
-  
-`
-Loading model...Done! Took 39.04430317878723 seconds
-Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
-`
-  
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196521072-a133a268-62ad-418a-8372-93456b26da4d.png">
-
-> <b>SSD ResNet101 V1 FPN 640x640 (RetinaNet101) with 2,000 steps</b>
-
-`
-Loading model...Done! Took 20.441354274749756 seconds
-Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
-`
-
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196985726-4f940892-27c8-4022-91b3-b874c63a01e4.png">
-  
-> <b>By increasing the steps to 10000, the results look better.</b>
-  
-`
-Loading model...Done! Took 21.366928339004517 seconds
-Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
-`
-
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/196995974-bb219911-a3c1-490f-832e-55b5d6cab4c8.png">
-
 **Coding for model: Faster R-CNN ResNet50 V1 640x640**
 
 ```python
@@ -896,32 +869,6 @@ We use this code for Inferencing Models, while the model's path depends on each 
 ```python
 PATH_TO_MODEL_DIR = '/content/drive/MyDrive/DADS7202/workspace/training_demo/pre-trained-models/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8'
 ```
-
-> <b>Pretrain-model Faster R-CNN without training.</b>
-
-`
-Loading model...Done! Took 9.365224361419678 seconds
-Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
-`
-
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/197007527-03edc2fe-fc28-4888-9a8b-415256397753.png">
-
-> <b>Fater R-CNN with 1,000 Steps.</b>
-
-`
-Loading model...Done! Took 8.798496007919312 seconds
-Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
-`
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/197007773-ef49386f-bfd9-4f70-88cf-479972b72580.png">
-
-> <b>Fater R-CNN with 2,000 Steps.</b>
-
-`
-Loading model...Done! Took 8.783716917037964 seconds
-Running inference for /content/drive/MyDrive/DADS7202/workspace/training_demo/images/test/1_jpg.rf.24fda645c9751b1f97ca006a4c164020.jpg... Done
-`
-
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/97492504/197008281-53b921d3-fcca-421b-a2b7-452189a8b4a0.png">
 
 ---
 
